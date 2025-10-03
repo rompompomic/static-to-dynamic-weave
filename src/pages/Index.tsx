@@ -1,17 +1,13 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import ServicesPreview from "@/components/ServicesPreview";
-import Footer from "@/components/Footer";
+import Services from "@/components/Services";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background overflow-hidden w-full min-w-[1440px] min-h-screen">
       <Header />
       <Hero />
-      <AboutUs />
-      <ServicesPreview />
-      <Footer />
+      <Services />
     </div>
   );
 };
