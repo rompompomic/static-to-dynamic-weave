@@ -1,65 +1,60 @@
 import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
-    <section className="relative w-full h-[635px] bg-gradient-hero overflow-hidden">
-      {/* Hero Image */}
-      <img
-        className="absolute top-0 right-0 w-[685px] h-full object-cover"
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/image.png"
-        alt="Construction site"
-      />
-
-      {/* Decorative Vector */}
-      <img
-        className="absolute -top-[179px] right-[110px] w-[131px] h-[812px]"
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
-        alt=""
-      />
-
-      {/* Hero Content */}
-      <div className="absolute top-[80px] left-[75px] w-[630px] flex flex-col items-start gap-8">
-        <h1 className="font-mono font-bold text-white text-[50px] leading-normal">
-          Jūsu uzticams partneris būvniecībā
-        </h1>
-        
-        <p className="font-sans font-normal text-white text-lg leading-normal">
-          Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
-          sākotnējām idejām līdz gataviem projektiem.
-        </p>
-
-        <button className="inline-flex justify-center gap-2.5 px-8 py-4 bg-white items-center hover:bg-opacity-90 transition-all">
-          <span className="font-sans font-bold text-primary text-base">
-            Uzzināt vairāk
-          </span>
-          <ArrowUpRight className="w-6 h-6 text-primary" />
-        </button>
+    <section className="relative w-full min-h-[600px] lg:h-[700px] bg-gradient-hero overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img
+          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80"
+          alt="Construction site"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
       </div>
 
-      {/* Stats Section */}
-      <div className="absolute bottom-[20px] left-[74px] flex items-end gap-[270px]">
-        <img
-          className="w-[634px] h-px absolute -top-[29px] left-0"
-          src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-2.svg"
-          alt=""
-        />
-        
-        <div className="flex flex-col gap-1">
-          <span className="font-mono font-normal text-white text-[50px] leading-normal">
-            120+
-          </span>
-          <span className="font-sans font-normal text-white text-base leading-normal ml-[130px]">
-            Skatīt pakalpojumus
-          </span>
-        </div>
+      {/* Hero Content */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
+        <div className="max-w-2xl py-20">
+          <h1 className="font-bold text-white text-4xl lg:text-6xl leading-tight mb-6">
+            {t('hero.title')}
+          </h1>
+          
+          <p className="font-sans text-white text-lg lg:text-xl leading-relaxed mb-8 opacity-90">
+            {t('hero.subtitle')}
+          </p>
 
-        <div className="flex flex-col gap-1">
-          <span className="font-mono font-normal text-white text-[50px] leading-normal">
-            32
-          </span>
-          <span className="font-sans font-normal text-white text-base leading-normal ml-[70px]">
-            Skatīt pakalpojumus
-          </span>
+          <Link
+            to="/pakalpojumi"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
+          >
+            <span>{t('hero.cta')}</span>
+            <ArrowUpRight className="w-6 h-6" />
+          </Link>
+
+          {/* Stats */}
+          <div className="flex gap-12 mt-16 pt-8 border-t border-white/30">
+            <div>
+              <div className="font-bold text-white text-5xl mb-2">
+                {t('hero.stat1')}
+              </div>
+              <div className="text-white/80 text-sm">
+                {t('hero.stat1.text')}
+              </div>
+            </div>
+            <div>
+              <div className="font-bold text-white text-5xl mb-2">
+                {t('hero.stat2')}
+              </div>
+              <div className="text-white/80 text-sm">
+                {t('hero.stat2.text')}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
