@@ -46,27 +46,37 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative w-full py-16 px-[75px]">
-      <h2 className="font-mono font-bold text-foreground text-[50px] leading-normal mb-[94px]">
-        Mūsu pakalpojumi
-      </h2>
+    <section className="w-full py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+        <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 md:mb-12 lg:mb-[94px] animate-fade-in">
+          Mūsu pakalpojumi
+        </h2>
 
-      <div className="relative w-full min-h-[769px]">
-        {/* First column - tall card */}
-        <div className="absolute top-0 left-0">
-          <ServiceCard {...services[0]} />
+        {/* Mobile & Tablet Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 md:gap-8">
+          {services.map((service) => (
+            <ServiceCard key={service.id} {...service} />
+          ))}
         </div>
 
-        {/* Second column - two short cards stacked */}
-        <div className="absolute top-0 left-[440px] flex flex-col gap-[29px]">
-          <ServiceCard {...services[1]} />
-          <ServiceCard {...services[2]} />
-        </div>
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
+          {/* First column - tall card */}
+          <div className="flex flex-col">
+            <ServiceCard {...services[0]} />
+          </div>
 
-        {/* Third column - two short cards stacked */}
-        <div className="absolute top-0 left-[880px] flex flex-col gap-[29px]">
-          <ServiceCard {...services[3]} />
-          <ServiceCard {...services[4]} />
+          {/* Second column - two short cards stacked */}
+          <div className="flex flex-col gap-[29px]">
+            <ServiceCard {...services[1]} />
+            <ServiceCard {...services[2]} />
+          </div>
+
+          {/* Third column - two short cards stacked */}
+          <div className="flex flex-col gap-[29px]">
+            <ServiceCard {...services[3]} />
+            <ServiceCard {...services[4]} />
+          </div>
         </div>
       </div>
     </section>

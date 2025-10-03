@@ -15,32 +15,38 @@ const ServiceCard = ({
   height = "short",
   showCursor = false
 }: ServiceCardProps) => {
-  const heightClass = height === "tall" ? "h-[769px]" : "h-[370px]";
+  const heightClass = height === "tall" ? "lg:h-[769px] h-[400px]" : "lg:h-[370px] h-[320px]";
   const buttonClass = variant === "accent" ? "bg-accent text-white" : "bg-muted text-primary";
-  return <div className={`relative flex flex-col w-[410px] ${heightClass} items-start justify-end overflow-hidden group`} style={{
-    backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
-    backgroundPosition: "50% 50%"
-  }}>
+  
+  return (
+    <div 
+      className={`relative flex flex-col w-full ${heightClass} items-start justify-end overflow-hidden group animate-fade-in`}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "50% 50%"
+      }}
+    >
       {showCursor}
 
-      <div className="flex flex-col items-start gap-4 p-4 w-full bg-card">
+      <div className="flex flex-col items-start gap-4 p-4 md:p-6 w-full bg-card">
         <div className="flex flex-col items-start gap-1.5">
-          <h3 className="font-sans font-bold text-foreground text-[21px] leading-normal">
+          <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal">
             {title}
           </h3>
-          <p className="font-sans font-normal text-foreground text-base leading-normal">
+          <p className="font-sans font-normal text-foreground text-sm md:text-base leading-normal">
             {description}
           </p>
         </div>
 
-        <button className={`flex items-center justify-between px-8 py-4 w-full ${buttonClass} hover:opacity-90 transition-opacity`}>
-          <span className="font-sans font-bold text-base">
+        <button className={`flex items-center justify-between px-6 md:px-8 py-3 md:py-4 w-full ${buttonClass} hover:opacity-90 transition-opacity`}>
+          <span className="font-sans font-bold text-sm md:text-base">
             Uzzināt vairāk
           </span>
-          <ArrowUpRight className="w-6 h-6" />
+          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
         </button>
       </div>
-    </div>;
+    </div>
+  );
 };
 export default ServiceCard;

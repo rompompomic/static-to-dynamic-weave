@@ -1,49 +1,134 @@
-import { ChevronDown, ArrowUpRight } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Header = () => {
-  return (
-    <header className="flex w-full items-center justify-between px-[75px] py-4 bg-card border-b border-border">
-      <img
-        className="w-[184px] h-14 object-contain"
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
-        alt="Demco Logo"
-      />
-      
-      <nav className="inline-flex items-center gap-6">
-        <a
-          href="#"
-          className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-        >
-          SNIEDZĒJIEM
-        </a>
-        <a
-          href="#"
-          className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-        >
-          SADARBĪBA UN KONTAKTI
-        </a>
-        <a
-          href="#"
-          className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-        >
-          SADARBĪBA UN KONTAKTI
-        </a>
-      </nav>
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
-      <div className="inline-flex items-center gap-2.5">
-        <button className="inline-flex h-14 justify-center gap-2.5 px-3 py-4 items-center hover:bg-muted transition-colors">
-          <span className="font-sans font-normal text-foreground text-base">
-            LV
-          </span>
-          <ChevronDown className="w-4 h-4" />
-        </button>
-        
-        <button className="inline-flex justify-center gap-2.5 px-8 py-4 bg-gradient-hero items-center hover:opacity-90 transition-opacity">
-          <span className="font-sans font-bold text-white text-base">
-            Skatīt pakalpojumus
-          </span>
-          <ArrowUpRight className="w-6 h-6 text-white" />
-        </button>
+  return (
+    <header className="sticky top-0 z-40 w-full bg-card border-b border-border backdrop-blur-sm bg-card/95">
+      <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <img
+            className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
+            src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
+            alt="Demco Logo"
+          />
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
+            <a
+              href="#"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              SNIEDZĒJIEM
+            </a>
+            <a
+              href="#"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              PAKALPOJUMI
+            </a>
+            <a
+              href="#"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              SADARBĪBA UN KONTAKTI
+            </a>
+          </nav>
+
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center gap-2.5">
+            <div className="relative">
+              <button 
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="inline-flex h-14 justify-center gap-2.5 px-3 py-4 items-center hover:bg-muted transition-colors"
+              >
+                <span className="font-sans font-normal text-foreground text-base">
+                  LV
+                </span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              
+              {langDropdownOpen && (
+                <div className="absolute top-full right-0 mt-2 bg-card border border-border shadow-lg min-w-[80px] animate-slide-down">
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
+                    EN
+                  </button>
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
+                    RU
+                  </button>
+                </div>
+              )}
+            </div>
+            
+            <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity whitespace-nowrap">
+              <span className="font-sans font-bold text-white text-sm md:text-base">
+                Skatīt pakalpojumus
+              </span>
+              <ArrowUpRight className="w-5 h-5 text-white" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 hover:bg-muted transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden pt-4 pb-4 animate-slide-down">
+            <nav className="flex flex-col gap-4">
+              <a
+                href="#"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                SNIEDZĒJIEM
+              </a>
+              <a
+                href="#"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                PAKALPOJUMI
+              </a>
+              <a
+                href="#"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                SADARBĪBA UN KONTAKTI
+              </a>
+              
+              <div className="flex gap-2 pt-2 border-t border-border">
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  LV
+                </button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  EN
+                </button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  RU
+                </button>
+              </div>
+              
+              <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2">
+                <span className="font-sans font-bold text-white text-base">
+                  Skatīt pakalpojumus
+                </span>
+                <ArrowUpRight className="w-5 h-5 text-white" />
+              </button>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
