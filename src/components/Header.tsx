@@ -22,7 +22,7 @@ const Header = () => {
               href="/"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
-              SĀKUMS
+              Sniedzējiem
             </a>
             <a
               href="/lv/pakalpojumi"
