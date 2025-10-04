@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-card border-t border-border">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12">
-        {/* 3 колонки на lg. Управляем положением колонок через justify-self */}
+        {/* 3 колонки на lg */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           
           {/* Company Info — слева */}
@@ -19,13 +19,12 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigācija — колонка по центру. Заголовок по центру, ссылки слева под ним */}
-          <div className="space-y-4 text-center lg:justify-self-center">
-            <h3 className="font-sans font-bold text-foreground text-base">
+          {/* Navigācija — центр на десктопе, слева на мобилке */}
+          <div className="space-y-4 lg:justify-self-center">
+            <h3 className="font-sans font-bold text-foreground text-base lg:text-center">
               Navigācija
             </h3>
-            {/* w-fit: блок шириной по содержимому; на мобилке центр, на десктопе ссылки слева */}
-            <nav className="w-fit mx-auto lg:mx-0">
+            <nav className="w-fit">
               <ul className="flex flex-col gap-2 items-start">
                 <li>
                   <a href="#" className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -51,13 +50,12 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Kontaktinformācija — колонка справа. Заголовок справа, ссылки слева под ним */}
-          <div className="space-y-4 text-center lg:text-right lg:justify-self-end">
-            <h3 className="font-sans font-bold text-foreground text-base">
+          {/* Kontaktinformācija — справа на десктопе, слева на мобилке */}
+          <div className="space-y-4 lg:justify-self-end">
+            <h3 className="font-sans font-bold text-foreground text-base lg:text-right">
               Kontaktinformācija
             </h3>
-            {/* w-fit + justify-self-end: блок под заголовком, но внутренности слева */}
-            <div className="w-fit mx-auto lg:mx-0">
+            <div className="w-fit">
               <div className="flex flex-col gap-3 items-start">
                 <a
                   href="tel:+37120000000"
