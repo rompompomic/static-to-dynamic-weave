@@ -66,13 +66,13 @@ const Pakalpojumi = () => {
         <div className="relative z-10">
           {/* Mobile toothed block */}
           <div
-            className="md:hidden bg-gradient-hero"
+            className="md:hidden bg-gradient-hero flex items-center"
             style={{
               clipPath:
                 "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
             }}
           >
-            <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
+            <div className="container mx-auto px-4 py-12 -mt-[56px] flex items-center">
               <p className="font-sans text-white text-base leading-relaxed">
                 No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
                 kas pielāgoti gan privātiem, gan industriāliem projektiem.
