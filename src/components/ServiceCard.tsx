@@ -25,7 +25,7 @@ const ServiceCard = ({
   const IMG_HEIGHT_CLASS =
     height === "tall"
       ? "h-[220px] md:h-[300px] lg:h-[520px]"
-      : "h-[170px] md:h-[170px] lg:h-[200px]";
+      : "h-[180px] md:h-[200px] lg:h-[200px]";
 
   const CONTENT_HEIGHT_CLASS =
     height === "tall" ? "h-auto lg:h-[329px]" : "h-auto lg:h-[210px]";
