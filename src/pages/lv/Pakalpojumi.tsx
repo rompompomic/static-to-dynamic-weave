@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
+
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
@@ -11,72 +12,82 @@ import labiekartosana from "@/assets/labiekartosana.webp";
 
 const Pakalpojumi = () => {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <main className="bg-background overflow-x-hidden w-full min-h-screen">
       <Helmet>
         <title>Pakalpojumi – DEMCO</title>
-        <meta 
-          name="description" 
-          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā." 
+        <meta
+          name="description"
+          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā."
         />
         <meta property="og:title" content="Pakalpojumi – DEMCO" />
-        <meta 
-          property="og:description" 
-          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā." 
+        <meta
+          property="og:description"
+          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā."
         />
         <link rel="canonical" href="https://yourdomain.com/lv/pakalpojumi" />
       </Helmet>
+
       <Header />
-      <Hero />
-      
-      {/* Intro Section */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
-        <div className="max-w-4xl animate-fade-in">
-          <h1 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] mb-6">
+
+      {/* ==== HERO с интро и пиллами внутри ==== */}
+      <Hero darkOverlay>
+        <div className="flex flex-col items-start gap-6 md:gap-8 animate-fade-in max-w-full md:max-w-[600px]">
+          <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Pakalpojumi
           </h1>
-          <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8">
+
+          <p className="font-sans text-white text-base md:text-lg leading-relaxed">
             Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības pakalpojumus dažāda mēroga projektiem.
           </p>
-          
-          {/* Quick Navigation Pills */}
-          <div className="flex flex-wrap gap-3">
+
+          {/* Quick Navigation Pills (всегда с фоном) */}
+          <div className="flex flex-wrap gap-3 pt-2">
             <button
               onClick={() => scrollToSection("eku-demontaza")}
-              className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-full font-sans text-sm font-medium"
+              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
+                         bg-white/10 text-white border border-white/20
+                         hover:bg-white/20 transition-colors"
             >
               Ēku demontāža
             </button>
             <button
               onClick={() => scrollToSection("razosanas-demontaza")}
-              className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-full font-sans text-sm font-medium"
+              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
+                         bg-white/10 text-white border border-white/20
+                         hover:bg-white/20 transition-colors"
             >
               Rūpnieciskā demontāža
             </button>
             <button
               onClick={() => scrollToSection("zemes-darbi")}
-              className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-full font-sans text-sm font-medium"
+              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
+                         bg-white/10 text-white border border-white/20
+                         hover:bg-white/20 transition-colors"
             >
               Zemes darbi
             </button>
             <button
               onClick={() => scrollToSection("labiekartosana")}
-              className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-full font-sans text-sm font-medium"
+              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
+                         bg-white/10 text-white border border-white/20
+                         hover:bg-white/20 transition-colors"
             >
               Labiekārtošana
             </button>
           </div>
         </div>
-      </section>
+      </Hero>
 
       {/* Service 1: Būvju un ēku demontāža */}
-      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section
+        id="eku-demontaza"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img
@@ -90,8 +101,8 @@ const Pakalpojumi = () => {
               Būvju un ēku demontāža
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu demontāžu ar pilnu atļauju noformēšanu, 
-              teritorijas norobežošanu un drošības pasākumu ievērošanu. Process ietver būvgružu izvešanu, 
+              Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu demontāžu ar pilnu atļauju noformēšanu,
+              teritorijas norobežošanu un drošības pasākumu ievērošanu. Process ietver būvgružu izvešanu,
               inženierkomunikāciju atslēgšanu un pilnīgu objekta likvidāciju saskaņā ar spēkā esošajiem noteikumiem.
             </p>
             <ul className="space-y-3 mb-6">
@@ -127,16 +138,19 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      {/* Service 2: Ražošanas ēku demontāža */}
-      <section id="razosanas-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      {/* Service 2: Ražošanas ēku demontāža (картинка справа на десктопе) */}
+      <section
+        id="razosanas-demontaza"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
               Ražošanas ēku demontāža
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Specializējamies industriālo objektu demontāžā, izmantojot profesionālu smago tehniku un ievērojot 
-              visus drošības standartus. Veicam bīstamo vielu identifikāciju, metāla konstrukciju demontāžu ar 
+              Specializējamies industriālo objektu demontāžā, izmantojot profesionālu smago tehniku un ievērojot
+              visus drošības standartus. Veicam bīstamo vielu identifikāciju, metāla konstrukciju demontāžu ar
               iespēju realizēt lūžņus, kā arī nodrošinām būvgružu šķirošanu un savākšanu atbilstoši vides prasībām.
             </p>
             <ul className="space-y-3 mb-6">
@@ -180,7 +194,10 @@ const Pakalpojumi = () => {
       </section>
 
       {/* Service 3: Zemes darbi */}
-      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section
+        id="zemes-darbi"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img
@@ -194,8 +211,8 @@ const Pakalpojumi = () => {
               Zemes darbi
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Piedāvājam pilnu spektru zemes darbu pakalpojumus – no pamatu rakšanas līdz teritorijas planēšanai. 
-              Izmantojam modernu tehniku grunts maiņai, drenāžas sistēmu izbūvei un komunikāciju tranšeju rakšanai. 
+              Piedāvājam pilnu spektru zemes darbu pakalpojumus – no pamatu rakšanas līdz teritorijas planēšanai.
+              Izmantojam modernu tehniku grunts maiņai, drenāžas sistēmu izbūvei un komunikāciju tranšeju rakšanai.
               Nodrošinām precīzu teritorijas sagatavošanu turpmākai būvniecībai vai labiekārtošanai.
             </p>
             <ul className="space-y-3 mb-6">
@@ -231,16 +248,19 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      {/* Service 4: Labiekārtošana */}
-      <section id="labiekartosana" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      {/* Service 4: Labiekārtošana (картинка справа на десктопе) */}
+      <section
+        id="labiekartosana"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
               Labiekārtošana
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Pēc demontāžas vai zemes darbu pabeigšanas piedāvājam teritorijas labiekārtošanu – ceļu un laukumu 
-              izbūvi, segumu ieklāšanu, apzaļumošanu. Izveidojam funkcionālas un estētiskas teritorijas gan privātām, 
+              Pēc demontāžas vai zemes darbu pabeigšanas piedāvājam teritorijas labiekārtošanu – ceļu un laukumu
+              izbūvi, segumu ieklāšanu, apzaļumošanu. Izveidojam funkcionālas un estētiskas teritorijas gan privātām,
               gan komerciālām vajadzībām, ievērojot visus ainavu arhitektūras un būvnormatīvu principus.
             </p>
             <ul className="space-y-3 mb-6">
