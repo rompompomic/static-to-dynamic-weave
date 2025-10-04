@@ -49,7 +49,7 @@ const Hero = () => {
           className="md:hidden bg-gradient-hero"
           style={{
             clipPath:
-              "polygon(0 56px, 25% 56px, 30% 28px, 35% 56px, 65% 56px, 70% 28px, 75% 56px, 100% 56px, 100% 100%, 0 100%)",
+              "polygon(0 56px, 20% 56px, 30% 10px, 70% 10px, 80% 56px, 100% 56px, 100% 100%, 0 100%)",
           }}
         >
           <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
