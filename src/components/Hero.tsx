@@ -1,28 +1,18 @@
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
-
 const Hero = () => {
-  return (
-    <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
+  return <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE: без искажений, прижат к правому краю */}
       <div className="absolute inset-0 z-0 flex justify-end">
-        <img
-          src={heroImage}
-          alt="Construction site"
-          className="
+        <img src={heroImage} alt="Construction site" className="
             object-cover object-center
             w-full h-auto
             md:h-full md:w-auto
-          "
-        />
+          " />
       </div>
 
       {/* Правая чёрная полоска прижата к правому краю, поверх картинки */}
-      <img
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
-        alt=""
-        className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-20 w-[131px] h-[812px] pointer-events-none"
-      />
+      <img src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg" alt="" className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-20 w-[131px] h-[812px] pointer-events-none" />
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
@@ -43,7 +33,7 @@ const Hero = () => {
           </button>
       
           {/* Статистика */}
-          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-full">
+          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-[500px]">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[80px]">
               <div className="flex flex-col gap-1">
                 <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
@@ -57,8 +47,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
