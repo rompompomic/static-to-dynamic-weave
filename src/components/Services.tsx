@@ -6,23 +6,23 @@ const Services = () => {
       id: 1,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11.png",
       title: "Būvju un ēku demontāža",
-      description: "kādus objektus nojaucam, kā notiek process.",
+      description: "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
       height: "tall" as const,
       variant: "default" as const,
     },
     {
       id: 2,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-1.png",
-      title: "Būvju un ēku demontāža",
-      description: "kādus objektus nojaucam, kā notiek process.",
+      title: "Ražošanas ēku demontāža",
+      description: "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
       height: "short" as const,
       variant: "default" as const,
     },
     {
       id: 3,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-2.png",
-      title: "Būvju un ēku demontāža",
-      description: "kādus objektus nojaucam, kā notiek process.",
+      title: "Zemes darbi",
+      description: "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
       height: "short" as const,
       variant: "accent" as const,
       showCursor: true,
@@ -30,16 +30,8 @@ const Services = () => {
     {
       id: 4,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-3.png",
-      title: "Būvju un ēku demontāža",
-      description: "kādus objektus nojaucam, kā notiek process.",
-      height: "short" as const,
-      variant: "default" as const,
-    },
-    {
-      id: 5,
-      image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-4.png",
-      title: "Būvju un ēku demontāža",
-      description: "kādus objektus nojaucam, kā notiek process.",
+      title: "Labiekārtošana",
+      description: "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
       height: "short" as const,
       variant: "default" as const,
     },
@@ -48,9 +40,13 @@ const Services = () => {
   return (
     <section className="w-full py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-        <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 md:mb-12 lg:mb-[94px] animate-fade-in">
+        <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8 animate-fade-in">
           Mūsu pakalpojumi
         </h2>
+
+        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl animate-fade-in">
+          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
+        </p>
 
         {/* Mobile & Tablet Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 md:gap-8">
@@ -72,10 +68,9 @@ const Services = () => {
             <ServiceCard {...services[2]} />
           </div>
 
-          {/* Third column - two short cards stacked */}
+          {/* Third column - one short card */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard {...services[3]} />
-            <ServiceCard {...services[4]} />
           </div>
         </div>
       </div>

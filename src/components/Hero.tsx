@@ -3,12 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
-      {/* Hero Image - Hidden on mobile, visible on larger screens */}
-      <img
-        className="hidden md:block absolute top-0 right-0 w-[50%] lg:w-[685px] h-full object-cover"
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/image.png"
-        alt="Construction site"
-      />
+      {/* Hero Image - Now visible on all screen sizes */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          className="w-full h-full object-cover opacity-40 md:opacity-100 md:w-[50%] lg:w-[685px] md:absolute md:right-0"
+          src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/image.png"
+          alt="Construction site"
+        />
+      </div>
 
       {/* Decorative Vector - Hidden on mobile */}
       <img
@@ -18,7 +20,7 @@ const Hero = () => {
       />
 
       {/* Hero Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
         <div className="max-w-full md:max-w-[630px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Jūsu uzticams partneris būvniecībā

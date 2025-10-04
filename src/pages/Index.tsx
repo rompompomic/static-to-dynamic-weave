@@ -1,18 +1,26 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
+import Gallery from "@/components/Gallery";
+import Partners from "@/components/Partners";
+import HowToApply from "@/components/HowToApply";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
   return (
-    <div className="bg-background overflow-x-hidden w-full min-h-screen">
+    <main className="bg-background overflow-x-hidden w-full min-h-screen">
       <Header />
       <Hero />
+      <AboutUs />
       <Services />
+      <Gallery />
+      <Partners />
+      <HowToApply />
       <Footer />
       <MobileCallButton />
-    </div>
+    </main>
   );
 };
 
