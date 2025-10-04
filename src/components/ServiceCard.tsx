@@ -7,7 +7,7 @@ interface ServiceCardProps {
   variant?: "default" | "accent";
   height?: "tall" | "short";
   showCursor?: boolean;
-  href?: string; // добавим пропс
+  href?: string;
 }
 
 const ServiceCard = ({
@@ -17,18 +17,22 @@ const ServiceCard = ({
   variant = "default",
   height = "short",
   showCursor = false,
-  href = "/lv/pakalpojumi", // дефолтная ссылка
+  href = "/lv/pakalpojumi",
 }: ServiceCardProps) => {
+  // На md карточка всегда растягивается по высоте ряда (h-full),
+  // а на lg получаем зафиксированные высоты под дизайн.
   const CARD_TOTAL_CLASS =
     height === "tall"
-      ? "md:h-[520px] lg:h-[849px]" // для tablet поменьше
-      : "md:h-[320px] lg:h-[410px]"; // фиксированная высота на tablet
+      ? "md:h-full lg:h-[849px]"
+      : "md:h-full lg:h-[410px]";
 
+  // Высота картинки
   const IMG_HEIGHT_CLASS =
     height === "tall"
       ? "h-[220px] md:h-[300px] lg:h-[520px]"
-      : "h-[170px] md:h-[170px] lg:h-[200px]";
+      : "h-[180px] md:h-[200px] lg:h-[200px]";
 
+  // Контент фиксируем только на lg; на md — авто, чтобы равномерно тянуться
   const CONTENT_HEIGHT_CLASS =
     height === "tall" ? "h-auto lg:h-[329px]" : "h-auto lg:h-[210px]";
 
@@ -53,7 +57,7 @@ const ServiceCard = ({
 
   return (
     <article
-      className={`relative w-full ${CARD_TOTAL_CLASS} overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] flex flex-col`}
+      className={`relative w-full h-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] flex flex-col ${CARD_TOTAL_CLASS}`}
     >
       {/* Изображение */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS} flex-none overflow-hidden`}>
@@ -63,7 +67,7 @@ const ServiceCard = ({
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        {showCursor && <></>}
+        {showCursor && null}
       </div>
 
       {/* Контент */}

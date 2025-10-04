@@ -54,24 +54,29 @@ const Services = () => {
         </p>
 
         {/* Mobile & Tablet Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 md:gap-8">
-          {services.map(service => <ServiceCard key={service.id} {...service} />)}
+        <div
+          className="
+            grid grid-cols-1 md:grid-cols-2 lg:hidden
+            gap-6 md:gap-8
+            md:[grid-auto-rows:1fr]  /* все ряды одинаковой высоты */
+            items-stretch               /* элементы тянутся по высоте ряда */
+          "
+        >
+          {services.map((service) => (
+            <div key={service.id} className="h-full">  {/* оболочка тоже тянется */}
+              <ServiceCard {...service} />
+            </div>
+          ))}
         </div>
-
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
-          {/* 1-я колонка — одна высокая карточка */}
           <div className="flex flex-col">
             <ServiceCard {...services[0]} />
           </div>
-
-          {/* 2-я колонка — две короткие */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard {...services[1]} />
             <ServiceCard {...services[2]} />
           </div>
-
-          {/* 3-я колонка — две короткие (старая + новая) */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard {...services[4]} />
             <ServiceCard {...services[3]} />
