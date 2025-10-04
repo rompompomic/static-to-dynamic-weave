@@ -20,7 +20,9 @@ const ServiceCard = ({
   href = "/lv/pakalpojumi", // дефолтная ссылка
 }: ServiceCardProps) => {
   const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[849px]" : "lg:h-[410px]";
+    height === "tall"
+      ? "md:h-[520px] lg:h-[849px]" // для tablet поменьше
+      : "md:h-[320px] lg:h-[410px]"; // фиксированная высота на tablet
 
   const IMG_HEIGHT_CLASS =
     height === "tall"
