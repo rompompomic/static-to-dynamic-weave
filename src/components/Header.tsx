@@ -22,7 +22,7 @@ const Header = () => {
               href="/"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
-              Sniedzējiem
+              SNIEDZĒJIEM
             </a>
             <a
               href="/lv/pakalpojumi"
@@ -96,7 +96,7 @@ const Header = () => {
                 href="/"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
-                SĀKUMS
+                SNIEDZĒJIEM
               </a>
               <a
                 href="/lv/pakalpojumi"
