@@ -1,5 +1,6 @@
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import demcoLogo from "@/assets/demco-logo.webp";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
           <a href="/" className="flex items-center">
             <img
               className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
-              src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
+              src={demcoLogo}
               alt="Demco Logo"
             />
           </a>
