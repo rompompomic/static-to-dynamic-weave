@@ -16,7 +16,7 @@ const Hero = () => {
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
-        <div className="max-w-full md:max-w-[500px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
+        <div className="max-w-full md:max-w-[560px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Jūsu uzticams partneris būvniecībā
           </h1>
@@ -33,7 +33,7 @@ const Hero = () => {
           </button>
       
           {/* Статистика */}
-          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-full">
+          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-[500px]">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[80px]">
               <div className="flex flex-col gap-1">
                 <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
