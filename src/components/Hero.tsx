@@ -23,7 +23,7 @@ const Hero = () => {
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
-        className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-20 w-[131px] h-[812px] pointer-events-none"
+        className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
       />
 
       {/* Контент */}
