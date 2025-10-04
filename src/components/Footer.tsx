@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer className="w-full bg-card border-t border-border">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12">
-        {/* 3 колонки уже с md, чтобы на планшете ничего не переносилось */}
+        {/* 3 колонки уже с md */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
           {/* Company Info — слева */}
-          <div className="space-y-4">
+          <div className="space-y-4 justify-self-start">
             <img
               className="w-[150px] h-auto object-contain"
               src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
@@ -18,8 +18,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigācija — по левому краю, без иконок, без переносов */}
-          <div className="space-y-4">
+          {/* Navigācija — по центру на таблетах и десктопе */}
+          <div className="space-y-4 justify-self-center">
             <h3 className="font-sans font-bold text-foreground text-base">
               Navigācija
             </h3>
@@ -53,8 +53,8 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Kontaktinformācija — тоже по левому краю, без переносов строк */}
-          <div className="space-y-4">
+          {/* Kontaktinformācija — справа */}
+          <div className="space-y-4 justify-self-end">
             <h3 className="font-sans font-bold text-foreground text-base">
               Kontaktinformācija
             </h3>
