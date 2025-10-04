@@ -19,19 +19,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <a
-              href="#"
+              href="/"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
-              SNIEDZĒJIEM
+              SĀKUMS
             </a>
             <a
-              href="#"
+              href="/lv/pakalpojumi"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
               PAKALPOJUMI
             </a>
             <a
-              href="#"
+              href="/lv/sadarbiba-un-kontakti#forma"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
               SADARBĪBA UN KONTAKTI
@@ -63,12 +63,15 @@ const Header = () => {
               )}
             </div>
             
-            <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity whitespace-nowrap">
+            <a 
+              href="/lv/pakalpojumi"
+              className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
               <span className="font-sans font-bold text-white text-sm md:text-base">
                 Skatīt pakalpojumus
               </span>
               <ArrowUpRight className="w-5 h-5 text-white" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,19 +93,19 @@ const Header = () => {
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
               <a
-                href="#"
+                href="/"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
-                SNIEDZĒJIEM
+                SĀKUMS
               </a>
               <a
-                href="#"
+                href="/lv/pakalpojumi"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
                 PAKALPOJUMI
               </a>
               <a
-                href="#"
+                href="/lv/sadarbiba-un-kontakti#forma"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
                 SADARBĪBA UN KONTAKTI
@@ -120,12 +123,15 @@ const Header = () => {
                 </button>
               </div>
               
-              <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2">
+              <a 
+                href="/lv/pakalpojumi"
+                className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2"
+              >
                 <span className="font-sans font-bold text-white text-base">
                   Skatīt pakalpojumus
                 </span>
                 <ArrowUpRight className="w-5 h-5 text-white" />
-              </button>
+              </a>
             </nav>
           </div>
         )}
