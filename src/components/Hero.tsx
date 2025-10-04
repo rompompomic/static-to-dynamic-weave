@@ -1,9 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
-
-// та же декоративная полоска, что и раньше
-const VECTOR_SRC = "https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg";
+import heroStrip from "@/assets/hero-strip.svg"; // ← добавьте svg/ png полоски в /assets
 
 const Stats = () => (
   <div className="mt-8 pt-6 border-t border-white/20">
@@ -22,57 +20,57 @@ const Stats = () => (
 
 const Hero = () => {
   return (
-    <section
-      className="
-        relative w-full overflow-hidden
-        md:min-h-[635px] md:bg-gradient-hero     /* десктоп: как было */
-      "
-    >
-      {/* === КАРТИНКА === */}
+    <section className="relative w-full overflow-hidden md:min-h-[635px] md:bg-gradient-hero">
+      {/* IMAGE */}
       <div className="relative md:absolute md:inset-0 z-0 flex justify-end">
         <img
           src={heroImage}
           alt="Construction site"
           className="
-            h-[320px] w-[110%] -translate-x-[5%]      /* мобилка: шире и чуть сдвигаем влево, чтобы скрыть фон */
+            h-[320px] w-[120%] -translate-x-[10%]         /* шире и сдвигаем влево на мобилке */
             object-cover object-center
-            md:h-full md:w-auto md:translate-x-0      /* десктоп: без искажений как раньше */
+            md:h-full md:w-auto md:translate-x-0
           "
         />
-        {/* затемнение только на мобилке для читаемости оверлея */}
+        {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45 md:hidden" />
 
-        {/* Мобильный заголовок поверх картинки */}
-        <div className="md:hidden absolute left-4 right-4 bottom-5">
+        {/* Заголовок на фото — поднят выше */}
+        <div className="md:hidden absolute left-4 right-4 top-6">
           <h1 className="font-mono font-bold text-white text-[28px] leading-tight">
             Jūsu uzticams<br />partneris būvniecībā
           </h1>
         </div>
       </div>
 
-      {/* === ГОРИЗОНТАЛЬНАЯ ПОЛОСКА НА МОБИЛКЕ (лежит на картинке) === */}
-      <div className="relative md:hidden -mt-[34px] z-10">
-        <img
-          src={VECTOR_SRC}
-          alt="decorative stripe"
-          className="w-full h-[56px] object-cover"
-          /* красим, не трогая прозрачность PNG */
-          style={{
-            filter:
-              "invert(47%) sepia(85%) saturate(362%) hue-rotate(128deg) brightness(92%) contrast(90%)",
-          }}
-        />
-      </div>
-
-      {/* === ПРАВАЯ ЧЁРНАЯ ПОЛОСА (ДЕСКТОП, как было) === */}
-      <img
-        src={VECTOR_SRC}
-        alt=""
-        className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+      {/* ==== ГОРИЗОНТАЛЬНАЯ ПОЛОСКА (маска) — ЛЕЖИТ НА ФОТО ==== */}
+      <div
+        className="md:hidden relative z-10 h-[56px] -mt-[22px] w-full"
+        style={{
+          background: "var(--gradient-hero)",            // цвет/градиент блока
+          WebkitMaskImage: `url(${heroStrip})`,           // маска для Safari/iOS
+          maskImage: `url(${heroStrip})`,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "cover",
+          maskSize: "cover",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
       />
 
-      {/* === КОНТЕНТ === */}
-      {/* Мобилка: отдельный закрашенный блок под полоской */}
+      {/* ПРАВАЯ ЧЁРНАЯ ПОЛОСА (десктоп — как было) */}
+      <img
+        src={heroStrip}
+        alt=""
+        className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+        style={{
+          // на десктопе не меняем цвет — оставляем как было
+          filter: "none",
+        }}
+      />
+
+      {/* КОНТЕНТ: мобилка — закрашенный блок под полоской; десктоп — как было */}
       <div className="md:hidden relative z-20 bg-gradient-hero">
         <div className="container mx-auto px-4 py-8">
           <p className="font-sans text-white text-base leading-relaxed mb-6">
@@ -87,7 +85,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Десктоп: исходный текстовый блок слева + статистика (как было) */}
       <div className="hidden md:block relative z-10">
         <div className="container mx-auto px-8 lg:px-[75px] py-20 max-w-[630px]">
           <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-normal">
