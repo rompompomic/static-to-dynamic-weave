@@ -43,17 +43,19 @@ const Hero = () => {
       />
 
       {/* === MOBILE: горизонтальная «полоска с заусенцем» поверх картинки === */}
-      <img
-        src={heroStrip}
-        alt=""
-        className="md:hidden relative z-10 -mt-8 w-full"
-        style={{ transform: "scaleY(-1)" }}
+      <div
+        className="md:hidden relative z-10 -mt-6 h-[56px] w-full"
+        style={{
+          background: "var(--gradient-hero)",
+          clipPath:
+            "polygon(0 55%, 42% 55%, 50% 15%, 58% 55%, 100% 55%, 100% 100%, 0 100%)",
+        }}
       />
 
       {/* === Контент (desktop слева; mobile — закрашенный блок) === */}
       <div className="relative z-10">
         {/* Mobile: под полоской отдельный закрашенный блок тем же градиентом */}
-        <div className="md:hidden bg-gradient-hero -mt-px">
+        <div className="md:hidden bg-gradient-hero">
           <div className="container mx-auto px-4 py-8">
             <p className="font-sans text-white text-base leading-relaxed mb-6">
               Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
