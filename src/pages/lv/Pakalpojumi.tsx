@@ -383,7 +383,7 @@ const Pakalpojumi = () => {
                 </a>
                 <a href="mailto:info@yourdomain.com" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Mail className="w-5 h-5" />
-                  info@yourdomain.com
+                  info@demco.lv
                 </a>
               </div>
 
