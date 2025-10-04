@@ -95,22 +95,19 @@ const Pakalpojumi = () => {
       {/* 1. Būvju un ēku demontāža */}
       <section id="eku-demontaza" className="w-full py-12 md:py-16 bg-white/0">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
-            {/* Image */}
-            <div className="overflow-hidden order-1 md:order-none">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="overflow-hidden">
               <img
                 src={buvjuUnEkuDemontaza}
                 alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana"
-                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+                className="w-full h-auto object-cover"
               />
             </div>
-      
-            {/* Text */}
-            <div className="order-2 md:order-none">
-              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
+            <div>
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Būvju un ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
                 Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
                 demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
                 un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
@@ -122,7 +119,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Dzīvojamās & saimniecības ēkas
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Nojaukšana līdz pamatiem, būvgružu izvešana, laukuma
                     izlīdzināšana turpmākajiem darbiem.
                   </p>
@@ -131,7 +128,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Drošība & dokumentācija
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Saskaņojumi ar pašvaldību, darbu plāns un riska novērtējums,
                     satiksmes organizācija.
                   </p>
@@ -145,13 +142,12 @@ const Pakalpojumi = () => {
       {/* 2. Ražošanas ēku demontāža */}
       <section id="razosanas-demontaza" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
-            {/* Text */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
             <div className="order-2 md:order-1">
-              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Ražošanas ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
                 Specializējamies industriālo objektu demontāžā ar smago tehniku,
                 ievērojot augstus drošības standartus un vides prasības.
               </p>
@@ -161,7 +157,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Industriālie objekti
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Noliktavas, angāri, cehi — darba zonu nožogošana un
                     koordinācija ar operatīvajiem dienestiem.
                   </p>
@@ -170,7 +166,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Utilizācija & šķirošana
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Metāla lūžņu realizācija, bīstamo atkritumu nodošana, pilnas
                     atskaites.
                   </p>
@@ -178,12 +174,11 @@ const Pakalpojumi = () => {
               </div>
             </div>
       
-            {/* Image */}
             <div className="overflow-hidden order-1 md:order-2">
               <img
                 src={razosanasEkuDemontaza}
                 alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana"
-                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -193,22 +188,19 @@ const Pakalpojumi = () => {
       {/* 3. Zemes darbi */}
       <section id="zemes-darbi" className="w-full py-12 md:py-16 bg-white/0">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
-            {/* Image */}
-            <div className="overflow-hidden order-1 md:order-none">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="overflow-hidden">
               <img
                 src={zemesDarbi}
                 alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana"
-                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+                className="w-full h-auto object-cover"
               />
             </div>
-      
-            {/* Text */}
-            <div className="order-2 md:order-none">
-              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
+            <div>
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Zemes darbi
               </h2>
-              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
                 Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju
                 rakšana inženierkomunikācijām, drenāžas risinājumi.
               </p>
@@ -218,7 +210,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Pamati & planēšana
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Pamatu bedres, laukumu sagatavošana, precīza līmeņošana ar
                     lāzera kontroli.
                   </p>
@@ -227,7 +219,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Drenāža & komunikācijas
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Drenāžas sistēmas, ūdens novade, tranšejas elektrībai,
                     ūdenim un kanalizācijai.
                   </p>
@@ -241,13 +233,12 @@ const Pakalpojumi = () => {
       {/* 4. Labiekārtošana */}
       <section id="labiekartosana" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
-            {/* Text */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
             <div className="order-2 md:order-1">
-              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Labiekārtošana
               </h2>
-              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
                 Ceļi un laukumi, segumu ieklāšana, apzaļumošana un funkcionāls
                 teritorijas dizains privātām un komerciālām vajadzībām.
               </p>
@@ -257,7 +248,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Celiņi & segumi
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Bruģis, šķembas, asfaltbetons; apmales, līmeņi un
                     ūdensnoteces.
                   </p>
@@ -266,7 +257,7 @@ const Pakalpojumi = () => {
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Apzaļumošana & dizains
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
                     Zālieni, stādījumi, apgaismojums, mazo arhitektūras formu
                     integrācija.
                   </p>
@@ -274,12 +265,11 @@ const Pakalpojumi = () => {
               </div>
             </div>
       
-            {/* Image */}
             <div className="overflow-hidden order-1 md:order-2">
               <img
                 src={labiekartosana}
                 alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana"
-                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
