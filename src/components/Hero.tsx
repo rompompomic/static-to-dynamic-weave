@@ -8,7 +8,7 @@ interface HeroProps {
   overlayMode?: "none" | "always" | "mobile";
 }
 
-const Hero = ({ children, overlayMode = "none" }: HeroProps) => {
+const Hero = ({ children, overlayMode = "mobile" }: HeroProps) => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE */}
@@ -23,11 +23,15 @@ const Hero = ({ children, overlayMode = "none" }: HeroProps) => {
           "
         />
         {/* затемнение: none / always / mobile */}
-        {overlayMode === "always" && <div className="absolute inset-0 bg-black/50" />}
-        {overlayMode === "mobile" && <div className="absolute inset-0 bg-black/50 md:hidden" />}
+        {overlayMode === "always" && (
+          <div className="absolute inset-0 bg-black/50" />
+        )}
+        {overlayMode === "mobile" && (
+          <div className="absolute inset-0 bg-black/50 md:hidden" />
+        )}
       </div>
 
-      {/* Правая декоративная полоса (как было) */}
+      {/* Правая декоративная полоса */}
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
@@ -44,11 +48,14 @@ const Hero = ({ children, overlayMode = "none" }: HeroProps) => {
               Jūsu uzticams partneris būvniecībā
             </h1>
             <p className="font-sans font-normal text-white text-base md:text-lg leading-relaxed">
-              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
-              sākotnējām idejām līdz gataviem projektiem.
+              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
+              kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
+              gataviem projektiem.
             </p>
             <button className="inline-flex justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white items-center hover:bg-opacity-90 transition-all">
-              <span className="font-sans font-bold text-primary text-sm md:text-base">Uzzināt vairāk</span>
+              <span className="font-sans font-bold text-primary text-sm md:text-base">
+                Uzzināt vairāk
+              </span>
               <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
             </button>
           </div>
