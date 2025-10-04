@@ -21,7 +21,7 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Construction site"
-          className="h-[300px] w-[1000%] -translate-x-[0%] object-cover object-center"
+          className="h-[300px] w-[600px] -translate-x-[0%] object-cover object-center"
         />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
