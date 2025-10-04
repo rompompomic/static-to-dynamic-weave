@@ -10,11 +10,13 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <img
-            className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
-            src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
-            alt="Demco Logo"
-          />
+          <a href="/" className="flex items-center">
+            <img
+              className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
+              src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/demco-logo-1.svg"
+              alt="Demco Logo"
+            />
+          </a>
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
