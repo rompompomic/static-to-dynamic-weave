@@ -8,39 +8,21 @@ import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
 import labiekartosana from "@/assets/labiekartosana.webp";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Clock,
-  Wallet,
-  Recycle,
-  Truck,
-  HardHat,
-  Handshake,
-  Sparkles,
-  Phone,
-  Mail
-} from "lucide-react";
-
+import { ArrowRight, ShieldCheck, Clock, Wallet, Recycle, Truck, HardHat, Handshake, Sparkles, Phone, Mail } from "lucide-react";
 const Pakalpojumi = () => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
-
-  return (
-    <main className="bg-background overflow-x-hidden w-full min-h-screen">
+  return <main className="bg-background overflow-x-hidden w-full min-h-screen">
       <Helmet>
         <title>Pakalpojumi – DEMCO</title>
-        <meta
-          name="description"
-          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā."
-        />
+        <meta name="description" content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā." />
         <meta property="og:title" content="Pakalpojumi – DEMCO" />
-        <meta
-          property="og:description"
-          content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā."
-        />
+        <meta property="og:description" content="Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi. DEMCO – uzticams partneris būvniecībā." />
         <link rel="canonical" href="https://yourdomain.com/lv/pakalpojumi" />
       </Helmet>
 
@@ -50,25 +32,16 @@ const Pakalpojumi = () => {
       <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
         {/* DESKTOP image (справа) */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end w-[52%]">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="h-full w-auto object-cover object-center"
-          />
+          <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
         </div>
 
         {/* MOBILE image */}
         <div className="md:hidden relative z-0 -mx-4">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="max-w-none w-[130vw] -translate-x-[15vw] h-[300px] object-cover object-center"
-          />
+          <img src={heroImage} alt="Construction site" className="max-w-none w-[130vw] -translate-x-[15vw] h-[300px] object-cover object-center" />
           <div className="absolute inset-0 bg-black/45" />
-          <div
-            className="absolute inset-0 z-10 flex items-center"
-            style={{ paddingLeft: "max(env(safe-area-inset-left), 1rem)" }}
-          >
+          <div className="absolute inset-0 z-10 flex items-center" style={{
+          paddingLeft: "max(env(safe-area-inset-left), 1rem)"
+        }}>
             <h1 className="font-mono font-bold text-white text-[28px] leading-tight pr-4 px-[10px]">
               Pakalpojumi
             </h1>
@@ -76,22 +49,14 @@ const Pakalpojumi = () => {
         </div>
 
         {/* Right strip */}
-        <img
-          src={heroStrip}
-          alt=""
-          className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
-        />
+        <img src={heroStrip} alt="" className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none" />
 
         {/* Desktop copy */}
         <div className="relative z-10">
           {/* Mobile toothed block */}
-          <div
-            className="md:hidden bg-gradient-hero"
-            style={{
-              clipPath:
-                "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
-            }}
-          >
+          <div className="md:hidden bg-gradient-hero" style={{
+          clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)"
+        }}>
             <div className="container mx-auto px-4 pb-8 pt-24 -mt-[64px]">
               <p className="font-sans text-white text-base leading-relaxed">
                 Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības
@@ -118,18 +83,11 @@ const Pakalpojumi = () => {
 
       {/* =========================
           УСЛУГИ (в каждом по 2 блока)
-      ========================= */}
-      <section
-        id="eku-demontaza"
-        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
-      >
+       ========================= */}
+      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
-            <img
-              src={buvjuUnEkuDemontaza}
-              alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana"
-              className="w-full h-auto object-cover"
-            />
+            <img src={buvjuUnEkuDemontaza} alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana" className="w-full h-auto object-cover" />
           </div>
           <div>
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
@@ -166,10 +124,7 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      <section
-        id="razosanas-demontaza"
-        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
-      >
+      <section id="razosanas-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
@@ -203,26 +158,15 @@ const Pakalpojumi = () => {
           </div>
 
           <div className="overflow-hidden order-1 md:order-2">
-            <img
-              src={razosanasEkuDemontaza}
-              alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana"
-              className="w-full h-auto object-cover"
-            />
+            <img src={razosanasEkuDemontaza} alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana" className="w-full h-auto object-cover" />
           </div>
         </div>
       </section>
 
-      <section
-        id="zemes-darbi"
-        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
-      >
+      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
-            <img
-              src={zemesDarbi}
-              alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana"
-              className="w-full h-auto object-cover"
-            />
+            <img src={zemesDarbi} alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana" className="w-full h-auto object-cover" />
           </div>
           <div>
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
@@ -257,10 +201,7 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      <section
-        id="labiekartosana"
-        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
-      >
+      <section id="labiekartosana" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
@@ -294,18 +235,14 @@ const Pakalpojumi = () => {
           </div>
 
           <div className="overflow-hidden order-1 md:order-2">
-            <img
-              src={labiekartosana}
-              alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana"
-              className="w-full h-auto object-cover"
-            />
+            <img src={labiekartosana} alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana" className="w-full h-auto object-cover" />
           </div>
         </div>
       </section>
 
       {/* =========================
           ПРЕИМУЩЕСТВА
-      ========================= */}
+       ========================= */}
       <section className="bg-muted/30 py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
           <div className="text-center mb-10">
@@ -319,48 +256,31 @@ const Pakalpojumi = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {[
-              {
-                icon: <ShieldCheck className="w-6 h-6" />,
-                title: "Sertificēta drošība",
-                text:
-                  "Darbu plāni, riska novērtējumi un atbildīgā meistara kontrole uz vietas.",
-              },
-              {
-                icon: <Clock className="w-6 h-6" />,
-                title: "Termiņi bez pārsteigumiem",
-                text:
-                  "Detalizēts grafiks un regulātas atskaites — jūs vienmēr zināt statusu.",
-              },
-              {
-                icon: <Wallet className="w-6 h-6" />,
-                title: "Godīgas tāmes",
-                text:
-                  "Fiksētas vienošanās, skaidra izmaksu struktūra bez slēptām pozīcijām.",
-              },
-              {
-                icon: <Recycle className="w-6 h-6" />,
-                title: "Atkritumu šķirošana",
-                text:
-                  "Būvgruži nodoti sertificētiem poligoniem ar pavaddokumentiem.",
-              },
-              {
-                icon: <Truck className="w-6 h-6" />,
-                title: "Pašu tehnika",
-                text:
-                  "Ekskavatori, hidrauliskie āmuri, vedēji — mazāk atkarības no nomas.",
-              },
-              {
-                icon: <HardHat className="w-6 h-6" />,
-                title: "Pieredzējušas brigādes",
-                text:
-                  "Komanda ar reāliem industriālo objektu projektiem portfelī.",
-              },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="group rounded-2xl border border-border bg-card p-6 shadow hover:shadow-lg transition-shadow"
-              >
+            {[{
+            icon: <ShieldCheck className="w-6 h-6" />,
+            title: "Sertificēta drošība",
+            text: "Darbu plāni, riska novērtējumi un atbildīgā meistara kontrole uz vietas."
+          }, {
+            icon: <Clock className="w-6 h-6" />,
+            title: "Termiņi bez pārsteigumiem",
+            text: "Detalizēts grafiks un regulātas atskaites — jūs vienmēr zināt statusu."
+          }, {
+            icon: <Wallet className="w-6 h-6" />,
+            title: "Godīgas tāmes",
+            text: "Fiksētas vienošanās, skaidra izmaksu struktūra bez slēptām pozīcijām."
+          }, {
+            icon: <Recycle className="w-6 h-6" />,
+            title: "Atkritumu šķirošana",
+            text: "Būvgruži nodoti sertificētiem poligoniem ar pavaddokumentiem."
+          }, {
+            icon: <Truck className="w-6 h-6" />,
+            title: "Pašu tehnika",
+            text: "Ekskavatori, hidrauliskie āmuri, vedēji — mazāk atkarības no nomas."
+          }, {
+            icon: <HardHat className="w-6 h-6" />,
+            title: "Pieredzējušas brigādes",
+            text: "Komanda ar reāliem industriālo objektu projektiem portfelī."
+          }].map((card, i) => <div key={i} className="group rounded-2xl border border-border bg-card p-6 shadow hover:shadow-lg transition-shadow">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                   {card.icon}
                 </div>
@@ -370,8 +290,7 @@ const Pakalpojumi = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {card.text}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* микро-бейджи доверия */}
@@ -391,8 +310,8 @@ const Pakalpojumi = () => {
 
       {/* =========================
           CTA (усиленный)
-      ========================= */}
-      <section className="relative overflow-hidden py-16 md:py-20">
+       ========================= */}
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#a4a4a4]/[0.08]">
         {/* мягкий фон/градиент */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" />
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
@@ -428,23 +347,14 @@ const Pakalpojumi = () => {
 
               {/* действия */}
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href="/lv/sadarbiba-un-kontakti#forma"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold"
-                >
+                <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
                   Sazināties ar speciālistu <ArrowRight className="w-5 h-5" />
                 </a>
-                <a
-                  href="tel:+37100000000"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition"
-                >
+                <a href="tel:+37100000000" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Phone className="w-5 h-5" />
                   +371 00 000 000
                 </a>
-                <a
-                  href="mailto:info@yourdomain.com"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition"
-                >
+                <a href="mailto:info@yourdomain.com" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Mail className="w-5 h-5" />
                   info@yourdomain.com
                 </a>
@@ -497,10 +407,7 @@ const Pakalpojumi = () => {
                 </div>
               </div>
 
-              <a
-                href="/lv/sadarbiba-un-kontakti#forma"
-                className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-foreground text-background hover:opacity-90 transition font-sans font-bold"
-              >
+              <a href="/lv/sadarbiba-un-kontakti#forma" className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-foreground text-background hover:opacity-90 transition font-sans font-bold">
                 Aizpildīt pieteikumu <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -510,8 +417,6 @@ const Pakalpojumi = () => {
 
       <Footer />
       <MobileCallButton />
-    </main>
-  );
+    </main>;
 };
-
 export default Pakalpojumi;
