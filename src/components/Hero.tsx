@@ -1,15 +1,14 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
-import heroStrip from "@/assets/hero-strip.svg"; // оставил, если понадобится позже
+import heroStrip from "@/assets/hero-strip.svg";
 
 const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden md:min-h-[635px] bg-gradient-hero">
-      {/* === IMAGE: desktop (справа, без растяжения), mobile (вверху, тянем по ширине) === */}
+      {/* === IMAGE: desktop (правый край), mobile (вверху) === */}
       {/* Desktop */}
       <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end">
-        {/* h-full = по высоте секции; w-auto = ширина по пропорциям → НЕ растягиваем */}
         <img
           src={heroImage}
           alt="Construction site"
@@ -19,11 +18,10 @@ const Hero = () => {
 
       {/* Mobile */}
       <div className="md:hidden relative z-0">
-        {/* Шире контейнера и немного сдвинуто влево → без пустых полей по бокам */}
         <img
           src={heroImage}
           alt="Construction site"
-          className="h-[300px] w-[115%] -translate-x-[7%] object-cover object-center"
+          className="h-[300px] w-[130%] -translate-x-[15%] object-cover object-center"
         />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
@@ -37,16 +35,16 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Правая чёрная декоративная полоса (десктоп) — как было */}
+      {/* Правая декоративная полоса (desktop) */}
       <img
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
-        alt=""
+        src={heroStrip}
+        alt="Decorative stripe"
         className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
       />
 
-      {/* === Контент (desktop слева; mobile — закрашенный блок с заусенцем) === */}
+      {/* === Контент (desktop слева; mobile — блок с заусенцем) === */}
       <div className="relative z-10">
-        {/* Mobile: блок с «заусенцем» (отрисовываем клип-фигурой) */}
+        {/* Mobile: блок с «заусенцем» */}
         <div
           className="md:hidden bg-gradient-hero"
           style={{
@@ -67,7 +65,7 @@ const Hero = () => {
               <ArrowUpRight className="w-5 h-5 text-primary" />
             </button>
 
-            {/* Статистика (mobile) */}
+            {/* Статистика */}
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-1">
@@ -91,7 +89,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Desktop: контент слева, как раньше */}
+        {/* Desktop: контент слева */}
         <div className="hidden md:block">
           <div className="container mx-auto px-8 lg:px-[75px] py-20">
             <div className="max-w-[630px]">
@@ -110,7 +108,7 @@ const Hero = () => {
                 <ArrowUpRight className="w-6 h-6 text-primary" />
               </button>
 
-              {/* Статистика (desktop, укороченная линия) */}
+              {/* Статистика (desktop) */}
               <div className="mt-12 pt-6 border-t border-white/20 max-w-[634px]">
                 <div className="flex gap-[120px]">
                   <div className="flex flex-col gap-1">
