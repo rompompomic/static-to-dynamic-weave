@@ -72,51 +72,55 @@ const Hero = () => {
 
         {/* Desktop / Tablet */}
         <div className="hidden md:block">
-          <div className="container mx-auto px-4 md:px-8 lg:px-[75px] md:min-h-[635px] md:flex md:items-center">
-            {/* Текстовый блок с правильным масштабированием */}
-            <div className="max-w-md lg:max-w-lg xl:max-w-xl">
-              <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight">
-                Jūsu uzticams partneris būvniecībā
-              </h1>
-              <p className="mt-4 md:mt-6 font-sans text-white text-base md:text-lg leading-relaxed">
-                Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
-                kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
-                gataviem projektiem.
-              </p>
-              <button className="
-                  mt-6 md:mt-8 group relative inline-flex items-center justify-center gap-2.5
-                  h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
-                  bg-white text-primary font-sans font-bold
-                  shadow-sm hover:shadow-md transition ease-out duration-200
-                  hover:scale-[1.02] active:scale-[0.97]
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-                  overflow-hidden
-                  before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-                  before:from-transparent before:via-white/20 before:to-transparent
-                  group-hover:before:translate-x-full before:transition-transform before:duration-700
-                ">
-                <span className="text-sm md:text-base">Uzzināt vairāk</span>
-                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
-              </button>
+          <div className="w-full md:min-h-[635px] md:flex md:items-center">
+            <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+              {/* Текстовый блок с центрированием на десктопе и ограничением ширины на планшете */}
+              <div className="max-w-sm md:max-w-md lg:max-w-none lg:text-center lg:mx-auto lg:max-w-2xl">
+                <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight">
+                  Jūsu uzticams partneris būvniecībā
+                </h1>
+                <p className="mt-4 md:mt-6 font-sans text-white text-base md:text-lg leading-relaxed">
+                  Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
+                  kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
+                  gataviem projektiem.
+                </p>
+                <div className="mt-6 md:mt-8 lg:flex lg:justify-center">
+                  <button className="
+                      group relative inline-flex items-center justify-center gap-2.5
+                      h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
+                      bg-white text-primary font-sans font-bold
+                      shadow-sm hover:shadow-md transition ease-out duration-200
+                      hover:scale-[1.02] active:scale-[0.97]
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                      overflow-hidden
+                      before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                      before:from-transparent before:via-white/20 before:to-transparent
+                      group-hover:before:translate-x-full before:transition-transform before:duration-700
+                    ">
+                    <span className="text-sm md:text-base">Uzzināt vairāk</span>
+                    <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                  </button>
+                </div>
 
-              {/* Статистика с адаптивным масштабированием */}
-              <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-white/20 w-full">
-                <div className="flex gap-8 md:gap-12 lg:gap-[120px]">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
-                      120+
-                    </span>
-                    <span className="font-sans text-white text-sm md:text-base">
-                      Pabeigti projekti
-                    </span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
-                      32
-                    </span>
-                    <span className="font-sans text-white text-sm md:text-base">
-                      Profesionāļi komandā
-                    </span>
+                {/* Статистика с центрированием на десктопе */}
+                <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-white/20">
+                  <div className="flex gap-8 md:gap-12 lg:justify-center lg:gap-[120px]">
+                    <div className="flex flex-col gap-1 lg:text-center">
+                      <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
+                        120+
+                      </span>
+                      <span className="font-sans text-white text-sm md:text-base">
+                        Pabeigti projekti
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1 lg:text-center">
+                      <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
+                        32
+                      </span>
+                      <span className="font-sans text-white text-sm md:text-base">
+                        Profesionāļi komandā
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
