@@ -72,23 +72,20 @@ const Hero = () => {
 
         {/* Desktop / Tablet */}
         <div className="hidden md:block">
-          <div className="
-              w-full px-8 lg:px-[75px]
-              md:min-h-[635px] md:flex md:items-center
-            ">
-            {/* Текстовый блок выровненный по линейке с секцией Par mums */}
-            <div className="w-full max-w-[290px] lg:max-w-[400px] lg:ml-[75px]">
-              <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
+          <div className="container mx-auto px-4 md:px-8 lg:px-[75px] md:min-h-[635px] md:flex md:items-center">
+            {/* Текстовый блок с правильным масштабированием */}
+            <div className="max-w-md lg:max-w-lg xl:max-w-xl">
+              <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
               </h1>
-              <p className="mt-6 font-sans text-white text-lg leading-relaxed">
+              <p className="mt-4 md:mt-6 font-sans text-white text-base md:text-lg leading-relaxed">
                 Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
                 kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
                 gataviem projektiem.
               </p>
               <button className="
-                  mt-8 group relative inline-flex items-center justify-center gap-2.5
-                  h-11 px-6 md:px-8 rounded-lg
+                  mt-6 md:mt-8 group relative inline-flex items-center justify-center gap-2.5
+                  h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
                   bg-white text-primary font-sans font-bold
                   shadow-sm hover:shadow-md transition ease-out duration-200
                   hover:scale-[1.02] active:scale-[0.97]
@@ -99,25 +96,25 @@ const Hero = () => {
                   group-hover:before:translate-x-full before:transition-transform before:duration-700
                 ">
                 <span className="text-sm md:text-base">Uzzināt vairāk</span>
-                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
               </button>
 
-              {/* Статистика desktop */}
-              <div className="mt-12 pt-6 border-t border-white/20 w-full">
-                <div className="flex gap-[96px] lg:gap-[120px]">
+              {/* Статистика с адаптивным масштабированием */}
+              <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-white/20 w-full">
+                <div className="flex gap-8 md:gap-12 lg:gap-[120px]">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[44px] lg:text-[50px] leading-none">
+                    <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
                       120+
                     </span>
-                    <span className="font-sans text-white">
+                    <span className="font-sans text-white text-sm md:text-base">
                       Pabeigti projekti
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[44px] lg:text-[50px] leading-none">
+                    <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
                       32
                     </span>
-                    <span className="font-sans text-white">
+                    <span className="font-sans text-white text-sm md:text-base">
                       Profesionāļi komandā
                     </span>
                   </div>
