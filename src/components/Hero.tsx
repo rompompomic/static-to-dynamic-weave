@@ -5,15 +5,14 @@ const Hero = () => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE: без искажений, прижат к правому краю */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex justify-end">
         <img
           src={heroImage}
           alt="Construction site"
           className="
             object-cover object-center
-            w-full h-auto                /* mobile: по ширине, сохраняем пропорции */
-            md:absolute md:right-0
-            md:h-full md:w-auto         /* desktop: высота = высоте секции, ширина авто */
+            w-full h-auto
+            md:h-full md:w-auto
           "
         />
       </div>
@@ -42,18 +41,18 @@ const Hero = () => {
             </span>
             <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
           </button>
-        </div>
 
-        {/* Статистика */}
-        <div className="mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/20 max-w-full md:max-w-[634px]">
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
-            <div className="flex flex-col gap-1">
-              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
-              <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
-              <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
+          {/* Статистика */}
+          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-full">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
+              <div className="flex flex-col gap-1">
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
+              </div>
             </div>
           </div>
         </div>
