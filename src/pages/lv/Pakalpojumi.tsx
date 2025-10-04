@@ -36,9 +36,7 @@ const Pakalpojumi = () => {
 
       <Header />
 
-      {/* =========================
-          HERO (такой же по размерам, как на главной)
-      ========================= */}
+      {/* HERO */}
       <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
         {/* DESKTOP image (справа), не растягиваем по ширине, только по высоте */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end w-[52%]">
@@ -83,7 +81,7 @@ const Pakalpojumi = () => {
             style={{
               // длинная средняя грань + заусенец ниже
               clipPath:
-                "polygon(0 64px, 18% 64px, 30% 30px, 70% 30px, 82% 64px, 100% 64px, 100% 100%, 0 100%)",
+                "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
             }}
           >
             <div className="container mx-auto px-4 pb-8 pt-24 -mt-[64px]">
