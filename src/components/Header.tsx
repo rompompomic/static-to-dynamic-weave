@@ -27,7 +27,7 @@ const Header = () => {
               PAKALPOJUMI
             </a>
             <a
-              href="/lv/sadarbiba-un-kontakti#forma"
+              href="/lv/sadarbiba-un-kontakti"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
               SADARBĪBA UN KONTAKTI
