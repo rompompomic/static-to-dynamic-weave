@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="w-full bg-card border-t border-border">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {/* Company Info - Left */}
           <div className="space-y-4">
             <img
               className="w-[150px] h-auto object-contain"
@@ -17,38 +17,56 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
+          {/* Quick Links - Center */}
+          <div className="space-y-4 mx-auto text-center">
             <h3 className="font-sans font-bold text-foreground text-base">
               Navigācija
             </h3>
-            <nav className="flex flex-col gap-2">
-              <a href="#" className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors">
+            <nav className="flex flex-col gap-2 items-center">
+              <a
+                href="#"
+                className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
                 Galvenā
               </a>
-              <a href="#" className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
                 Pakalpojumi
               </a>
-              <a href="#" className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
                 Sadarbība
               </a>
-              <a href="#" className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
                 Kontakti
               </a>
             </nav>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
+          {/* Contact Info - Right */}
+          <div className="space-y-4 lg:text-right">
             <h3 className="font-sans font-bold text-foreground text-base">
               Kontaktinformācija
             </h3>
-            <div className="flex flex-col gap-3">
-              <a href="tel:+37120000000" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <div className="flex flex-col gap-3 items-start lg:items-end">
+              <a
+                href="tel:+37120000000"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Phone className="w-4 h-4" />
                 <span className="font-sans text-sm">+371 2000 0000</span>
               </a>
-              <a href="mailto:info@demco.lv" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="mailto:info@demco.lv"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Mail className="w-4 h-4" />
                 <span className="font-sans text-sm">info@demco.lv</span>
               </a>
