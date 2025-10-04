@@ -30,7 +30,7 @@ const Pakalpojumi = () => {
 
       {/* HERO (pakalpojumi) */}
       <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
-        {/* Desktop image (справа) */}
+        {/* Desktop/Tablet image (справа) */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
           <img
             src={heroImage}
@@ -49,25 +49,25 @@ const Pakalpojumi = () => {
           <div className="absolute inset-0 bg-black/45" />
       
           {/* Текст по центру вертикали */}
-          <div className="absolute inset-0 z-10 flex flex-col justify-center px-6">
+          <div className="absolute inset-0 z-10 flex flex-col items-start justify-center px-6">
             <h1 className="font-mono font-bold text-white text-[28px] leading-tight mb-3">
-              Mūsu pakalpojumi
+              Pakalpojumi
             </h1>
-            <p className="font-sans text-white text-base leading-relaxed">
+            <p className="font-sans text-white text-base leading-relaxed max-w-[320px]">
               No demontāžas līdz labiekārtošanai — piedāvājam pilnu spektru
               risinājumu, kas pielāgoti gan privātiem, gan industriāliem projektiem.
             </p>
           </div>
         </div>
       
-        {/* Right strip */}
+        {/* Right strip (с планшета и выше) */}
         <img
           src={heroStrip}
           alt=""
-          className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+          className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
         />
       
-        {/* Desktop copy */}
+        {/* Desktop / Tablet copy */}
         <div className="relative z-10 hidden md:block">
           <div
             className="
