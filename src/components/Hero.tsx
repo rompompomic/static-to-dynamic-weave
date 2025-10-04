@@ -21,11 +21,11 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Construction site"
-          className="h-[300px] w-[130%] -translate-x-[15%] object-cover object-center"
+          className="h-[300px] w-[120%] -translate-x-[10%] object-cover object-center"
         />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
-        {/* Заголовок на фото — слева по горизонтали, по центру по вертикали */}
+        {/* Заголовок */}
         <div className="absolute inset-0 flex items-center z-10">
           <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-4">
             Jūsu uzticams
