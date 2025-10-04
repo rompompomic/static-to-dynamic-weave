@@ -7,7 +7,7 @@ import heroStrip from "@/assets/hero-strip.svg";
 import buvjuUnEkuDemontaza from "@/assets/services-buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/services-razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/services-zemes-darbi.webp";
-import labiekartosana from "@/assets/services-labiekartosana.webp";
+import labiekartosana from "@/assets/services-zemes-darbi.webp";
 import { ArrowRight, ShieldCheck, Clock, Wallet, Recycle, Truck, HardHat, Handshake, Sparkles, Phone, Mail } from "lucide-react";
 const Pakalpojumi = () => {
   const scrollToSection = (id: string) => {
