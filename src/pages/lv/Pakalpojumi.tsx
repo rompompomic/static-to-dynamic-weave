@@ -1,10 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
-
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
@@ -34,54 +32,76 @@ const Pakalpojumi = () => {
 
       <Header />
 
-      {/* HERO: затемнение уже по умолчанию на мобилке, статистику скрываем */}
-      <Hero>
-        <div className="max-w-full md:max-w-[600px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
-          <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
-            Pakalpojumi
-          </h1>
-      
-          <p className="font-sans text-white text-base md:text-lg leading-relaxed">
-            Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības pakalpojumus dažāda mēroga projektiem.
-          </p>
-      
-          {/* Quick Navigation Pills */}
-          <div className="flex flex-wrap gap-3 pt-2 w-full max-w-[480px]">  {/* <-- фикс ширины */}
-            <button
-              onClick={() => scrollToSection("eku-demontaza")}
-              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
-                         bg-white/10 text-white border border-white/20
-                         hover:bg-white/20 transition-colors"
-            >
-              Ēku demontāža
-            </button>
-            <button
-              onClick={() => scrollToSection("razosanas-demontaza")}
-              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
-                         bg-white/10 text-white border border-white/20
-                         hover:bg-white/20 transition-colors"
-            >
-              Rūpnieciskā demontāža
-            </button>
-            <button
-              onClick={() => scrollToSection("zemes-darbi")}
-              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
-                         bg-white/10 text-white border border-white/20
-                         hover:bg-white/20 transition-colors"
-            >
-              Zemes darbi
-            </button>
-            <button
-              onClick={() => scrollToSection("labiekartosana")}
-              className="px-4 py-2 rounded-full font-sans text-sm font-semibold
-                         bg-white/10 text-white border border-white/20
-                         hover:bg-white/20 transition-colors"
-            >
-              Labiekārtošana
-            </button>
+      {/* ==== HERO (только для страницы услуг) ==== */}
+      <section className="relative w-full overflow-hidden md:min-h-[420px] bg-gradient-hero">
+        {/* Desktop картинка справа */}
+        <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end">
+          <img
+            src={heroImage}
+            alt="Construction site"
+            className="h-full w-auto object-cover object-center"
+          />
+        </div>
+
+        {/* Mobile картинка */}
+        <div className="md:hidden relative z-0 -mx-4">
+          <img
+            src={heroImage}
+            alt="Construction site"
+            className="max-w-none w-[130vw] -translate-x-[15vw] h-[260px] object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/45" />
+
+          {/* Заголовок поверх фото */}
+          <div className="absolute inset-0 flex items-center z-10 px-4">
+            <h1 className="font-mono font-bold text-white text-[26px] leading-tight">
+              Pakalpojumi
+            </h1>
           </div>
         </div>
-      </Hero>
+
+        {/* Правая декоративная полоса (desktop) */}
+        <img
+          src={heroStrip}
+          alt="Decorative stripe"
+          className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+        />
+
+        {/* Контент */}
+        <div className="relative z-10">
+          {/* Mobile блок с заусенцем */}
+          <div
+            className="md:hidden bg-gradient-hero"
+            style={{
+              clipPath:
+                "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
+            }}
+          >
+            <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
+              <p className="font-sans text-white text-base leading-relaxed">
+                Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības
+                pakalpojumus dažāda mēroga projektiem.
+              </p>
+            </div>
+          </div>
+
+          {/* Desktop контент */}
+          <div className="hidden md:block">
+            <div className="container mx-auto px-8 lg:px-[75px] py-16">
+              <div className="max-w-[600px]">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight mb-6">
+                  Pakalpojumi
+                </h1>
+                <p className="font-sans text-white text-lg leading-relaxed">
+                  Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības
+                  pakalpojumus dažāda mēroga projektiem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ==== /HERO ==== */}
 
       {/* дальше всё без изменений */}
       {/* Service 1 */}
