@@ -77,7 +77,7 @@ const Hero = () => {
               md:min-h-[635px] md:flex md:items-center
             ">
             {/* Текстовый блок выровненный по линейке с секцией Par mums */}
-            <div className="w-[500px] lg:w-[550px] ml-[50px] lg:ml-[75px]">
+            <div className="w-[500px] lg:w-[550px] lg:ml-[75px]">
               <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
               </h1>
