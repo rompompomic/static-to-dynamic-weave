@@ -4,24 +4,28 @@ import heroImage from "@/assets/hero-image.webp";
 const Hero = () => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
-      {/* BG Image */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* IMAGE: без искажений, прижат к правому краю */}
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Construction site"
-          /* Мобайл: на всю ширину/высоту; Десктоп: фиксируем по высоте секции, без растяжения по ширине */
-          className="h-full w-full object-cover opacity-40 md:opacity-100 md:w-auto md:h-full md:absolute md:right-0 lg:w-[685px]"
+          className="
+            object-cover object-center
+            w-full h-auto                /* mobile: по ширине, сохраняем пропорции */
+            md:absolute md:right-0
+            md:h-full md:w-auto         /* desktop: высота = высоте секции, ширина авто */
+          "
         />
       </div>
 
-      {/* Right black vector – pinned to right edge */}
+      {/* Правая чёрная полоска прижата к правому краю, поверх картинки */}
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
-        className="hidden lg:block absolute z-20 pointer-events-none right-0 top-1/2 -translate-y-1/2 w-[131px] h-[812px]"
+        className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-20 w-[131px] h-[812px] pointer-events-none"
       />
 
-      {/* Content */}
+      {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
         <div className="max-w-full md:max-w-[630px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
@@ -29,8 +33,7 @@ const Hero = () => {
           </h1>
 
           <p className="font-sans font-normal text-white text-base md:text-lg leading-relaxed">
-            Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
-            sākotnējām idejām līdz gataviem projektiem.
+            Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no sākotnējām idejām līdz gataviem projektiem.
           </p>
 
           <button className="inline-flex justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white items-center hover:bg-opacity-90 transition-all">
@@ -41,16 +44,16 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Stats */}
+        {/* Статистика */}
         <div className="mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/20 max-w-full md:max-w-[634px]">
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
             <div className="flex flex-col gap-1">
               <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
-              <span className="font-sans font-normal text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
+              <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
             </div>
             <div className="flex flex-col gap-1">
               <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
-              <span className="font-sans font-normal text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
+              <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
             </div>
           </div>
         </div>
