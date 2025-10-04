@@ -42,21 +42,17 @@ const Hero = () => {
         className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
       />
 
-      {/* === MOBILE: горизонтальная «полоска с заусенцем» поверх картинки === */}
-      <div
-        className="md:hidden relative z-10 -mt-6 h-[56px] w-full"
-        style={{
-          background: "var(--gradient-hero)",
-          clipPath:
-            "polygon(0 55%, 42% 55%, 50% 15%, 58% 55%, 100% 55%, 100% 100%, 0 100%)",
-        }}
-      />
-
       {/* === Контент (desktop слева; mobile — закрашенный блок) === */}
       <div className="relative z-10">
-        {/* Mobile: под полоской отдельный закрашенный блок тем же градиентом */}
-        <div className="md:hidden bg-gradient-hero">
-          <div className="container mx-auto px-4 py-8">
+        {/* Mobile: блок с двумя заусенцами */}
+        <div
+          className="md:hidden bg-gradient-hero"
+          style={{
+            clipPath:
+              "polygon(0 56px, 25% 56px, 30% 28px, 35% 56px, 65% 56px, 70% 28px, 75% 56px, 100% 56px, 100% 100%, 0 100%)",
+          }}
+        >
+          <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
             <p className="font-sans text-white text-base leading-relaxed mb-6">
               Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
               kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
