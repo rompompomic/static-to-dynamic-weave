@@ -21,12 +21,6 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <a
-              href="/"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
-              SNIEDZĒJIEM
-            </a>
-            <a
               href="/lv/pakalpojumi"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
@@ -104,12 +98,6 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
-              <a
-                href="/"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
-                SNIEDZĒJIEM
-              </a>
               <a
                 href="/lv/pakalpojumi"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
