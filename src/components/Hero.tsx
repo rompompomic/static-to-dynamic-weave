@@ -6,8 +6,8 @@ import heroStrip from "@/assets/hero-strip.svg";
 const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden md:min-h-[635px] bg-gradient-hero">
-      {/* === IMAGE: desktop (правый край), mobile (вверху) === */}
-      <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end w-[52%] pointer-events-none select-none">
+      {/* Картинка справа (tablet+ / desktop) */}
+      <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
         <img
           src={heroImage}
           alt="Construction site"
@@ -15,7 +15,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Mobile (full-bleed) */}
+      {/* Мобилка (full-bleed) */}
       <div className="md:hidden relative z-0 -mx-4">
         <img
           src={heroImage}
@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Правая декоративная полоса (tablet+desktop) */}
+      {/* Полоса справа (tablet+) */}
       <img
         src={heroStrip}
         alt="Decorative stripe"
@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* Контент */}
       <div className="relative z-10">
-        {/* Mobile toothed block */}
+        {/* Мобилка: блок с «заусенцем» */}
         <div
           className="md:hidden bg-gradient-hero"
           style={{
@@ -64,7 +64,7 @@ const Hero = () => {
               <ArrowUpRight className="w-5 h-5 text-primary" />
             </button>
 
-            {/* Статистика */}
+            {/* Статистика (mobile) */}
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-1">
@@ -92,22 +92,39 @@ const Hero = () => {
         <div className="hidden md:block">
           <div
             className="
-              container mx-auto px-8 lg:px-[75px]
+              container mx-auto px-8 lg:px-[75px] max-w-[1920px]
               md:min-h-[635px] md:flex md:items-center
-              /* справа резерв: ширина картинки (52%) + полоса 131px */
-              md:pr-[calc(52%+131px)]
+              md:pr-[calc(50%+96px)] lg:pr-[calc(52%+131px)]
             "
           >
-            {/* ВАЖНО: адаптивные max-w, чтобы не заезжать на фото на узких десктопах */}
-            <div className="md:max-w-[460px] lg:max-w-[620px] xl:max-w-[760px] 2xl:max-w-[880px]">
-              <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-                Jūsu uzticams partneris būvniecībā
+            {/* ВАЖНО: fluid-ширина колонки + fluid-типографика */}
+            <div className="
+                w-full
+                md:max-w-[clamp(440px,48vw,760px)]
+                xl:max-w-[clamp(520px,46vw,820px)]
+                2xl:max-w-[clamp(600px,44vw,900px)]
+              ">
+              <h1
+                className="
+                  font-mono font-bold text-white leading-[1.05]
+                  text-[clamp(28px,4vw,50px)]
+                "
+              >
+                Jūsu uzticams
+                <br /> partneris būvniecībā
               </h1>
-              <p className="mt-6 font-sans text-white text-lg leading-relaxed">
+
+              <p
+                className="
+                  mt-6 font-sans text-white leading-relaxed
+                  text-[clamp(16px,1.4vw,20px)]
+                "
+              >
                 Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
                 kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
                 gataviem projektiem.
               </p>
+
               <button
                 className="
                   mt-8 group relative inline-flex items-center justify-center gap-2.5
@@ -122,26 +139,31 @@ const Hero = () => {
                   group-hover:before:translate-x-full before:transition-transform before:duration-700
                 "
               >
-                <span className="text-sm md:text-base">Uzzināt vairāk</span>
+                <span className="text-[clamp(14px,1.2vw,16px)]">Uzzināt vairāk</span>
                 <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
               </button>
 
-              {/* Статистика desktop — те же пределы ширины */}
-              <div className="mt-12 pt-6 border-t border-white/20 md:max-w-[460px] lg:max-w-[620px] xl:max-w-[760px] 2xl:max-w-[880px]">
-                <div className="flex gap-[72px] lg:gap-[96px] xl:gap-[120px]">
+              {/* Статистика (desktop) — та же fluid-ширина */}
+              <div className="
+                  mt-12 pt-6 border-t border-white/20
+                  md:max-w-[clamp(440px,48vw,760px)]
+                  xl:max-w-[clamp(520px,46vw,820px)]
+                  2xl:max-w-[clamp(600px,44vw,900px)]
+                ">
+                <div className="flex gap-[min(8vw,120px)]">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[44px] lg:text-[50px] leading-none">
+                    <span className="font-mono font-bold text-white leading-none text-[clamp(36px,3.2vw,50px)]">
                       120+
                     </span>
-                    <span className="font-sans text-white">
+                    <span className="font-sans text-white text-[clamp(14px,1.1vw,16px)]">
                       Pabeigti projekti
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[44px] lg:text-[50px] leading-none">
+                    <span className="font-mono font-bold text-white leading-none text-[clamp(36px,3.2vw,50px)]">
                       32
                     </span>
-                    <span className="font-sans text-white">
+                    <span className="font-sans text-white text-[clamp(14px,1.1vw,16px)]">
                       Profesionāļi komandā
                     </span>
                   </div>
