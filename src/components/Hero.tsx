@@ -78,8 +78,8 @@ const Hero = () => {
               md:min-h-[635px] md:flex md:items-center
             "
           >
-            {/* Текстовый блок занимает всё пространство между левым краем и картинкой */}
-            <div className="flex-1 pr-[calc(52%+131px)]">
+            {/* Текстовый блок */}
+            <div className="max-w-[1100px] mr-auto pr-[calc(52%+131px)]">
               <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
               </h1>
