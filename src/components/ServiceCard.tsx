@@ -17,21 +17,30 @@ const ServiceCard = ({
   height = "short",
   showCursor = false,
 }: ServiceCardProps) => {
-  // Высота для карточек
+  /**
+   * Фиксируем РАЗМЕР КАРТОЧКИ (как в текущей сетке),
+   * фиксируем РАЗМЕР ИЗОБРАЖЕНИЯ,
+   * а белая подплашка занимает остаток — у всех short она одинаковая.
+   */
   const cardHeightClass =
     height === "tall"
-      ? "lg:h-[849px] md:h-[680px] h-[680px]" // tall = ровно как две short + gap
-      : "lg:h-[410px] md:h-[340px] h-[340px]"; // short одинаковые
+      ? "h-[849px] md:h-[680px]"  // tall = две short + gap (ничего не меняем визуально)
+      : "h-[410px] md:h-[340px]"; // short единая высота
+
+  const imageHeightClass =
+    height === "tall"
+      ? "h-[420px] md:h-[340px]"  // фото в tall
+      : "h-[200px] md:h-[180px]"; // фото в short (одинаково у всех)
 
   const buttonClass =
     variant === "accent" ? "bg-accent text-white" : "bg-muted text-primary";
 
   return (
     <article
-      className={`relative flex flex-col w-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] ${cardHeightClass}`}
+      className={`relative w-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] ${cardHeightClass} flex flex-col`}
     >
-      {/* Фото занимает верхнюю часть */}
-      <div className="relative w-full flex-1 overflow-hidden">
+      {/* Изображение фиксированной высоты (одинаковое для карточек одного типа) */}
+      <div className={`relative w-full ${imageHeightClass} flex-none overflow-hidden`}>
         <img
           src={image}
           alt={title}
@@ -41,13 +50,23 @@ const ServiceCard = ({
         {showCursor && <></>}
       </div>
 
-      {/* Белый блок снизу фиксированной высоты */}
-      <div className="flex flex-col gap-4 p-4 md:p-6 bg-card">
-        <div className="flex flex-col gap-1.5 flex-1 min-h-0">
+      {/* Белая подплашка: занимает остаток высоты карточки → одинаковая у всех short */}
+      <div className="flex-1 flex flex-col gap-4 p-4 md:p-6">
+        <div className="flex-1 min-h-0">
           <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal">
             {title}
           </h3>
-          <p className="font-sans font-normal text-foreground text-sm md:text-base leading-normal overflow-hidden">
+
+          {/* Описание ограничиваем по строкам, чтобы не "раздувало" подплашку */}
+          <p
+            className="font-sans font-normal text-foreground text-sm md:text-base leading-normal mt-1"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,       // 2 строки на всех брейкпоинтах
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             {description}
           </p>
         </div>
