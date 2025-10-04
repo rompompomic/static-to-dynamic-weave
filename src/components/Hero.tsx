@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="relative z-10">
         {/* Mobile: блок с «заусенцем» */}
         <div className="md:hidden bg-gradient-hero" style={{
-        clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%);"
+        clipPath: "polygon(0 56px, 22% 56px, 32% 36px, 68% 36px, 78% 56px, 100% 56px, 100% 100%, 0 100%)"
       }}>
           <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
             <p className="font-sans text-white text-base leading-relaxed mb-6">
