@@ -113,11 +113,24 @@ const Hero = () => {
                 kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
                 gataviem projektiem.
               </p>
-              <button className="mt-8 inline-flex justify-center gap-2.5 px-8 py-4 bg-white items-center hover:bg-opacity-90 transition-all">
-                <span className="font-sans font-bold text-primary">
-                  Uzzināt vairāk
-                </span>
-                <ArrowUpRight className="w-6 h-6 text-primary" />
+              <button
+                className="
+                  mt-8 group relative inline-flex items-center justify-center gap-2.5
+                  h-11 px-6 md:px-8 rounded-lg
+                  bg-white text-primary font-sans font-bold
+                  shadow-sm hover:shadow-md transition ease-out duration-200
+                  hover:scale-[1.02] active:scale-[0.97]
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                  overflow-hidden
+                  before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                  before:from-transparent before:via-white/20 before:to-transparent
+                  group-hover:before:translate-x-full before:transition-transform before:duration-700
+                "
+              >
+                <span className="text-sm md:text-base">Uzzināt vairāk</span>
+                <ArrowUpRight
+                  className="w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1"
+                />
               </button>
 
               {/* Статистика (desktop) */}
