@@ -4,25 +4,25 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: "/images/gallery-demolition-before.jpg",
+      url: "/assets/pirms.webp",
       alt: "Demontāžas darbi pirms",
       label: "Pirms",
     },
     {
       id: 2,
-      url: "/images/gallery-demolition-after.jpg",
+      url: "/assets/pec.webp",
       alt: "Demontāžas darbi pēc",
       label: "Pēc",
     },
     {
       id: 3,
-      url: "/images/gallery-earthworks.jpg",
+      url: "/assets/zemes-darbi.webp",
       alt: "Zemes darbi",
       label: "Zemes darbi",
     },
     {
       id: 4,
-      url: "/images/gallery-industrial-demolition.jpg",
+      url: "/assets/industrialie-objekti.webp",
       alt: "Ražošanas ēku demontāža",
       label: "Industriālie objekti",
     },
