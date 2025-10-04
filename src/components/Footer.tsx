@@ -51,11 +51,11 @@ const Footer = () => {
           </div>
 
           {/* Contact Info - Right */}
-          <div className="space-y-4 lg:text-right">
-            <h3 className="font-sans font-bold text-foreground text-base">
+          <div className="space-y-4">
+            <h3 className="font-sans font-bold text-foreground text-base lg:text-right">
               Kontaktinformācija
             </h3>
-            <div className="flex flex-col gap-3 items-start lg:items-end">
+            <div className="flex flex-col gap-3 items-start">
               <a
                 href="tel:+37120000000"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
