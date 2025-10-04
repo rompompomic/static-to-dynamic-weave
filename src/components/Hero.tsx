@@ -6,8 +6,8 @@ import heroStrip from "@/assets/hero-strip.svg";
 const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden md:min-h-[635px] bg-gradient-hero">
-      {/* Картинка справа (tablet+ / desktop) */}
-      <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
+      {/* === IMAGE: tablet/desktop (справа) === */}
+      <div className="hidden md:block absolute inset-y-0 right-0 z-0 w-[52%] pointer-events-none select-none">
         <img
           src={heroImage}
           alt="Construction site"
@@ -15,7 +15,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Мобилка (full-bleed) */}
+      {/* === Mobile (full-bleed) === */}
       <div className="md:hidden relative z-0 -mx-4">
         <img
           src={heroImage}
@@ -34,16 +34,16 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Полоса справа (tablet+) */}
+      {/* Полоса справа: tablet+ */}
       <img
         src={heroStrip}
         alt="Decorative stripe"
         className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
       />
 
-      {/* Контент */}
+      {/* === Контент === */}
       <div className="relative z-10">
-        {/* Мобилка: блок с «заусенцем» */}
+        {/* Mobile: блок с «заусенцем» */}
         <div
           className="md:hidden bg-gradient-hero"
           style={{
@@ -88,22 +88,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Tablet / Desktop */}
+        {/* Tablet / Desktop: текст всегда между левым краем и картинкой */}
         <div className="hidden md:block">
           <div
             className="
               container mx-auto px-8 lg:px-[75px] max-w-[1920px]
-              md:min-h-[635px] md:flex md:items-center
-              md:pr-[calc(50%+96px)] lg:pr-[calc(52%+131px)]
+              md:min-h-[635px] md:grid md:grid-cols-2 md:items-center
             "
           >
-            {/* ВАЖНО: fluid-ширина колонки + fluid-типографика */}
-            <div className="
-                w-full
-                md:max-w-[clamp(440px,48vw,760px)]
-                xl:max-w-[clamp(520px,46vw,820px)]
-                2xl:max-w-[clamp(600px,44vw,900px)]
-              ">
+            {/* Левая колонка = текст. Прижимаем к полосе справа на lg+ */}
+            <div className="col-span-1 pr-6 lg:pr-[131px]">
               <h1
                 className="
                   font-mono font-bold text-white leading-[1.05]
@@ -143,13 +137,8 @@ const Hero = () => {
                 <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
               </button>
 
-              {/* Статистика (desktop) — та же fluid-ширина */}
-              <div className="
-                  mt-12 pt-6 border-t border-white/20
-                  md:max-w-[clamp(440px,48vw,760px)]
-                  xl:max-w-[clamp(520px,46vw,820px)]
-                  2xl:max-w-[clamp(600px,44vw,900px)]
-                ">
+              {/* Статистика (desktop) */}
+              <div className="mt-12 pt-6 border-t border-white/20">
                 <div className="flex gap-[min(8vw,120px)]">
                   <div className="flex flex-col gap-1">
                     <span className="font-mono font-bold text-white leading-none text-[clamp(36px,3.2vw,50px)]">
@@ -170,9 +159,12 @@ const Hero = () => {
                 </div>
               </div>
             </div>
+
+            {/* Правая колонка сетки пустая (её занимает абсолютная картинка выше) */}
+            <div className="col-span-1" />
           </div>
         </div>
-      </div>      
+      </div>
     </section>
   );
 };
