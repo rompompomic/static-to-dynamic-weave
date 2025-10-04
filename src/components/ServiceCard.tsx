@@ -19,27 +19,24 @@ const ServiceCard = ({
   showCursor = false,
   href = "/lv/pakalpojumi",
 }: ServiceCardProps) => {
-  // На md карточка всегда растягивается по высоте ряда (h-full),
-  // а на lg получаем зафиксированные высоты под дизайн.
+  // На md все карточки равной высоты (h-full), различия высот только на lg
   const CARD_TOTAL_CLASS =
-    height === "tall"
-      ? "md:h-full lg:h-[849px]"
-      : "md:h-full lg:h-[410px]";
+    height === "tall" ? "md:h-full lg:h-[849px]" : "md:h-full lg:h-[410px]";
 
-  // Высота картинки
+  // На md даём одинаковую высоту картинки, различаем только на lg
   const IMG_HEIGHT_CLASS =
     height === "tall"
-      ? "h-[220px] md:h-[300px] lg:h-[520px]"
-      : "h-[180px] md:h-[200px] lg:h-[200px]";
+      ? "h-[220px] md:h-[220px] lg:h-[520px]"
+      : "h-[180px] md:h-[220px] lg:h-[200px]";
 
-  // Контент фиксируем только на lg; на md — авто, чтобы равномерно тянуться
+  // Контент фиксируем лишь на lg, на md — auto
   const CONTENT_HEIGHT_CLASS =
     height === "tall" ? "h-auto lg:h-[329px]" : "h-auto lg:h-[210px]";
 
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
   const baseButton =
-    "mt-auto group relative flex items-center justify-between w-full " +
+    "group relative inline-flex items-center justify-between w-full " +
     "h-10 md:h-11 px-4 md:px-5 rounded-lg " +
     "shadow-sm hover:shadow-md transition ease-out duration-200 " +
     "hover:scale-[1.02] active:scale-[0.97] " +
@@ -57,10 +54,14 @@ const ServiceCard = ({
 
   return (
     <article
-      className={`relative w-full h-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] flex flex-col ${CARD_TOTAL_CLASS}`}
+      className={
+        // grid: картинка / контент / кнопка; на md всегда тянется на весь ряд
+        `grid grid-rows-[auto,1fr,auto] w-full h-full overflow-hidden rounded 
+         animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] ${CARD_TOTAL_CLASS}`
+      }
     >
-      {/* Изображение */}
-      <div className={`relative w-full ${IMG_HEIGHT_CLASS} flex-none overflow-hidden`}>
+      {/* 1) Изображение */}
+      <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
         <img
           src={image}
           alt={title}
@@ -70,26 +71,26 @@ const ServiceCard = ({
         {showCursor && null}
       </div>
 
-      {/* Контент */}
-      <div className={`flex flex-col gap-4 p-4 md:p-6 ${CONTENT_HEIGHT_CLASS}`}>
-        <div className="flex-1 min-h-0">
-          <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal line-clamp-2">
-            {title}
-          </h3>
-          <p
-            className="font-sans font-normal text-foreground text-sm md:text-base leading-normal mt-1"
-            style={{
-              display: "-webkit-box",
-              WebkitLineClamp: CLAMP_LINES,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {description}
-          </p>
-        </div>
+      {/* 2) Контент (тянется) */}
+      <div className={`flex flex-col gap-4 p-4 md:p-6 ${CONTENT_HEIGHT_CLASS} min-h-0`}>
+        <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal line-clamp-2">
+          {title}
+        </h3>
+        <p
+          className="font-sans text-foreground text-sm md:text-base leading-normal"
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: CLAMP_LINES,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
+        >
+          {description}
+        </p>
+      </div>
 
-        {/* Ссылка-кнопка */}
+      {/* 3) Кнопка (всегда внизу) */}
+      <div className="px-4 pb-4 md:px-6 md:pb-6">
         <a href={href} className={buttonClass}>
           <span className="font-sans font-bold text-[13px] md:text-sm leading-none">
             Uzzināt vairāk

@@ -58,8 +58,8 @@ const Services = () => {
           className="
             grid grid-cols-1 md:grid-cols-2 lg:hidden
             gap-6 md:gap-8
-            md:[grid-auto-rows:1fr]  /* все ряды одинаковой высоты */
-            items-stretch               /* элементы тянутся по высоте ряда */
+            md:[grid-auto-rows:minmax(0,1fr)]  /* одинаковая высота рядов */
+            items-stretch                    /* тянем элементы по высоте рядов */
           "
         >
           {services.map((service) => (
@@ -68,6 +68,7 @@ const Services = () => {
             </div>
           ))}
         </div>
+
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
           <div className="flex flex-col">
