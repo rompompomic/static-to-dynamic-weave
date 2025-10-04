@@ -27,23 +27,27 @@ const Footer = () => {
             <nav className="w-fit">
               <ul className="flex flex-col gap-2 items-start">
                 <li>
-                  <a href="#" className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Galvenā
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Pakalpojumi
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Sadarbība
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Kontakti
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Sadarbība un kontakti
                   </a>
                 </li>
               </ul>
