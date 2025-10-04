@@ -35,18 +35,18 @@ const Pakalpojumi = () => {
       <Header />
 
       {/* HERO: затемнение уже по умолчанию на мобилке, статистику скрываем */}
-      <Hero withStats={false}>
-        <div className="flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
+      <Hero>
+        <div className="max-w-full md:max-w-[600px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Pakalpojumi
           </h1>
-
+      
           <p className="font-sans text-white text-base md:text-lg leading-relaxed">
             Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības pakalpojumus dažāda mēroga projektiem.
           </p>
-
-          {/* Quick Navigation Pills — всегда с фоном */}
-          <div className="flex flex-wrap gap-3 pt-2">
+      
+          {/* Quick Navigation Pills */}
+          <div className="flex flex-wrap gap-3 pt-2 w-full max-w-[480px]">  {/* <-- фикс ширины */}
             <button
               onClick={() => scrollToSection("eku-demontaza")}
               className="px-4 py-2 rounded-full font-sans text-sm font-semibold
