@@ -90,26 +90,34 @@ const Pakalpojumi = () => {
 
       {/* =========================
           УСЛУГИ (по 2 блока)
-       ========================= */}
+      ========================= */}
+      
       {/* 1. Būvju un ēku demontāža */}
       <section id="eku-demontaza" className="w-full py-12 md:py-16 bg-white/0">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-            <div className="overflow-hidden">
-              <img src={buvjuUnEkuDemontaza} alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana" className="w-full h-auto object-cover" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
+            {/* Image */}
+            <div className="overflow-hidden order-1 md:order-none">
+              <img
+                src={buvjuUnEkuDemontaza}
+                alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana"
+                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+              />
             </div>
-            <div>
-              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+      
+            {/* Text */}
+            <div className="order-2 md:order-none">
+              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
                 Būvju un ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
                 Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
                 demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
                 un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
                 inženierkomunikāciju atslēgšana un pilnīga objekta likvidācija.
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-border bg-card shadow p-6">
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Dzīvojamās & saimniecības ēkas
@@ -133,21 +141,22 @@ const Pakalpojumi = () => {
           </div>
         </div>
       </section>
-
+      
       {/* 2. Ražošanas ēku demontāža */}
       <section id="razosanas-demontaza" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
+            {/* Text */}
             <div className="order-2 md:order-1">
-              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
                 Ražošanas ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
                 Specializējamies industriālo objektu demontāžā ar smago tehniku,
                 ievērojot augstus drošības standartus un vides prasības.
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-border bg-card shadow p-6">
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Industriālie objekti
@@ -168,31 +177,43 @@ const Pakalpojumi = () => {
                 </div>
               </div>
             </div>
-
+      
+            {/* Image */}
             <div className="overflow-hidden order-1 md:order-2">
-              <img src={razosanasEkuDemontaza} alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana" className="w-full h-auto object-cover" />
+              <img
+                src={razosanasEkuDemontaza}
+                alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana"
+                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+              />
             </div>
           </div>
         </div>
       </section>
-
+      
       {/* 3. Zemes darbi */}
       <section id="zemes-darbi" className="w-full py-12 md:py-16 bg-white/0">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-            <div className="overflow-hidden">
-              <img src={zemesDarbi} alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana" className="w-full h-auto object-cover" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
+            {/* Image */}
+            <div className="overflow-hidden order-1 md:order-none">
+              <img
+                src={zemesDarbi}
+                alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana"
+                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+              />
             </div>
-            <div>
-              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+      
+            {/* Text */}
+            <div className="order-2 md:order-none">
+              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
                 Zemes darbi
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
                 Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju
                 rakšana inženierkomunikācijām, drenāžas risinājumi.
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-border bg-card shadow p-6">
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Pamati & planēšana
@@ -216,21 +237,22 @@ const Pakalpojumi = () => {
           </div>
         </div>
       </section>
-
+      
       {/* 4. Labiekārtošana */}
       <section id="labiekartosana" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center animate-fade-in">
+            {/* Text */}
             <div className="order-2 md:order-1">
-              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+              <h2 className="font-mono font-bold text-foreground text-2xl sm:text-3xl lg:text-4xl mb-4">
                 Labiekārtošana
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+              <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6 max-w-none lg:max-w-[600px]">
                 Ceļi un laukumi, segumu ieklāšana, apzaļumošana un funkcionāls
                 teritorijas dizains privātām un komerciālām vajadzībām.
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-border bg-card shadow p-6">
                   <h3 className="font-mono font-bold text-lg mb-2">
                     Celiņi & segumi
@@ -251,9 +273,14 @@ const Pakalpojumi = () => {
                 </div>
               </div>
             </div>
-
+      
+            {/* Image */}
             <div className="overflow-hidden order-1 md:order-2">
-              <img src={labiekartosana} alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana" className="w-full h-auto object-cover" />
+              <img
+                src={labiekartosana}
+                alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana"
+                className="w-full h-auto object-cover rounded-lg md:rounded-xl"
+              />
             </div>
           </div>
         </div>
