@@ -25,12 +25,10 @@ const ServiceCard = ({
   const IMG_HEIGHT_CLASS =
     height === "tall"
       ? "h-[220px] md:h-[300px] lg:h-[520px]"
-      : "h-[180px] md:h-[200px] lg:h-[200px]";
+      : "h-[170px] md:h-[170px] lg:h-[200px]";
 
-  const CARD_TOTAL_CLASS =
-    height === "tall"
-      ? "md:h-[520px] lg:h-[849px]" // для tablet поменьше
-      : "md:h-[320px] lg:h-[410px]"; // фиксированная высота на tablet
+  const CONTENT_HEIGHT_CLASS =
+    height === "tall" ? "h-auto lg:h-[329px]" : "h-auto lg:h-[210px]";
 
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
