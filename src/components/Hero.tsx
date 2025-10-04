@@ -21,13 +21,13 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Construction site"
-          className="h-[300px] w-[112%] -translate-x-[6%] object-cover object-center"
+          className="h-[300px] w-[120%] -translate-x-[10%] object-cover object-center"
         />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
         {/* Заголовок на фото — выше */}
-        <div className="absolute left-4 right-4 top-6 z-10">
-          <h1 className="font-mono font-bold text-white text-[28px] leading-tight">
+        <div className="absolute inset-0 flex items-center justify-center z-10 text-center">
+          <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-4">
             Jūsu uzticams
             <br />
             partneris būvniecībā
@@ -49,7 +49,7 @@ const Hero = () => {
           className="md:hidden bg-gradient-hero"
           style={{
             clipPath:
-              "polygon(0 56px, 20% 56px, 30% 10px, 70% 10px, 80% 56px, 100% 56px, 100% 100%, 0 100%)",
+              "polygon(0 56px, 27% 56px, 37% 10px, 63% 10px, 73% 56px, 100% 56px, 100% 100%, 0 100%)",
           }}
         >
           <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
