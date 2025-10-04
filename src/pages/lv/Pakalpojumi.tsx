@@ -88,159 +88,187 @@ const Pakalpojumi = () => {
 
       {/* =========================
           УСЛУГИ (в каждом по 2 блока)
-       ========================= */}
-      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-white/0">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-          <div className="overflow-hidden">
-            <img src={buvjuUnEkuDemontaza} alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana" className="w-full h-auto object-cover" />
-          </div>
-          <div>
-            <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
-              Būvju un ēku demontāža
-            </h2>
-            <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
-              demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
-              un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
-              inženierkomunikāciju atslēgšana un pilnīga objekta likvidācija.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Dzīvojamās & saimniecības ēkas
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Nojaukšana līdz pamatiem, būvgružu izvešana, laukuma
-                  izlīdzināšana turpmākajiem darbiem.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Drošība & dokumentācija
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Saskaņojumi ar pašvaldību, darbu plāns un riska novērtējums,
-                  satiksmes organizācija.
-                </p>
+      ========================= */}
+      
+      {/* --- Būvju un ēku demontāža --- */}
+      <section id="eku-demontaza" className="w-full py-12 md:py-16 bg-white/0">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="overflow-hidden">
+              <img
+                src={buvjuUnEkuDemontaza}
+                alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+                Būvju un ēku demontāža
+              </h2>
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
+                demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
+                un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
+                inženierkomunikāciju atslēgšana un pilnīga objekta likvidācija.
+              </p>
+      
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Dzīvojamās & saimniecības ēkas
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Nojaukšana līdz pamatiem, būvgružu izvešana, laukuma
+                    izlīdzināšana turpmākajiem darbiem.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Drošība & dokumentācija
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Saskaņojumi ar pašvaldību, darbu plāns un riska novērtējums,
+                    satiksmes organizācija.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section id="razosanas-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-          <div className="order-2 md:order-1">
-            <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
-              Ražošanas ēku demontāža
-            </h2>
-            <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Specializējamies industriālo objektu demontāžā ar smago tehniku,
-              ievērojot augstus drošības standartus un vides prasības.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Industriālie objekti
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Noliktavas, angāri, cehi — darba zonu nožogošana un
-                  koordinācija ar operatīvajiem dienestiem.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Utilizācija & šķirošana
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Metāla lūžņu realizācija, bīstamo atkritumu nodošana, pilnas
-                  atskaites.
-                </p>
+      
+      {/* --- Ražošanas ēku demontāža --- */}
+      <section id="razosanas-demontaza" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="order-2 md:order-1">
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+                Ražošanas ēku demontāža
+              </h2>
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Specializējamies industriālo objektu demontāžā ar smago tehniku,
+                ievērojot augstus drošības standartus un vides prasības.
+              </p>
+      
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Industriālie objekti
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Noliktavas, angāri, cehi — darba zonu nožogošana un
+                    koordinācija ar operatīvajiem dienestiem.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Utilizācija & šķirošana
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Metāla lūžņu realizācija, bīstamo atkritumu nodošana, pilnas
+                    atskaites.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="overflow-hidden order-1 md:order-2">
-            <img src={razosanasEkuDemontaza} alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana" className="w-full h-auto object-cover" />
-          </div>
-        </div>
-      </section>
-
-      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-white/0">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-          <div className="overflow-hidden">
-            <img src={zemesDarbi} alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana" className="w-full h-auto object-cover" />
-          </div>
-          <div>
-            <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
-              Zemes darbi
-            </h2>
-            <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju
-              rakšana inženierkomunikācijām, drenāžas risinājumi.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Pamati & planēšana
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Pamatu bedres, laukumu sagatavošana, precīza līmeņošana ar
-                  lāzera kontroli.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Drenāža & komunikācijas
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Drenāžas sistēmas, ūdens novade, tranšejas elektrībai, ūdenim
-                  un kanalizācijai.
-                </p>
-              </div>
+      
+            <div className="overflow-hidden order-1 md:order-2">
+              <img
+                src={razosanasEkuDemontaza}
+                alt="Ražošanas ēku demontāža - industriālo objektu un angāru nojaukšana"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
-
-      <section id="labiekartosana" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
-          <div className="order-2 md:order-1">
-            <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
-              Labiekārtošana
-            </h2>
-            <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Ceļi un laukumi, segumu ieklāšana, apzaļumošana un funkcionāls
-              teritorijas dizains privātām un komerciālām vajadzībām.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Celiņi & segumi
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Bruģis, šķembas, asfaltbetons; apmales, līmeņi un
-                  ūdensnoteces.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border bg-card shadow p-6">
-                <h3 className="font-mono font-bold text-lg mb-2">
-                  Apzaļumošana & dizains
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Zālieni, stādījumi, apgaismojums, mazo arhitektūras formu
-                  integrācija.
-                </p>
+      
+      {/* --- Zemes darbi --- */}
+      <section id="zemes-darbi" className="w-full py-12 md:py-16 bg-white/0">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="overflow-hidden">
+              <img
+                src={zemesDarbi}
+                alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+                Zemes darbi
+              </h2>
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju
+                rakšana inženierkomunikācijām, drenāžas risinājumi.
+              </p>
+      
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Pamati & planēšana
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Pamatu bedres, laukumu sagatavošana, precīza līmeņošana ar
+                    lāzera kontroli.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Drenāža & komunikācijas
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Drenāžas sistēmas, ūdens novade, tranšejas elektrībai, ūdenim
+                    un kanalizācijai.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="overflow-hidden order-1 md:order-2">
-            <img src={labiekartosana} alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana" className="w-full h-auto object-cover" />
+        </div>
+      </section>
+      
+      {/* --- Labiekārtošana --- */}
+      <section id="labiekartosana" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="order-2 md:order-1">
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+                Labiekārtošana
+              </h2>
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Ceļi un laukumi, segumu ieklāšana, apzaļumošana un funkcionāls
+                teritorijas dizains privātām un komerciālām vajadzībām.
+              </p>
+      
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Celiņi & segumi
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Bruģis, šķembas, asfaltbetons; apmales, līmeņi un ūdensnoteces.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card shadow p-6">
+                  <h3 className="font-mono font-bold text-lg mb-2">
+                    Apzaļumošana & dizains
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Zālieni, stādījumi, apgaismojums, mazo arhitektūras formu
+                    integrācija.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <div className="overflow-hidden order-1 md:order-2">
+              <img
+                src={labiekartosana}
+                alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
