@@ -43,15 +43,23 @@ const Hero = () => {
           </button>
 
           {/* Статистика */}
-          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-full">
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
+          <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-[320px]">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
               <div className="flex flex-col gap-1">
-                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
-                <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
+                  120+
+                </span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">
+                  Pabeigti projekti
+                </span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
-                <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
+                  32
+                </span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">
+                  Profesionāļi komandā
+                </span>
               </div>
             </div>
           </div>
