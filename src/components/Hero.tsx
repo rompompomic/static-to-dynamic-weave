@@ -72,12 +72,11 @@ const Hero = () => {
 
         {/* Desktop / Tablet */}
         <div className="hidden md:block">
-          <div
-            className="
+          <div className="
               w-full px-8 lg:px-[75px]
               md:min-h-[635px] md:flex md:items-center
-            "
-          >
+            ">
+            {/* Текстовый блок занимает всё пространство между левым краем и картинкой */}
             <div className="flex-1 mr-[calc(52%+131px)]">
               <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
@@ -87,8 +86,6 @@ const Hero = () => {
                 kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
                 gataviem projektiem.
               </p>
-            </div>
-          </div>
               <button className="
                   mt-8 group relative inline-flex items-center justify-center gap-2.5
                   h-11 px-6 md:px-8 rounded-lg
