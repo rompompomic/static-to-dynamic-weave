@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import pirmsImg from "@/assets/pirms.webp";
 import pecImg from "@/assets/pec.webp";
@@ -61,7 +62,6 @@ const Gallery = () => {
             role="region"
             aria-label="Foto galerija"
           >
-            {/* изображение с плавной сменой */}
             <img
               key={images[active].id}
               src={images[active].url}
@@ -76,10 +76,10 @@ const Gallery = () => {
             <button
               type="button"
               onClick={prev}
-              className="px-4 py-2 rounded-lg border border-border hover:bg-muted transition"
+              className="p-2 rounded-lg border border-border hover:bg-muted transition"
               aria-label="Iepriekšējais"
             >
-              ←
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <div className="text-sm text-muted-foreground">
               {active + 1} / {total}
@@ -87,10 +87,10 @@ const Gallery = () => {
             <button
               type="button"
               onClick={next}
-              className="px-4 py-2 rounded-lg border border-border hover:bg-muted transition"
+              className="p-2 rounded-lg border border-border hover:bg-muted transition"
               aria-label="Nākamais"
             >
-              →
+              <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         </div>
@@ -102,7 +102,6 @@ const Gallery = () => {
               flex gap-3 md:gap-4 overflow-x-auto pb-1
               [scrollbar-width:none] [-ms-overflow-style:none]
             "
-            /* скрыть скроллбар в WebKit */
             style={{ scrollbarWidth: "none" } as React.CSSProperties}
           >
             {images.map((img, idx) => {
