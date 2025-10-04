@@ -75,12 +75,10 @@ const Pakalpojumi = () => {
 
         {/* Контент: desktop — слева, центр по вертикали; mobile — блок с «заусенцем» */}
         <div className="relative z-10">
-          {/* MOBILE: блок с заусенцем, цвет = градиент-hero */}
-          <div className="relative z-10">
-        {/* Mobile: блок с «заусенцем» */}
-        <div className="md:hidden bg-gradient-hero" style={{
-        clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
-      }}>
+          {/* Mobile: блок с «заусенцем» */}
+          <div className="md:hidden bg-gradient-hero" style={{
+          clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
+        }}>
             <div className="container mx-auto px-4 pb-8 pt-24 -mt-[64px]">
               <p className="font-sans text-white text-base leading-relaxed">
                 Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības
