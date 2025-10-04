@@ -18,11 +18,11 @@ const Footer = () => {
           </div>
 
           {/* Quick Links - Center */}
-          <div className="space-y-4 mx-auto text-center">
-            <h3 className="font-sans font-bold text-foreground text-base">
+          <div className="space-y-4 text-center lg:text-center">
+            <h3 className="font-sans font-bold text-foreground text-base lg:text-center">
               Navigācija
             </h3>
-            <nav className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-2 items-center lg:items-start lg:mx-auto">
               <a
                 href="#"
                 className="font-sans text-muted-foreground text-sm hover:text-primary transition-colors"
@@ -47,15 +47,15 @@ const Footer = () => {
               >
                 Kontakti
               </a>
-            </nav>
+            </div>
           </div>
 
           {/* Contact Info - Right */}
-          <div className="space-y-4 lg:text-right">
+          <div className="space-y-4 text-center lg:text-right">
             <h3 className="font-sans font-bold text-foreground text-base">
               Kontaktinformācija
             </h3>
-            <div className="flex flex-col gap-3 items-start lg:items-end">
+            <div className="flex flex-col gap-3 items-center lg:items-start lg:ml-auto">
               <a
                 href="tel:+37120000000"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
