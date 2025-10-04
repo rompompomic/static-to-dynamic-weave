@@ -1,29 +1,36 @@
 import { Play } from "lucide-react";
 
+// импорт как в Services
+import videoPreview from "@/assets/demontazas-procesa-video.webp";
+import pirmsImg from "@/assets/pirms.webp";
+import pecImg from "@/assets/pec.webp";
+import zemesDarbiImg from "@/assets/zemes-darbi.webp";
+import industrialieObjektiImg from "@/assets/industrialie-objekti.webp";
+
 const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: "@/assets/pirms.webp",
+      url: pirmsImg,
       alt: "Demontāžas darbi pirms",
       label: "Pirms",
     },
     {
       id: 2,
-      url: "@/assets/pec.webp",
+      url: pecImg,
       alt: "Demontāžas darbi pēc",
       label: "Pēc",
     },
     {
       id: 3,
-      url: "@/assets/zemes-darbi.webp",
+      url: zemesDarbiImg,
       alt: "Zemes darbi",
       label: "Zemes darbi",
     },
     {
       id: 4,
-      url: "@/assets/industrialie-objekti.webp",
-      alt: "Ražošanas ēku demontāža",
+      url: industrialieObjektiImg,
+      alt: "Industriālie objekti",
       label: "Industriālie objekti",
     },
   ];
@@ -43,18 +50,26 @@ const Gallery = () => {
         <div className="mb-12 animate-fade-in">
           <div className="relative w-full aspect-video bg-muted border border-border overflow-hidden group">
             <img
-              src="@/assets/demontazas-procesa-video.webp"
-              alt="Video preview"
+              src={videoPreview}
+              alt="Demontāžas procesa video priekšskatījums"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-              <button className="w-20 h-20 flex items-center justify-center bg-primary text-primary-foreground rounded-full hover:scale-110 transition-transform">
+              <button
+                type="button"
+                className="w-20 h-20 flex items-center justify-center bg-primary text-primary-foreground rounded-full hover:scale-110 transition-transform"
+                aria-label="Atskaņot video"
+              >
                 <Play className="w-10 h-10 ml-1" fill="currentColor" />
               </button>
             </div>
             <div className="absolute bottom-6 left-6 text-white">
-              <p className="font-sans font-bold text-lg mb-1">Demontāžas procesa video</p>
-              <p className="font-sans text-sm opacity-90">Skatiet, kā mēs strādājam</p>
+              <p className="font-sans font-bold text-lg mb-1">
+                Demontāžas procesa video
+              </p>
+              <p className="font-sans text-sm opacity-90">
+                Skatiet, kā mēs strādājam
+              </p>
             </div>
           </div>
         </div>
