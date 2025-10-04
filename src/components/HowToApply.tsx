@@ -52,7 +52,7 @@ const HowToApply = () => {
         </div>
 
         <div className="flex justify-center animate-fade-in">
-          <a href="#kontakti" className={ctaClass}>
+          <a href="/lv/sadarbiba-un-kontakti" className={ctaClass}>
             <span className="font-sans font-bold text-base">Sazināties ar mums</span>
             <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
           </a>
