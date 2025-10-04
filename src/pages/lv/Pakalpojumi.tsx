@@ -1,19 +1,17 @@
-import { ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
+
+import heroImage from "@/assets/hero-image.webp";
+import heroStrip from "@/assets/hero-strip.svg";
+
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
 import labiekartosana from "@/assets/labiekartosana.webp";
 
 const Pakalpojumi = () => {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <main className="bg-background overflow-x-hidden w-full min-h-screen">
       <Helmet>
@@ -69,7 +67,7 @@ const Pakalpojumi = () => {
 
         {/* Контент */}
         <div className="relative z-10">
-          {/* Mobile блок с заусенцем */}
+          {/* Mobile: блок с заусенцем */}
           <div
             className="md:hidden bg-gradient-hero"
             style={{
@@ -103,9 +101,11 @@ const Pakalpojumi = () => {
       </section>
       {/* ==== /HERO ==== */}
 
-      {/* дальше всё без изменений */}
-      {/* Service 1 */}
-      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      {/* ==== Услуги ==== */}
+      <section
+        id="eku-demontaza"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img
@@ -119,46 +119,27 @@ const Pakalpojumi = () => {
               Būvju un ēku demontāža
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu demontāžu ar pilnu atļauju noformēšanu,
-              teritorijas norobežošanu un drošības pasākumu ievērošanu. Process ietver būvgružu izvešanu,
-              inženierkomunikāciju atslēgšanu un pilnīgu objekta likvidāciju saskaņā ar spēkā esošajiem noteikumiem.
+              Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
+              demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
+              un drošības pasākumu ievērošanu.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Dzīvojamās ēkas un privātmājas</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Saimniecības ēkas un garāžas</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Nelieli komerciālie objekti</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Koka un ķieģeļu konstrukcijas</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Būvgružu izvešana un utilizācija</span></li>
-            </ul>
-            <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
-              Uzzināt vairāk <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Service 2 */}
-      <section id="razosanas-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section
+        id="razosanas-demontaza"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
               Ražošanas ēku demontāža
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Specializējamies industriālo objektu demontāžā, izmantojot profesionālu smago tehniku un ievērojot
-              visus drošības standartus. Veicam bīstamo vielu identifikāciju, metāla konstrukciju demontāžu ar
-              iespēju realizēt lūžņus, kā arī nodrošinām būvgružu šķirošanu un savākšanu atbilstoši vides prasībām.
+              Specializējamies industriālo objektu demontāžā, izmantojot
+              profesionālu smago tehniku un ievērojot visus drošības standartus.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Noliktavas un ražotnes</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Angāri un metāla konstrukcijas</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Silosi un industriālie objekti</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Bīstamo vielu kontrole un utilizācija</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Metāllūžņu savākšana un realizācija</span></li>
-            </ul>
-            <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
-              Uzzināt vairāk <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
           <div className="overflow-hidden order-1 md:order-2">
             <img
@@ -170,8 +151,10 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      {/* Service 3 */}
-      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section
+        id="zemes-darbi"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img
@@ -185,46 +168,27 @@ const Pakalpojumi = () => {
               Zemes darbi
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Piedāvājam pilnu spektru zemes darbu pakalpojumus – no pamatu rakšanas līdz teritorijas planēšanai.
-              Izmantojam modernu tehniku grunts maiņai, drenāžas sistēmu izbūvei un komunikāciju tranšeju rakšanai.
-              Nodrošinām precīzu teritorijas sagatavošanu turpmākai būvniecībai vai labiekārtošanai.
+              Piedāvājam pilnu spektru zemes darbu pakalpojumus – no pamatu
+              rakšanas līdz teritorijas planēšanai.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Augsnes noņemšana un grunts maiņa</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Teritorijas planēšana un izlīdzināšana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Pamatu bedru un tranšeju rakšana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Komunikāciju ieklāšana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Drenāžas sistēmu izbūve</span></li>
-            </ul>
-            <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
-              Uzzināt vairāk <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Service 4 */}
-      <section id="labiekartosana" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section
+        id="labiekartosana"
+        className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16"
+      >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="order-2 md:order-1">
             <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
               Labiekārtošana
             </h2>
             <p className="font-sans text-foreground text-base leading-relaxed mb-6">
-              Pēc demontāžas vai zemes darbu pabeigšanas piedāvājam teritorijas labiekārtošanu – ceļu un laukumu
-              izbūvi, segumu ieklāšanu, apzaļumošanu. Izveidojam funkcionālas un estētiskas teritorijas gan privātām,
-              gan komerciālām vajadzībām, ievērojot visus ainavu arhitektūras un būvnormatīvu principus.
+              Pēc demontāžas vai zemes darbu pabeigšanas piedāvājam teritorijas
+              labiekārtošanu – ceļu un laukumu izbūvi, segumu ieklāšanu,
+              apzaļumošanu.
             </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Bruģa un asfalta segumu ieklāšana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Apmales un robežakmens uzstādīšana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Zaļo zonu veidošana un zālāja ierīkošana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Stādījumu izvietošana</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary mt-1">•</span><span className="font-sans text-foreground">Autostāvvietu un gājēju celiņu izbūve</span></li>
-            </ul>
-            <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
-              Uzzināt vairāk <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
           <div className="overflow-hidden order-1 md:order-2">
             <img
@@ -233,18 +197,6 @@ const Pakalpojumi = () => {
               className="w-full h-auto object-cover"
             />
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="w-full bg-gradient-hero py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-[75px] text-center animate-fade-in">
-          <h2 className="font-mono font-bold text-white text-2xl md:text-3xl lg:text-4xl mb-6">
-            Vēlaties konsultāciju vai tāmi?
-          </h2>
-          <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary hover:bg-opacity-90 transition-all font-sans font-bold">
-            Sazināties <ArrowRight className="w-6 h-6" />
-          </a>
         </div>
       </section>
 
