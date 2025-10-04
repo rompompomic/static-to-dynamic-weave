@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-sans text-muted-foreground text-sm text-center md:text-left">
-              © 2025 SIA DEMCO · Privātuma politika · Lietošanas noteikumi
+              © 2025 SIA DEMCO · Privātuma politika
             </p>
           </div>
         </div>
