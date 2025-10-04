@@ -16,7 +16,7 @@ const Hero = () => {
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
-        <div className="max-w-full md:max-w-[500px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
+        <div className="max-w-full md:max-w-[450px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Jūsu uzticams partneris būvniecībā
           </h1>
