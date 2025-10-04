@@ -12,13 +12,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Decorative Vector - Hidden on mobile */}
-      <img
-        className="hidden lg:block absolute -top-[179px] right-[110px] w-[131px] h-[812px]"
-        src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
-        alt=""
-      />
-
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
         <div className="max-w-full md:max-w-[630px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
