@@ -1,143 +1,108 @@
-import { ArrowUpRight } from "lucide-react";
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
-
-interface HeroProps {
-  children?: React.ReactNode;
-  /** "none" = без затемнения; "always" = всегда; "mobile" = только на мобилке */
-  overlayMode?: "none" | "always" | "mobile";
-  /** Показать блок со статистикой */
-  withStats?: boolean;
-}
+import heroStrip from "@/assets/hero-strip.svg"; // ← добавьте svg/ png полоски в /assets
 
 const Stats = () => (
-  <div className="mt-6 pt-4 border-t border-white/20">
-    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
+  <div className="mt-8 pt-6 border-t border-white/20">
+    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
       <div className="flex flex-col gap-1">
-        <span className="font-mono font-bold text-white text-4xl leading-none">120+</span>
-        <span className="font-sans text-white text-sm">Pabeigti projekti</span>
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
       </div>
       <div className="flex flex-col gap-1">
-        <span className="font-mono font-bold text-white text-4xl leading-none">32</span>
-        <span className="font-sans text-white text-sm">Profesionāļi komandā</span>
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
       </div>
     </div>
   </div>
 );
 
-const Hero = ({ children, overlayMode = "mobile", withStats = true }: HeroProps) => {
+const Hero = () => {
   return (
-    <section className="relative w-full bg-gradient-hero overflow-hidden">
-
-      {/* ========== MOBILE VERSION ========== */}
-      <div className="md:hidden">
-        {/* 1) Картинка с заголовком */}
-        <div className="relative w-full">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="w-full h-[300px] object-cover"
-          />
-          {(overlayMode === "always" || overlayMode === "mobile") && (
-            <div className="absolute inset-0 bg-black/50" />
-          )}
-
-          {/* Заголовок поверх фото */}
-          <div className="absolute inset-x-4 bottom-4">
-            <h1 className="font-mono font-bold text-white text-3xl leading-tight">
-              Jūsu uzticams partneris būvniecībā
-            </h1>
-          </div>
-        </div>
-
-        {/* 2) Закрашенный блок, который заходит на фото + заусенец */}
-        <div className="-mt-3 relative z-10">
-          <div className="relative bg-gradient-hero text-white px-4 py-6">
-            {/* Заусенец (вверх) — та же заливка, ложится на фото */}
-            <div
-              className="absolute -top-3 left-0 right-0 h-3"
-              style={{
-                background: "var(--gradient-hero)",
-                // центральный «пик» вверх
-                clipPath:
-                  "polygon(0% 100%, 42% 100%, 46% 35%, 50% 0%, 54% 35%, 58% 100%, 100% 100%, 100% 0%, 0% 0%)",
-              }}
-            />
-
-            {/* Контент блока: описание/кнопки/статы */}
-            <div className="max-w-[600px]">
-              {children ? (
-                children
-              ) : (
-                <>
-                  <p className="font-sans text-white/95 text-base leading-relaxed mb-4">
-                    Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
-                    kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
-                    gataviem projektiem.
-                  </p>
-                  <button className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-bold hover:bg-white/90 transition">
-                    Uzzināt vairāk
-                    <ArrowUpRight className="w-5 h-5" />
-                  </button>
-                  {withStats && <Stats />}
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ========== DESKTOP / TABLET VERSION (как было) ========== */}
-      <div className="hidden md:block relative min-h-[635px]">
-        {/* Картинка фоном справа */}
-        <div className="absolute inset-0 z-0 flex justify-end">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="object-cover object-center w-auto h-full"
-          />
-          {overlayMode === "always" && <div className="absolute inset-0 bg-black/50" />}
-        </div>
-
-        {/* Правая декоративная полоса */}
+    <section className="relative w-full overflow-hidden md:min-h-[635px] md:bg-gradient-hero">
+      {/* IMAGE */}
+      <div className="relative md:absolute md:inset-0 z-0 flex justify-end">
         <img
-          src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
-          alt=""
-          className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+          src={heroImage}
+          alt="Construction site"
+          className="
+            h-[320px] w-[120%] -translate-x-[10%]         /* шире и сдвигаем влево на мобилке */
+            object-cover object-center
+            md:h-full md:w-auto md:translate-x-0
+          "
         />
+        {/* затемнение только на мобилке */}
+        <div className="absolute inset-0 bg-black/45 md:hidden" />
 
-        {/* Контент слева */}
-        <div className="relative z-10 container mx-auto px-8 lg:px-[75px] py-20">
-          <div className="max-w-[430px] flex flex-col items-start gap-8">
-            <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-              Jūsu uzticams partneris būvniecībā
-            </h1>
-            <p className="font-sans text-white text-lg leading-relaxed">
-              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
-              sākotnējām idejām līdz gataviem projektiem.
-            </p>
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold hover:bg-white/90 transition">
-              Uzzināt vairāk
-              <ArrowUpRight className="w-6 h-6" />
-            </button>
-            {withStats && (
-              <div className="mt-16 pt-8 border-t border-white/20 max-w-[634px]">
-                <div className="flex gap-[120px]">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[50px] leading-none">120+</span>
-                    <span className="font-sans text-white">Pabeigti projekti</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-mono font-bold text-white text-[50px] leading-none">32</span>
-                    <span className="font-sans text-white">Profesionāļi komandā</span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+        {/* Заголовок на фото — поднят выше */}
+        <div className="md:hidden absolute left-4 right-4 top-6">
+          <h1 className="font-mono font-bold text-white text-[28px] leading-tight">
+            Jūsu uzticams<br />partneris būvniecībā
+          </h1>
         </div>
       </div>
 
+      {/* ==== ГОРИЗОНТАЛЬНАЯ ПОЛОСКА (маска) — ЛЕЖИТ НА ФОТО ==== */}
+      <div
+        className="md:hidden relative z-10 h-[56px] -mt-[22px] w-full"
+        style={{
+          background: "var(--gradient-hero)",            // цвет/градиент блока
+          WebkitMaskImage: `url(${heroStrip})`,           // маска для Safari/iOS
+          maskImage: `url(${heroStrip})`,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "cover",
+          maskSize: "cover",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
+      />
+
+      {/* ПРАВАЯ ЧЁРНАЯ ПОЛОСА (десктоп — как было) */}
+      <img
+        src={heroStrip}
+        alt=""
+        className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
+        style={{
+          // на десктопе не меняем цвет — оставляем как было
+          filter: "none",
+        }}
+      />
+
+      {/* КОНТЕНТ: мобилка — закрашенный блок под полоской; десктоп — как было */}
+      <div className="md:hidden relative z-20 bg-gradient-hero">
+        <div className="container mx-auto px-4 py-8">
+          <p className="font-sans text-white text-base leading-relaxed mb-6">
+            Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
+            sākotnējām idejām līdz gataviem projektiem.
+          </p>
+          <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-white items-center hover:bg-opacity-90 transition-all">
+            <span className="font-sans font-bold text-primary text-sm">Uzzināt vairāk</span>
+            <ArrowUpRight className="w-5 h-5 text-primary" />
+          </button>
+          <Stats />
+        </div>
+      </div>
+
+      <div className="hidden md:block relative z-10">
+        <div className="container mx-auto px-8 lg:px-[75px] py-20 max-w-[630px]">
+          <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-normal">
+            Jūsu uzticams partneris būvniecībā
+          </h1>
+          <p className="mt-6 font-sans text-white text-lg leading-relaxed">
+            Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
+            sākotnējām idejām līdz gataviem projektiem.
+          </p>
+          <button className="mt-8 inline-flex justify-center gap-2.5 px-8 py-4 bg-white items-center hover:bg-opacity-90 transition-all">
+            <span className="font-sans font-bold text-primary">Uzzināt vairāk</span>
+            <ArrowUpRight className="w-6 h-6 text-primary" />
+          </button>
+          <div className="max-w-[634px]">
+            <Stats />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
