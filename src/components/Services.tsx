@@ -6,7 +6,8 @@ const Services = () => {
       id: 1,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11.png",
       title: "Būvju un ēku demontāža",
-      description: "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
+      description:
+        "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
       height: "tall" as const,
       variant: "default" as const,
     },
@@ -14,7 +15,8 @@ const Services = () => {
       id: 2,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-1.png",
       title: "Ražošanas ēku demontāža",
-      description: "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
+      description:
+        "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
       height: "short" as const,
       variant: "default" as const,
     },
@@ -22,7 +24,8 @@ const Services = () => {
       id: 3,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-2.png",
       title: "Zemes darbi",
-      description: "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
+      description:
+        "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
       height: "short" as const,
       variant: "accent" as const,
       showCursor: true,
@@ -31,7 +34,20 @@ const Services = () => {
       id: 4,
       image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-3.png",
       title: "Labiekārtošana",
-      description: "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
+      description:
+        "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
+      height: "short" as const,
+      variant: "default" as const,
+    },
+    // ✅ Новая услуга — вывоз и утилизация строительных отходов
+    {
+      id: 5,
+      image:
+        // можно заменить на свой ассет; временно ставлю плейсхолдер с индустриальным кадром
+        "https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop",
+      title: "Būvgružu izvešana un utilizācija",
+      description:
+        "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām. Pēc darbiem nodrošinām tīru un drošu teritoriju.",
       height: "short" as const,
       variant: "default" as const,
     },
@@ -45,7 +61,8 @@ const Services = () => {
         </h2>
 
         <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl animate-fade-in">
-          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
+          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo
+          ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
         {/* Mobile & Tablet Layout */}
@@ -57,19 +74,20 @@ const Services = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
-          {/* First column - tall card */}
+          {/* 1-я колонка — одна высокая карточка */}
           <div className="flex flex-col">
             <ServiceCard {...services[0]} />
           </div>
 
-          {/* Second column - two short cards stacked */}
+          {/* 2-я колонка — две короткие */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard {...services[1]} />
             <ServiceCard {...services[2]} />
           </div>
 
-          {/* Third column - one short card */}
+          {/* 3-я колонка — две короткие (старая + новая) */}
           <div className="flex flex-col gap-[29px]">
+            <ServiceCard {...services[4]} />
             <ServiceCard {...services[3]} />
           </div>
         </div>
