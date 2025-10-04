@@ -84,7 +84,7 @@ const Pakalpojumi = () => {
       {/* =========================
           УСЛУГИ (в каждом по 2 блока)
        ========================= */}
-      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-white/0">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img src={buvjuUnEkuDemontaza} alt="Būvju un ēku demontāža - dzīvojamo un saimniecības ēku nojaukšana" className="w-full h-auto object-cover" />
@@ -163,7 +163,7 @@ const Pakalpojumi = () => {
         </div>
       </section>
 
-      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
+      <section id="zemes-darbi" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16 bg-white/0">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
           <div className="overflow-hidden">
             <img src={zemesDarbi} alt="Zemes darbi - rakšana, grunts izlīdzināšana un pamatu sagatavošana" className="w-full h-auto object-cover" />
@@ -243,7 +243,7 @@ const Pakalpojumi = () => {
       {/* =========================
           ПРЕИМУЩЕСТВА
        ========================= */}
-      <section className="bg-muted/30 py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white/0">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
           <div className="text-center mb-10">
             <h2 className="font-mono font-bold text-2xl md:text-3xl lg:text-4xl">
