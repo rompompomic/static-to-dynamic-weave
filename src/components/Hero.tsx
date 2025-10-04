@@ -8,32 +8,31 @@ interface HeroProps {
   overlayMode?: "none" | "always" | "mobile";
   /** Показать полосу со статистикой под контентом */
   withStats?: boolean;
+  /** Показывать заусенец на мобилке */
+  showMobileNotch?: boolean;
 }
 
 const Stats = () => (
   <div className="mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/20 max-w-full md:max-w-[634px]">
     <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
       <div className="flex flex-col gap-1">
-        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-          120+
-        </span>
-        <span className="font-sans text-white text-sm md:text-base leading-normal">
-          Pabeigti projekti
-        </span>
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
       </div>
       <div className="flex flex-col gap-1">
-        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-          32
-        </span>
-        <span className="font-sans text-white text-sm md:text-base leading-normal">
-          Profesionāļi komandā
-        </span>
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
       </div>
     </div>
   </div>
 );
 
-const Hero = ({ children, overlayMode = "mobile", withStats = true }: HeroProps) => {
+const Hero = ({
+  children,
+  overlayMode = "mobile",
+  withStats = true,
+  showMobileNotch = true,
+}: HeroProps) => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE */}
@@ -47,7 +46,7 @@ const Hero = ({ children, overlayMode = "mobile", withStats = true }: HeroProps)
         {overlayMode === "mobile" && <div className="absolute inset-0 bg-black/50 md:hidden" />}
       </div>
 
-      {/* Правая декоративная полоса */}
+      {/* Правая декоративная полоса (десктоп) */}
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
@@ -56,6 +55,23 @@ const Hero = ({ children, overlayMode = "mobile", withStats = true }: HeroProps)
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
+        {/* Мобильный «заусенец» — выступ блока в картинку */}
+        {showMobileNotch && (
+          <div className="relative md:hidden h-6 -mt-4 mb-4">
+            {/* сам выступ */}
+            <div
+              className="absolute left-0 right-0 top-0 h-6"
+              style={{
+                // цвет/градиент тот же, что у самого hero-блока
+                background: "var(--gradient-hero)",
+                // форма: узкая полоска с центральным «пиком» вверх
+                clipPath:
+                  "polygon(0% 70%, 42% 70%, 46% 0%, 54% 0%, 58% 70%, 100% 70%, 100% 100%, 0% 100%)",
+              }}
+            />
+          </div>
+        )}
+
         {children ? (
           <>
             <div className="max-w-full md:max-w-[600px]">{children}</div>
