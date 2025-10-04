@@ -2,37 +2,28 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
 import heroStrip from "@/assets/hero-strip.svg";
-
 const Hero = () => {
-  return (
-    <section className="relative w-full overflow-hidden md:min-h-[635px] bg-gradient-hero">
+  return <section className="relative w-full overflow-hidden md:min-h-[635px] bg-gradient-hero">
       {/* === IMAGE: desktop (правый край), mobile (вверху) === */}
       {/* Desktop */}
       <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end">
-        <img
-          src={heroImage}
-          alt="Construction site"
-          className="h-full w-auto object-cover object-center"
-        />
+        <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
       </div>
 
       {/* Mobile (full-bleed) */}
       <div className="md:hidden relative z-0 -mx-4">
-        <img
-          src={heroImage}                 // или heroStrip, если нужно
-          alt="Construction site"
-          className="
+        <img src={heroImage} // или heroStrip, если нужно
+      alt="Construction site" className="
             max-w-none                    /* не ограничивать шириной родителя */
             w-[130vw] -translate-x-[15vw] /* шире вьюпорта + смещение влево */
             h-[300px] object-cover object-center
-          "
-        />
+          " />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
       
         {/* Заголовок поверх фото */}
         <div className="absolute inset-0 flex items-center z-10 px-4">
-          <h1 className="font-mono font-bold text-white text-[28px] leading-tight">
+          <h1 className="font-mono font-bold text-white text-[28px] left-1 px-[10px]">
             Jūsu uzticams
             <br />partneris būvniecībā
           </h1>
@@ -40,22 +31,14 @@ const Hero = () => {
       </div>
 
       {/* Правая декоративная полоса (desktop) */}
-      <img
-        src={heroStrip}
-        alt="Decorative stripe"
-        className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
-      />
+      <img src={heroStrip} alt="Decorative stripe" className="hidden lg:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none" />
 
       {/* === Контент (desktop слева; mobile — блок с заусенцем) === */}
       <div className="relative z-10">
         {/* Mobile: блок с «заусенцем» */}
-        <div
-          className="md:hidden bg-gradient-hero"
-          style={{
-            clipPath:
-              "polygon(0 56px, 27% 56px, 37% 10px, 63% 10px, 73% 56px, 100% 56px, 100% 100%, 0 100%)",
-          }}
-        >
+        <div className="md:hidden bg-gradient-hero" style={{
+        clipPath: "polygon(0 56px, 27% 56px, 37% 10px, 63% 10px, 73% 56px, 100% 56px, 100% 100%, 0 100%)"
+      }}>
           <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
             <p className="font-sans text-white text-base leading-relaxed mb-6">
               Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
@@ -135,8 +118,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
