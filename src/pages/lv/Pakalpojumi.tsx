@@ -28,63 +28,76 @@ const Pakalpojumi = () => {
 
       <Header />
 
-      {/* HERO (pakalpojumi) */}
+      {/* HERO */}
       <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
-        {/* Desktop/Tablet image (справа) */}
+        {/* DESKTOP image (справа) */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="h-full w-auto object-cover object-center"
-          />
+          <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
         </div>
       
-        {/* Mobile image */}
+        {/* MOBILE image */}
         <div className="md:hidden relative z-0 -mx-4">
           <img
             src={heroImage}
             alt="Construction site"
             className="max-w-none w-[130vw] -translate-x-[15vw] h-[300px] object-cover object-center"
           />
+          {/* затемнение */}
           <div className="absolute inset-0 bg-black/45" />
-      
-          {/* Текст по центру вертикали */}
-          <div className="absolute inset-0 z-10 flex flex-col items-start justify-center px-6">
-            <h1 className="font-mono font-bold text-white text-[28px] leading-tight mb-3">
+          {/* заголовок поверх фото */}
+          <div
+            className="absolute inset-0 flex items-center z-10"
+            style={{ paddingLeft: "max(env(safe-area-inset-left), 1rem)" }}
+          >
+            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[10px]">
               Pakalpojumi
             </h1>
-            <p className="font-sans text-white text-base leading-relaxed max-w-[320px]">
-              No demontāžas līdz labiekārtošanai — piedāvājam pilnu spektru
-              risinājumu, kas pielāgoti gan privātiem, gan industriāliem projektiem.
-            </p>
           </div>
         </div>
       
-        {/* Right strip (с планшета и выше) */}
+        {/* Right strip (tablet+desktop) */}
         <img
           src={heroStrip}
           alt=""
           className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
         />
       
-        {/* Desktop / Tablet copy */}
-        <div className="relative z-10 hidden md:block">
+        {/* Content */}
+        <div className="relative z-10">
+          {/* Mobile toothed block */}
           <div
-            className="
-              container mx-auto px-8 lg:px-[75px]
-              md:min-h-[635px] md:flex md:items-center
-              md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
-            "
+            className="md:hidden bg-gradient-hero"
+            style={{
+              clipPath:
+                "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
+            }}
           >
-            <div className="max-w-[760px]">
-              <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-                Profesionāli pakalpojumi būvniecībā
-              </h1>
-              <p className="mt-6 font-sans text-white text-lg leading-relaxed">
-                Piedāvājam demontāžas, zemes darbu un labiekārtošanas risinājumus ar
-                pilnu dokumentācijas nodrošinājumu un garantētu kvalitāti. Katrs
-                projekts tiek veikts droši un savlaicīgi.
+            <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
+              <p className="font-sans text-white text-base leading-relaxed">
+                No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
+                kas pielāgoti gan privātiem, gan industriāliem projektiem.
               </p>
+            </div>
+          </div>
+      
+          {/* Desktop / Tablet */}
+          <div className="hidden md:block">
+            <div
+              className="
+                container mx-auto px-8 lg:px-[75px]
+                md:min-h-[635px] md:flex md:items-center
+                md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+              "
+            >
+              <div className="w-[800px]">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
+                  Pakalpojumi
+                </h1>
+                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
+                  No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
+                  kas pielāgoti gan privātiem, gan industriāliem projektiem.
+                </p>
+              </div>
             </div>
           </div>
         </div>
