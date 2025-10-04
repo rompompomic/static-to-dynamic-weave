@@ -34,8 +34,8 @@ const Pakalpojumi = () => {
 
       <Header />
 
-      {/* HERO с интро и пиллами; затемнение только на мобилке */}
-      <Hero overlayMode="mobile">
+      {/* HERO: затемнение уже по умолчанию на мобилке, статистику скрываем */}
+      <Hero withStats={false}>
         <div className="flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Pakalpojumi
@@ -83,6 +83,7 @@ const Pakalpojumi = () => {
         </div>
       </Hero>
 
+      {/* дальше всё без изменений */}
       {/* Service 1 */}
       <section id="eku-demontaza" className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-16">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
