@@ -15,13 +15,27 @@ const ServiceCard = ({
   description,
   variant = "default",
   height = "short",
-  showCursor = false
+  showCursor = false,
 }: ServiceCardProps) => {
-  // у tall оставляем как было, у short делаем фиксированную побольше
+  /**
+   * Высоты карточек:
+   * - short: одинаковая фиксированная высота (картинка крупнее и стабильная)
+   * - tall: равна двум short + gap (и на мобилке, и на десктопе)
+   *
+   * Desktop (lg):
+   *   short = 370px
+   *   gap   = 29px
+   *   tall  = 370*2 + 29 = 769px
+   *
+   * Mobile:
+   *   short = 320px
+   *   gap   = 24px (grid gap-6)
+   *   tall  = 320*2 + 24 = 664px
+   */
   const heightClass =
     height === "tall"
-      ? "lg:h-[769px] h-[400px]"
-      : "lg:h-[420px] h-[360px]"; // увеличил высоту коротких карточек
+      ? "h-[664px] lg:h-[769px]"
+      : "h-[320px] lg:h-[370px]";
 
   const buttonClass =
     variant === "accent"
@@ -30,17 +44,20 @@ const ServiceCard = ({
 
   return (
     <div
-      className={`relative flex flex-col w-full ${heightClass} items-start justify-end overflow-hidden group animate-fade-in`}
+      className={`relative flex flex-col w-full ${heightClass} items-start justify-end overflow-hidden group animate-fade-in rounded`}
     >
-      {/* Картинка теперь отдельным img с фиксированной высотой */}
+      {/* Фото как реальный <img>, чтобы масштаб был ровнее и крупнее */}
       <img
         src={image}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
 
-      {showCursor}
+      {/* Если когда-то понадобится курсор/оверлей — не рендерим "true" в DOM */}
+      {showCursor && <></>}
 
+      {/* Контентная карточка */}
       <div className="relative flex flex-col items-start gap-4 p-4 md:p-6 w-full bg-card">
         <div className="flex flex-col items-start gap-1.5">
           <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal">
