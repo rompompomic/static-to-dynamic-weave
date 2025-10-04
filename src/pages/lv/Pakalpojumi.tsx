@@ -103,34 +103,34 @@ const Pakalpojumi = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
+      
             <div>
               <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Būvju un ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
-                Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu
-                demontāžu ar pilnu atļauju noformēšanu, teritorijas norobežošanu
-                un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Veicam dzīvojamo, saimniecības un nelielu komerciālo objektu demontāžu ar pilnu atļauju noformēšanu,
+                teritorijas norobežošanu un drošības pasākumu ievērošanu. Iekļauts būvgružu izvešana,
                 inženierkomunikāciju atslēgšana un pilnīga objekta likvidācija.
               </p>
       
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+              {/* Карточки: планшеты = 1 колонка, десктопы = 2 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Dzīvojamās & saimniecības ēkas
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Nojaukšana līdz pamatiem, būvgružu izvešana, laukuma
-                    izlīdzināšana turpmākajiem darbiem.
+                    Nojaukšana līdz pamatiem, būvgružu izvešana, laukuma izlīdzināšana turpmākajiem darbiem.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+      
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Drošība & dokumentācija
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Saskaņojumi ar pašvaldību, darbu plāns un riska novērtējums,
-                    satiksmes organizācija.
+                    Saskaņojumi ar pašvaldību, darbu plāns un riska novērtējums, satiksmes organizācija.
                   </p>
                 </div>
               </div>
@@ -147,28 +147,27 @@ const Pakalpojumi = () => {
               <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Ražošanas ēku demontāža
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
-                Specializējamies industriālo objektu demontāžā ar smago tehniku,
-                ievērojot augstus drošības standartus un vides prasības.
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Specializējamies industriālo objektu demontāžā ar smago tehniku, ievērojot augstus drošības
+                standartus un vides prasības.
               </p>
       
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Industriālie objekti
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Noliktavas, angāri, cehi — darba zonu nožogošana un
-                    koordinācija ar operatīvajiem dienestiem.
+                    Noliktavas, angāri, cehi — darba zonu nožogošana un koordinācija ar operatīvajiem dienestiem.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+      
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Utilizācija & šķirošana
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Metāla lūžņu realizācija, bīstamo atkritumu nodošana, pilnas
-                    atskaites.
+                    Metāla lūžņu realizācija, bīstamo atkritumu nodošana, pilnas atskaites.
                   </p>
                 </div>
               </div>
@@ -196,32 +195,32 @@ const Pakalpojumi = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
+      
             <div>
               <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Zemes darbi
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
-                Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju
-                rakšana inženierkomunikācijām, drenāžas risinājumi.
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Pilns spektrs: pamatu rakšana, grunts maiņa, planēšana, tranšeju rakšana
+                inženierkomunikācijām, drenāžas risinājumi.
               </p>
       
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Pamati & planēšana
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Pamatu bedres, laukumu sagatavošana, precīza līmeņošana ar
-                    lāzera kontroli.
+                    Pamatu bedres, laukumu sagatavošana, precīza līmeņošana ar lāzera kontroli.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+      
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Drenāža & komunikācijas
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Drenāžas sistēmas, ūdens novade, tranšejas elektrībai,
-                    ūdenim un kanalizācijai.
+                    Drenāžas sistēmas, ūdens novade, tranšejas elektrībai, ūdenim un kanalizācijai.
                   </p>
                 </div>
               </div>
@@ -238,28 +237,27 @@ const Pakalpojumi = () => {
               <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
                 Labiekārtošana
               </h2>
-              <p className="font-sans text-foreground text-base leading-relaxed mb-6 break-words hyphens-auto">
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
                 Ceļi un laukumi, segumu ieklāšana, apzaļumošana un funkcionāls
                 teritorijas dizains privātām un komerciālām vajadzībām.
               </p>
       
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Celiņi & segumi
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Bruģis, šķembas, asfaltbetons; apmales, līmeņi un
-                    ūdensnoteces.
+                    Bruģis, šķembas, asfaltbetons; apmales, līmeņi un ūdensnoteces.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-card shadow p-6">
-                  <h3 className="font-mono font-bold text-lg mb-2">
+      
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
                     Apzaļumošana & dizains
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
-                    Zālieni, stādījumi, apgaismojums, mazo arhitektūras formu
-                    integrācija.
+                    Zālieni, stādījumi, apgaismojums, mazo arhitektūras formu integrācija.
                   </p>
                 </div>
               </div>
