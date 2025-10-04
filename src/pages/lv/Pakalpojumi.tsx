@@ -347,9 +347,7 @@ const Pakalpojumi = () => {
 
               {/* действия */}
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="/lv/sadarbiba-un-kontakti#forma" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-sans font-bold">
-                  Sazināties ar speciālistu <ArrowRight className="w-5 h-5" />
-                </a>
+                
                 <a href="tel:+37100000000" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Phone className="w-5 h-5" />
                   +371 00 000 000
