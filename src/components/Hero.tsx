@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
+import heroStrip from "@/assets/hero-strip.svg";
 
 const Hero = () => {
   return (
@@ -42,20 +43,17 @@ const Hero = () => {
       />
 
       {/* === MOBILE: горизонтальная «полоска с заусенцем» поверх картинки === */}
-      <div
-        className="md:hidden relative z-10 -mt-6 h-[56px] w-full"
-        style={{
-          background: "var(--gradient-hero)",
-          // заусенец сверху по центру:
-          clipPath:
-            "polygon(0 55%, 42% 55%, 50% 15%, 58% 55%, 100% 55%, 100% 100%, 0 100%)",
-        }}
+      <img
+        src={heroStrip}
+        alt=""
+        className="md:hidden relative z-10 -mt-8 w-full"
+        style={{ transform: "scaleY(-1)" }}
       />
 
       {/* === Контент (desktop слева; mobile — закрашенный блок) === */}
       <div className="relative z-10">
         {/* Mobile: под полоской отдельный закрашенный блок тем же градиентом */}
-        <div className="md:hidden bg-gradient-hero">
+        <div className="md:hidden bg-gradient-hero -mt-px">
           <div className="container mx-auto px-4 py-8">
             <p className="font-sans text-white text-base leading-relaxed mb-6">
               Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
