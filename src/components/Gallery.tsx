@@ -4,25 +4,25 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: "/assets/pirms.webp",
+      url: "@/assets/pirms.webp",
       alt: "Demontāžas darbi pirms",
       label: "Pirms",
     },
     {
       id: 2,
-      url: "/assets/pec.webp",
+      url: "@/assets/pec.webp",
       alt: "Demontāžas darbi pēc",
       label: "Pēc",
     },
     {
       id: 3,
-      url: "/assets/zemes-darbi.webp",
+      url: "@/assets/zemes-darbi.webp",
       alt: "Zemes darbi",
       label: "Zemes darbi",
     },
     {
       id: 4,
-      url: "/assets/industrialie-objekti.webp",
+      url: "@/assets/industrialie-objekti.webp",
       alt: "Ražošanas ēku demontāža",
       label: "Industriālie objekti",
     },
@@ -43,7 +43,7 @@ const Gallery = () => {
         <div className="mb-12 animate-fade-in">
           <div className="relative w-full aspect-video bg-muted border border-border overflow-hidden group">
             <img
-              src="/images/video-preview-demolition-process.jpg"
+              src="@/assets/demontazas-procesa-video.webp"
               alt="Video preview"
               className="w-full h-full object-cover"
             />
