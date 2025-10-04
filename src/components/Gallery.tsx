@@ -4,25 +4,25 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
+      url: "/images/gallery-demolition-before.jpg",
       alt: "Demontāžas darbi pirms",
       label: "Pirms",
     },
     {
       id: 2,
-      url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      url: "/images/gallery-demolition-after.jpg",
       alt: "Demontāžas darbi pēc",
       label: "Pēc",
     },
     {
       id: 3,
-      url: "https://images.unsplash.com/photo-1590496793907-4453fce6ec3b?w=800&q=80",
+      url: "/images/gallery-earthworks.jpg",
       alt: "Zemes darbi",
       label: "Zemes darbi",
     },
     {
       id: 4,
-      url: "https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?w=800&q=80",
+      url: "/images/gallery-industrial-demolition.jpg",
       alt: "Ražošanas ēku demontāža",
       label: "Industriālie objekti",
     },
@@ -43,7 +43,7 @@ const Gallery = () => {
         <div className="mb-12 animate-fade-in">
           <div className="relative w-full aspect-video bg-muted border border-border overflow-hidden group">
             <img
-              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80"
+              src="/images/video-preview-demolition-process.jpg"
               alt="Video preview"
               className="w-full h-full object-cover"
             />

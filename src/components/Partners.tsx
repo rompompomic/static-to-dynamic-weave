@@ -1,12 +1,12 @@
 const Partners = () => {
   // Placeholder partner logos - replace with actual logos when available
   const partners = [
-    { id: 1, name: "Partner 1", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+1" },
-    { id: 2, name: "Partner 2", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+2" },
-    { id: 3, name: "Partner 3", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+3" },
-    { id: 4, name: "Partner 4", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+4" },
-    { id: 5, name: "Partner 5", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+5" },
-    { id: 6, name: "Partner 6", logo: "https://placehold.co/200x80/e5e5e5/666?text=Partner+6" },
+    { id: 1, name: "Partner 1", logo: "/images/partner-logo-construction-company-1.png" },
+    { id: 2, name: "Partner 2", logo: "/images/partner-logo-construction-company-2.png" },
+    { id: 3, name: "Partner 3", logo: "/images/partner-logo-industrial-company-1.png" },
+    { id: 4, name: "Partner 4", logo: "/images/partner-logo-industrial-company-2.png" },
+    { id: 5, name: "Partner 5", logo: "/images/partner-logo-engineering-company.png" },
+    { id: 6, name: "Partner 6", logo: "/images/partner-logo-equipment-supplier.png" },
   ];
 
   return (

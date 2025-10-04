@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import heroImage from "@/assets/hero-image.webp";
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full">
         <img
           className="w-full h-full object-cover opacity-40 md:opacity-100 md:w-[50%] lg:w-[685px] md:absolute md:right-0"
-          src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/image.png"
+          src={heroImage}
           alt="Construction site"
         />
       </div>

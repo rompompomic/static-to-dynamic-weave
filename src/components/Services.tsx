@@ -1,10 +1,15 @@
 import ServiceCard from "./ServiceCard";
+import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
+import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
+import zemesDarbi from "@/assets/zemes-darbi.webp";
+import labiekartosana from "@/assets/labiekartosana.webp";
+import buvgruzuIzvesana from "@/assets/buvgruzu-izvesana-un-utilizacija.webp";
 
 const Services = () => {
   const services = [
     {
       id: 1,
-      image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11.png",
+      image: buvjuUnEkuDemontaza,
       title: "Būvju un ēku demontāža",
       description:
         "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
@@ -13,7 +18,7 @@ const Services = () => {
     },
     {
       id: 2,
-      image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-1.png",
+      image: razosanasEkuDemontaza,
       title: "Ražošanas ēku demontāža",
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
@@ -22,7 +27,7 @@ const Services = () => {
     },
     {
       id: 3,
-      image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-2.png",
+      image: zemesDarbi,
       title: "Zemes darbi",
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
@@ -32,19 +37,16 @@ const Services = () => {
     },
     {
       id: 4,
-      image: "https://c.animaapp.com/mgb0i1n04Vr9F3/img/frame-11-3.png",
+      image: labiekartosana,
       title: "Labiekārtošana",
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
       height: "short" as const,
       variant: "default" as const,
     },
-    // ✅ Новая услуга — вывоз и утилизация строительных отходов
     {
       id: 5,
-      image:
-        // можно заменить на свой ассет; временно ставлю плейсхолдер с индустриальным кадром
-        "https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop",
+      image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
       description:
         "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām. Pēc darbiem nodrošinām tīru un drošu teritoriju.",
