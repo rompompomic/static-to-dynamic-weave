@@ -4,10 +4,11 @@ import heroImage from "@/assets/hero-image.webp";
 
 interface HeroProps {
   children?: React.ReactNode;
-  darkOverlay?: boolean; // 👈 новый пропс
+  /** "none" = без затемнения; "always" = всегда; "mobile" = только на мобилке */
+  overlayMode?: "none" | "always" | "mobile";
 }
 
-const Hero = ({ children, darkOverlay = false }: HeroProps) => {
+const Hero = ({ children, overlayMode = "none" }: HeroProps) => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE */}
@@ -21,11 +22,12 @@ const Hero = ({ children, darkOverlay = false }: HeroProps) => {
             md:h-full md:w-auto
           "
         />
-        {/* затемнение — только если darkOverlay = true */}
-        {darkOverlay && <div className="absolute inset-0 bg-black/50" />}
+        {/* затемнение: none / always / mobile */}
+        {overlayMode === "always" && <div className="absolute inset-0 bg-black/50" />}
+        {overlayMode === "mobile" && <div className="absolute inset-0 bg-black/50 md:hidden" />}
       </div>
 
-      {/* Правая декоративная полоса */}
+      {/* Правая декоративная полоса (как было) */}
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
@@ -46,9 +48,7 @@ const Hero = ({ children, darkOverlay = false }: HeroProps) => {
               sākotnējām idejām līdz gataviem projektiem.
             </p>
             <button className="inline-flex justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white items-center hover:bg-opacity-90 transition-all">
-              <span className="font-sans font-bold text-primary text-sm md:text-base">
-                Uzzināt vairāk
-              </span>
+              <span className="font-sans font-bold text-primary text-sm md:text-base">Uzzināt vairāk</span>
               <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
             </button>
           </div>
