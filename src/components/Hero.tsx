@@ -11,28 +11,15 @@ const Hero = () => {
           alt="Construction site"
           className="
             object-cover object-center
-            w-full h-auto
-            md:h-full md:w-auto
+            w-full h-auto            /* mobile: по ширине, без искажений */
+            md:h-full md:w-auto     /* desktop: высота секции, ширина авто */
           "
         />
         {/* затемнение только на мобилках */}
         <div className="absolute inset-0 bg-black/50 md:hidden" />
-
-        {/* Мобильная горизонтальная полоса с заусенцем сверху (над картинкой) */}
-        <div
-          className="md:hidden absolute left-0 right-0 -bottom-px h-14 z-20 pointer-events-none"
-          style={{
-            // тот же градиент, что у блока
-            background: "var(--gradient-hero)",
-            // форма: горизонтальная полоска с «пиком» вверх по центру
-            //         ┌─ /\ ─┐
-            clipPath:
-              "polygon(0% 36%, 47% 36%, 50% 0%, 53% 36%, 100% 36%, 100% 100%, 0% 100%)",
-          }}
-        />
       </div>
 
-      {/* Правая чёрная полоска (десктоп как было) */}
+      {/* Правая вертикальная полоска (как было на десктопе) */}
       <img
         src="https://c.animaapp.com/mgb0i1n04Vr9F3/img/vector-3.svg"
         alt=""
@@ -41,7 +28,21 @@ const Hero = () => {
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
-        <div className="max-w-full md:max-w-[430px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
+        {/* Мобильная горизонтальная «полоска с заусенцем», ПОВЕРХ И СРАЗУ НАД h1 */}
+        <div
+          className="md:hidden absolute left-0 right-0 z-20
+                     -mt-6 /* поднимаем полоску над началом контента */
+                     h-12 pointer-events-none"
+          style={{
+            background: "var(--gradient-hero)",
+
+            /* форма: горизонтальная полоса с «пиком» вверх по центру */
+            clipPath:
+              "polygon(0% 60%, 46% 60%, 50% 0%, 54% 60%, 100% 60%, 100% 100%, 0% 100%)",
+          }}
+        />
+
+        <div className="relative max-w-full md:max-w-[430px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Jūsu uzticams partneris būvniecībā
           </h1>
@@ -62,20 +63,12 @@ const Hero = () => {
           <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/20 w-full">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[80px]">
               <div className="flex flex-col gap-1">
-                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-                  120+
-                </span>
-                <span className="font-sans text-white text-sm md:text-base leading-normal">
-                  Pabeigti projekti
-                </span>
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-                  32
-                </span>
-                <span className="font-sans text-white text-sm md:text-base leading-normal">
-                  Profesionāļi komandā
-                </span>
+                <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
+                <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
               </div>
             </div>
           </div>
