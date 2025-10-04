@@ -4,9 +4,8 @@ const Footer = () => {
   return (
     <footer className="w-full bg-card border-t border-border">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12">
-        {/* 3 колонки на lg */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 items-start">
-          
+        {/* 3 колонки уже с md, чтобы на планшете ничего не переносилось */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
           {/* Company Info — слева */}
           <div className="space-y-4">
             <img
@@ -19,55 +18,63 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigācija — центр на десктопе, слева на мобилке */}
+          {/* Navigācija — по левому краю, без иконок, без переносов */}
           <div className="space-y-4">
-            <h3 className="font-sans font-bold text-foreground text-base text-left lg:text-center">
+            <h3 className="font-sans font-bold text-foreground text-base">
               Navigācija
             </h3>
-            <div className="flex flex-col gap-3 text-muted-foreground lg:items-center">
-              <a
-                href="#"
-                className="font-sans text-sm hover:text-primary transition-colors"
-              >
-                Galvenā
-              </a>
-              <a
-                href="#"
-                className="font-sans text-sm hover:text-primary transition-colors"
-              >
-                Pakalpojumi
-              </a>
-              <a
-                href="#"
-                className="font-sans text-sm hover:text-primary transition-colors"
-              >
-                Sadarbība un kontakti
-              </a>
-            </div>
+            <nav>
+              <ul className="flex flex-col gap-3">
+                <li>
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+                  >
+                    Galvenā
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+                  >
+                    Pakalpojumi
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+                  >
+                    Sadarbība un kontakti
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
-          {/* Kontaktinformācija — справа на десктопе */}
+          {/* Kontaktinformācija — тоже по левому краю, без переносов строк */}
           <div className="space-y-4">
-            <h3 className="font-sans font-bold text-foreground text-base text-left lg:text-right">
+            <h3 className="font-sans font-bold text-foreground text-base">
               Kontaktinformācija
             </h3>
-            <div className="flex flex-col gap-3 text-muted-foreground lg:items-end">
+            <div className="flex flex-col gap-3 text-muted-foreground">
               <a
                 href="tel:+37120000000"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
+                className="flex items-center gap-2 hover:text-primary transition-colors whitespace-nowrap"
               >
                 <Phone className="w-4 h-4" />
                 <span className="font-sans text-sm">+371 2000 0000</span>
               </a>
               <a
                 href="mailto:info@demco.lv"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
+                className="flex items-center gap-2 hover:text-primary transition-colors whitespace-nowrap"
               >
                 <Mail className="w-4 h-4" />
                 <span className="font-sans text-sm">info@demco.lv</span>
               </a>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <div className="flex items-center gap-2 whitespace-nowrap">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
                 <span className="font-sans text-sm">Rīga, Latvija</span>
               </div>
             </div>
@@ -77,7 +84,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-sans text-muted-foreground text-sm text-center md:text-left">
+            <p className="font-sans text-muted-foreground text-sm text-center md:text-left whitespace-nowrap">
               © 2025 SIA DEMCO · Privātuma politika
             </p>
           </div>
