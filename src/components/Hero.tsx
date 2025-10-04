@@ -74,7 +74,7 @@ const Hero = () => {
         <div className="hidden md:block">
           <div className="container mx-auto px-4 md:px-8 lg:px-[75px] md:min-h-[635px] md:flex md:items-center">
             {/* Текстовый блок в левой части, слева от картинки */}
-            <div className="w-full max-w-sm md:max-w-md lg:max-w-lg">
+            <div className="w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl">
               <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
               </h1>
