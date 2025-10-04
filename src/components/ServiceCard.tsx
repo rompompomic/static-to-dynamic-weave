@@ -17,25 +17,21 @@ const ServiceCard = ({
   height = "short",
   showCursor = false,
 }: ServiceCardProps) => {
-  // ❄️ Уменьшил высоту фото
-  const imageHeightClass =
+  // Высота для карточек
+  const cardHeightClass =
     height === "tall"
-      ? "h-[300px] md:h-[340px] lg:h-[400px]" // стало меньше
-      : "h-[160px] md:h-[180px] lg:h-[200px]"; // short фото тоже меньше
-
-  // ❄️ Белый блок оставляем фиксированным, чтобы все карточки были одинаковые по высоте
-  const contentHeightClass =
-    height === "tall"
-      ? "h-[230px] md:h-[240px] lg:h-[249px]"
-      : "h-[190px] md:h-[210px] lg:h-[210px]";
+      ? "lg:h-[849px] md:h-[680px] h-[680px]" // tall = ровно как две short + gap
+      : "lg:h-[410px] md:h-[340px] h-[340px]"; // short одинаковые
 
   const buttonClass =
     variant === "accent" ? "bg-accent text-white" : "bg-muted text-primary";
 
   return (
-    <article className="relative flex flex-col w-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)]">
-      {/* Фото меньше */}
-      <div className={`relative w-full ${imageHeightClass} overflow-hidden`}>
+    <article
+      className={`relative flex flex-col w-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)] ${cardHeightClass}`}
+    >
+      {/* Фото занимает верхнюю часть */}
+      <div className="relative w-full flex-1 overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -45,8 +41,8 @@ const ServiceCard = ({
         {showCursor && <></>}
       </div>
 
-      {/* Белый блок одинаковой высоты */}
-      <div className={`flex flex-col gap-4 p-4 md:p-6 ${contentHeightClass}`}>
+      {/* Белый блок снизу фиксированной высоты */}
+      <div className="flex flex-col gap-4 p-4 md:p-6 bg-card">
         <div className="flex flex-col gap-1.5 flex-1 min-h-0">
           <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal">
             {title}
