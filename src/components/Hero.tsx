@@ -72,14 +72,12 @@ const Hero = () => {
 
         {/* Desktop / Tablet */}
         <div className="hidden md:block">
-          <div
-            className="
+          <div className="
               w-full px-8 lg:px-[75px]
               md:min-h-[635px] md:flex md:items-center
-              md:pr-[calc(52%+131px)]
-            "
-          >
-            <div className="max-w-[800px] mx-auto">
+            ">
+            {/* Текстовый блок занимает всё пространство между левым краем и картинкой */}
+            <div className="flex-1 mr-[calc(52%+131px)]">
               <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                 Jūsu uzticams partneris būvniecībā
               </h1>
@@ -89,17 +87,17 @@ const Hero = () => {
                 gataviem projektiem.
               </p>
               <button className="
-                mt-8 group relative inline-flex items-center justify-center gap-2.5
-                h-11 px-6 md:px-8 rounded-lg
-                bg-white text-primary font-sans font-bold
-                shadow-sm hover:shadow-md transition ease-out duration-200
-                hover:scale-[1.02] active:scale-[0.97]
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-                overflow-hidden
-                before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-                before:from-transparent before:via-white/20 before:to-transparent
-                group-hover:before:translate-x-full before:transition-transform before:duration-700
-              ">
+                  mt-8 group relative inline-flex items-center justify-center gap-2.5
+                  h-11 px-6 md:px-8 rounded-lg
+                  bg-white text-primary font-sans font-bold
+                  shadow-sm hover:shadow-md transition ease-out duration-200
+                  hover:scale-[1.02] active:scale-[0.97]
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                  overflow-hidden
+                  before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                  before:from-transparent before:via-white/20 before:to-transparent
+                  group-hover:before:translate-x-full before:transition-transform before:duration-700
+                ">
                 <span className="text-sm md:text-base">Uzzināt vairāk</span>
                 <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
               </button>
