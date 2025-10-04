@@ -6,9 +6,34 @@ interface HeroProps {
   children?: React.ReactNode;
   /** "none" = без затемнения; "always" = всегда; "mobile" = только на мобилке */
   overlayMode?: "none" | "always" | "mobile";
+  /** Показать полосу со статистикой под контентом */
+  withStats?: boolean;
 }
 
-const Hero = ({ children, overlayMode = "mobile" }: HeroProps) => {
+const Stats = () => (
+  <div className="mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/20 max-w-full md:max-w-[634px]">
+    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
+      <div className="flex flex-col gap-1">
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
+          120+
+        </span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">
+          Pabeigti projekti
+        </span>
+      </div>
+      <div className="flex flex-col gap-1">
+        <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
+          32
+        </span>
+        <span className="font-sans text-white text-sm md:text-base leading-normal">
+          Profesionāļi komandā
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+const Hero = ({ children, overlayMode = "mobile", withStats = true }: HeroProps) => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
       {/* IMAGE */}
@@ -16,19 +41,10 @@ const Hero = ({ children, overlayMode = "mobile" }: HeroProps) => {
         <img
           src={heroImage}
           alt="Construction site"
-          className="
-            object-cover object-center
-            w-full h-auto
-            md:h-full md:w-auto
-          "
+          className="object-cover object-center w-full h-auto md:h-full md:w-auto"
         />
-        {/* затемнение: none / always / mobile */}
-        {overlayMode === "always" && (
-          <div className="absolute inset-0 bg-black/50" />
-        )}
-        {overlayMode === "mobile" && (
-          <div className="absolute inset-0 bg-black/50 md:hidden" />
-        )}
+        {overlayMode === "always" && <div className="absolute inset-0 bg-black/50" />}
+        {overlayMode === "mobile" && <div className="absolute inset-0 bg-black/50 md:hidden" />}
       </div>
 
       {/* Правая декоративная полоса */}
@@ -41,24 +57,27 @@ const Hero = ({ children, overlayMode = "mobile" }: HeroProps) => {
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
         {children ? (
-          <div className="max-w-full md:max-w-[600px]">{children}</div>
+          <>
+            <div className="max-w-full md:max-w-[600px]">{children}</div>
+            {withStats && <Stats />}
+          </>
         ) : (
-          <div className="max-w-full md:max-w-[430px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
-            <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
-              Jūsu uzticams partneris būvniecībā
-            </h1>
-            <p className="font-sans font-normal text-white text-base md:text-lg leading-relaxed">
-              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
-              kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
-              gataviem projektiem.
-            </p>
-            <button className="inline-flex justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white items-center hover:bg-opacity-90 transition-all">
-              <span className="font-sans font-bold text-primary text-sm md:text-base">
-                Uzzināt vairāk
-              </span>
-              <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-            </button>
-          </div>
+          <>
+            <div className="max-w-full md:max-w-[430px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
+              <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
+                Jūsu uzticams partneris būvniecībā
+              </h1>
+              <p className="font-sans font-normal text-white text-base md:text-lg leading-relaxed">
+                Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu – no
+                sākotnējām idejām līdz gataviem projektiem.
+              </p>
+              <button className="inline-flex justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white items-center hover:bg-opacity-90 transition-all">
+                <span className="font-sans font-bold text-primary text-sm md:text-base">Uzzināt vairāk</span>
+                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+              </button>
+            </div>
+            {withStats && <Stats />}
+          </>
         )}
       </div>
     </section>
