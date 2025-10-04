@@ -17,48 +17,33 @@ const ServiceCard = ({
   height = "short",
   showCursor = false,
 }: ServiceCardProps) => {
-  /**
-   * Высоты карточек:
-   * - short: одинаковая фиксированная высота (картинка крупнее и стабильная)
-   * - tall: равна двум short + gap (и на мобилке, и на десктопе)
-   *
-   * Desktop (lg):
-   *   short = 370px
-   *   gap   = 29px
-   *   tall  = 370*2 + 29 = 769px
-   *
-   * Mobile:
-   *   short = 320px
-   *   gap   = 24px (grid gap-6)
-   *   tall  = 320*2 + 24 = 664px
-   */
-  const heightClass =
+  // Фиксируем высоту именно ДЛЯ ИЗОБРАЖЕНИЯ, чтобы у всех short карточек она была одинаковой.
+  // Для tall — большее изображение.
+  const imageHeightClass =
     height === "tall"
-      ? "h-[664px] lg:h-[769px]"
-      : "h-[320px] lg:h-[370px]";
+      ? "h-[360px] md:h-[420px] lg:h-[520px]"
+      : "h-[210px] md:h-[230px] lg:h-[240px]"; // одинаковая высота фото у всех short
 
+  // Общая высота карточки нам больше не нужна (иначе снова будет «съедать» картинку).
+  // Высота будет естественно складываться из блока изображения + контента.
   const buttonClass =
-    variant === "accent"
-      ? "bg-accent text-white"
-      : "bg-muted text-primary";
+    variant === "accent" ? "bg-accent text-white" : "bg-muted text-primary";
 
   return (
-    <div
-      className={`relative flex flex-col w-full ${heightClass} items-start justify-end overflow-hidden group animate-fade-in rounded`}
-    >
-      {/* Фото как реальный <img>, чтобы масштаб был ровнее и крупнее */}
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-      />
+    <article className="relative flex flex-col w-full overflow-hidden rounded animate-fade-in bg-card shadow-[0_0_0_1px_var(--border)]">
+      {/* Блок изображения с фиксированной высотой */}
+      <div className={`relative w-full ${imageHeightClass} overflow-hidden`}>
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        {showCursor && <></>}
+      </div>
 
-      {/* Если когда-то понадобится курсор/оверлей — не рендерим "true" в DOM */}
-      {showCursor && <></>}
-
-      {/* Контентная карточка */}
-      <div className="relative flex flex-col items-start gap-4 p-4 md:p-6 w-full bg-card">
+      {/* Контент */}
+      <div className="flex flex-col items-start gap-4 p-4 md:p-6">
         <div className="flex flex-col items-start gap-1.5">
           <h3 className="font-sans font-bold text-foreground text-lg md:text-[21px] leading-normal">
             {title}
@@ -77,7 +62,7 @@ const ServiceCard = ({
           <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
         </button>
       </div>
-    </div>
+    </article>
   );
 };
 
