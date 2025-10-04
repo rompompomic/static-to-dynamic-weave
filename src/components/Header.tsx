@@ -67,12 +67,22 @@ const Header = () => {
             
             <a 
               href="/lv/pakalpojumi"
-              className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity whitespace-nowrap"
+              className="
+                group relative inline-flex items-center justify-center gap-2.5
+                h-11 px-6 md:px-8 rounded-lg
+                bg-gradient-hero text-white font-sans font-bold
+                shadow-sm hover:shadow-md transition ease-out duration-200
+                hover:scale-[1.02] active:scale-[0.97]
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                overflow-hidden
+                before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                before:from-transparent before:via-white/20 before:to-transparent
+                group-hover:before:translate-x-full before:transition-transform before:duration-700
+                whitespace-nowrap
+              "
             >
-              <span className="font-sans font-bold text-white text-sm md:text-base">
-                Skatīt pakalpojumus
-              </span>
-              <ArrowUpRight className="w-5 h-5 text-white" />
+              <span className="text-sm md:text-base">Skatīt pakalpojumus</span>
+              <ArrowUpRight className="w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
             </a>
           </div>
 
