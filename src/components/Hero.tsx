@@ -3,9 +3,9 @@ import heroImage from "@/assets/hero-image.webp";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
-      {/* IMAGE */}
-      <div className="absolute inset-0 w-full h-full z-0">
+    <section className="relative w-full min-h-[520px] md:min-h-[635px] bg-gradient-hero overflow-hidden">
+      {/* IMAGE (z-0) */}
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Construction site"
@@ -13,32 +13,32 @@ const Hero = () => {
         />
       </div>
 
-      {/* DECOR SHAPES (responsive) */}
-      {/* Left teal wedge */}
+      {/* SHAPES ABOVE IMAGE (z-20) */}
+      {/* Left teal wedge with sharp 45° cuts */}
       <div
-        className="hidden md:block absolute inset-y-0 left-0 z-[1] bg-accent"
-        // ширина клина растёт с брейкпоинтом
+        className="hidden md:block absolute inset-y-0 left-0 z-20 bg-accent pointer-events-none"
         style={{
-          width: "clamp(90px, 10vw, 200px)",
+          // ширина клина
+          width: "clamp(110px, 12vw, 220px)",
+          // острые углы: прямоугольник с диагональными срезами
           clipPath:
-            // форма: <| - с «срезом» сверху и снизу
-            "polygon(0% 0%, 85% 0%, 65% 20%, 65% 80%, 85% 100%, 0% 100%)",
+            "polygon(0% 0%, 100% 0%, 100% 26%, 78% 40%, 78% 60%, 100% 74%, 100% 100%, 0% 100%, 0% 74%, 22% 60%, 22% 40%, 0% 26%)",
         }}
       />
 
-      {/* Right black notch over the image */}
+      {/* Right black notch with deep chevron (как на макете) */}
       <div
-        className="hidden md:block absolute inset-y-0 right-0 z-[1] bg-black"
+        className="hidden md:block absolute inset-y-0 right-0 z-20 bg-black pointer-events-none"
         style={{
-          width: "clamp(70px, 7vw, 120px)",
-          // форма с выемкой посередине
+          width: "clamp(90px, 9vw, 140px)",
+          // форма «вреза» внутрь: острые углы
           clipPath:
-            "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 70%, 20% 60%, 20% 40%, 0% 30%)",
+            "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 68%, 28% 50%, 0% 32%)",
         }}
       />
 
-      {/* CONTENT */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
+      {/* CONTENT (над фигурами) */}
+      <div className="relative z-30 container mx-auto px-4 md:px-8 lg:px-[75px] py-12 md:py-20">
         <div className="max-w-full md:max-w-[630px] flex flex-col items-start gap-6 md:gap-8 animate-fade-in">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Jūsu uzticams partneris būvniecībā
@@ -61,21 +61,12 @@ const Hero = () => {
         <div className="mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/20 max-w-full md:max-w-[634px]">
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-[120px]">
             <div className="flex flex-col gap-1">
-              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-                120+
-              </span>
-              <span className="font-sans font-normal text-white text-sm md:text-base leading-normal">
-                Pabeigti projekti
-              </span>
+              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">120+</span>
+              <span className="font-sans text-white text-sm md:text-base leading-normal">Pabeigti projekti</span>
             </div>
-
             <div className="flex flex-col gap-1">
-              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">
-                32
-              </span>
-              <span className="font-sans font-normal text-white text-sm md:text-base leading-normal">
-                Profesionāļi komandā
-              </span>
+              <span className="font-mono font-bold text-white text-4xl md:text-[50px] leading-normal">32</span>
+              <span className="font-sans text-white text-sm md:text-base leading-normal">Profesionāļi komandā</span>
             </div>
           </div>
         </div>
