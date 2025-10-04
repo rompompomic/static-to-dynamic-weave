@@ -7,6 +7,7 @@ interface ServiceCardProps {
   variant?: "default" | "accent";
   height?: "tall" | "short";
   showCursor?: boolean;
+  href?: string; // добавим пропс
 }
 
 const ServiceCard = ({
@@ -16,8 +17,8 @@ const ServiceCard = ({
   variant = "default",
   height = "short",
   showCursor = false,
+  href = "/lv/pakalpojumi", // дефолтная ссылка
 }: ServiceCardProps) => {
-  // Жёсткие размеры под сетку (только на lg+)
   const CARD_TOTAL_CLASS =
     height === "tall" ? "lg:h-[849px]" : "lg:h-[410px]";
 
@@ -31,10 +32,9 @@ const ServiceCard = ({
 
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
-  // Стили кнопки — компактная по высоте
-  const buttonBase =
+  const baseButton =
     "mt-auto group relative flex items-center justify-between w-full " +
-    "h-10 md:h-11 px-4 md:px-5 rounded-lg " + // фиксированная меньшая высота
+    "h-10 md:h-11 px-4 md:px-5 rounded-lg " +
     "shadow-sm hover:shadow-md transition ease-out duration-200 " +
     "hover:scale-[1.02] active:scale-[0.97] " +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40 overflow-hidden";
@@ -46,8 +46,8 @@ const ServiceCard = ({
 
   const buttonClass =
     variant === "accent"
-      ? `bg-accent text-white ${buttonBase} ${shimmer}`
-      : `bg-muted text-primary ${buttonBase} ${shimmer}`;
+      ? `bg-accent text-white ${baseButton} ${shimmer}`
+      : `bg-muted text-primary ${baseButton} ${shimmer}`;
 
   return (
     <article
@@ -83,13 +83,13 @@ const ServiceCard = ({
           </p>
         </div>
 
-        {/* Кнопка */}
-        <button className={buttonClass}>
+        {/* Ссылка-кнопка */}
+        <a href={href} className={buttonClass}>
           <span className="font-sans font-bold text-[13px] md:text-sm leading-none">
             Uzzināt vairāk
           </span>
           <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-        </button>
+        </a>
       </div>
     </article>
   );
