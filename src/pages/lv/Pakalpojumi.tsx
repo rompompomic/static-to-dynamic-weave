@@ -35,17 +35,17 @@ const Pakalpojumi = () => {
       <Header />
 
       {/* ==== HERO с интро и пиллами внутри ==== */}
-      <Hero>
+      <Hero overlayMode="mobile">
         <div className="flex flex-col items-start gap-6 md:gap-8 animate-fade-in max-w-full md:max-w-[600px]">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Pakalpojumi
           </h1>
-
+      
           <p className="font-sans text-white text-base md:text-lg leading-relaxed">
             Mūsu uzņēmums piedāvā profesionālus demontāžas un būvniecības pakalpojumus dažāda mēroga projektiem.
           </p>
-
-          {/* Quick Navigation Pills (всегда с фоном) */}
+      
+          {/* Quick Navigation Pills */}
           <div className="flex flex-wrap gap-3 pt-2">
             <button
               onClick={() => scrollToSection("eku-demontaza")}
