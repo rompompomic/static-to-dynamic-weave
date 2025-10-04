@@ -16,21 +16,25 @@ const Hero = () => {
         />
       </div>
 
-      {/* Mobile */}
-      <div className="md:hidden relative z-0">
+      {/* Mobile (full-bleed) */}
+      <div className="md:hidden relative z-0 -mx-4">
         <img
-          src={heroImage}
+          src={heroImage}                 // или heroStrip, если нужно
           alt="Construction site"
-          className="h-[300px] w-[600px] -translate-x-[0%] object-cover object-center"
+          className="
+            max-w-none                    /* не ограничивать шириной родителя */
+            w-[130vw] -translate-x-[15vw] /* шире вьюпорта + смещение влево */
+            h-[300px] object-cover object-center
+          "
         />
         {/* затемнение только на мобилке */}
         <div className="absolute inset-0 bg-black/45" />
-        {/* Заголовок */}
-        <div className="absolute inset-0 flex items-center z-10">
-          <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-4">
+      
+        {/* Заголовок поверх фото */}
+        <div className="absolute inset-0 flex items-center z-10 px-4">
+          <h1 className="font-mono font-bold text-white text-[28px] leading-tight">
             Jūsu uzticams
-            <br />
-            partneris būvniecībā
+            <br />partneris būvniecībā
           </h1>
         </div>
       </div>
