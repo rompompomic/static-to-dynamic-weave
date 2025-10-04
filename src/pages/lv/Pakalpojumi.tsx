@@ -35,7 +35,7 @@ const Pakalpojumi = () => {
       <Header />
 
       {/* ==== HERO с интро и пиллами внутри ==== */}
-      <Hero darkOverlay>
+      <Hero>
         <div className="flex flex-col items-start gap-6 md:gap-8 animate-fade-in max-w-full md:max-w-[600px]">
           <h1 className="font-mono font-bold text-white text-3xl md:text-4xl lg:text-[50px] leading-tight md:leading-normal">
             Pakalpojumi
