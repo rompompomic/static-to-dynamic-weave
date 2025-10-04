@@ -27,7 +27,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
                     Galvenā
@@ -35,7 +35,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/lv/pakalpojumi"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
                     Pakalpojumi
@@ -43,7 +43,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/lv/sadarbiba-un-kontakti"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
                     Sadarbība un kontakti
