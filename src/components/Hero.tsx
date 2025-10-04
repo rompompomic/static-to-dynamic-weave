@@ -17,19 +17,6 @@ const Hero = () => {
         />
         {/* затемнение только на мобилках */}
         <div className="absolute inset-0 bg-black/50 md:hidden" />
-
-        {/* Мобильная горизонтальная полоса с заусенцем сверху (над картинкой) */}
-        <div
-          className="md:hidden absolute left-0 right-0 -bottom-px h-14 z-20 pointer-events-none"
-          style={{
-            // тот же градиент, что у блока
-            background: "var(--gradient-hero)",
-            // форма: горизонтальная полоска с «пиком» вверх по центру
-            //         ┌─ /\ ─┐
-            clipPath:
-              "polygon(0% 36%, 47% 36%, 50% 0%, 53% 36%, 100% 36%, 100% 100%, 0% 100%)",
-          }}
-        />
       </div>
 
       {/* Правая чёрная полоска (десктоп как было) */}
