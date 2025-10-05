@@ -61,17 +61,15 @@ const SadarbibaUnKontakti = () => {
                 className="
                   container mx-auto px-8 lg:px-[75px]
                   md:min-h-[635px] md:flex md:items-center
-                  md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+                  md:pr-[calc(50%+131px)]  /* реальный запас под фото */
                 "
               >
-                {/* шире контейнер текста */}
-                <div className="max-w-none md:max-w-[900px] lg:max-w-[1040px]">
-                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight break-words">
+                {/* шире текстовый блок */}
+                <div className="flex flex-col max-w-none w-full md:w-[60%] lg:w-[58%]">
+                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                     Sadarbība un kontakti
                   </h1>
-            
-                  {/* шире описание */}
-                  <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-none md:max-w-[820px] lg:max-w-[920px]">
+                  <p className="mt-6 font-sans text-white text-lg leading-relaxed">
                     Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                   </p>
                 </div>
