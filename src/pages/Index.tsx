@@ -10,7 +10,7 @@ import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
   return (
-    <main className="bg-background overflow-x-hidden w-full min-h-screen">
+    <main className="bg-background overflow-x-hidden w-full min-h-screen pt-[72px] md:pt-[80px]">
       <Header />
       <Hero />
       <AboutUs />
