@@ -57,19 +57,16 @@ const SadarbibaUnKontakti = () => {
         
             {/* Desktop / Tablet */}
             <div className="hidden md:block">
-              <div
-                className="
+              <div className="
                   container mx-auto px-8 lg:px-[75px]
                   md:min-h-[635px] md:flex md:items-center
-                  md:pr-[calc(50%+131px)]  /* реальный запас под фото */
-                "
-              >
-                {/* шире текстовый блок */}
-                <div className="flex flex-col max-w-none w-full md:w-[60%] lg:w-[58%]">
+                  md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+                ">
+                <div className="w-[800px]">
                   <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                     Sadarbība un kontakti
                   </h1>
-                  <p className="mt-6 font-sans text-white text-lg leading-relaxed">
+                  <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
                     Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                   </p>
                 </div>
