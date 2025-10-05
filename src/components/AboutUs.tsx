@@ -7,25 +7,21 @@ const AboutUs = () => {
       icon: Clock,
       title: "Ātrums",
       description: "Efektīva darbu izpilde",
-      size: "small",
     },
     {
       icon: Shield,
       title: "Drošība",
       description: "Atbilstība standartiem",
-      size: "small",
     },
     {
       icon: Users,
       title: "Profesionāla komanda",
       description: "Pieredzējuši speciālisti",
-      size: "small",
     },
     {
       icon: "tractor",
       title: "Mūsdienīga tehnika",
       description: "Jaunākais aprīkojums",
-      size: "large",
     },
   ];
 
@@ -66,10 +62,10 @@ const AboutUs = () => {
               key={index}
               className="flex flex-col items-start gap-4 p-6 bg-background border border-border hover:border-primary/50 transition-colors"
             >
-              <div className="p-3 bg-primary/10 flex items-center justify-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-primary/10 rounded-md">
                 {advantage.icon === "tractor" ? (
                   <div
-                    className="w-14 h-14 md:w-16 md:h-16 bg-primary"
+                    className="w-10 h-10 md:w-14 md:h-14 bg-primary"
                     style={{
                       WebkitMaskImage: `url(${tractor})`,
                       maskImage: `url(${tractor})`,
@@ -82,13 +78,7 @@ const AboutUs = () => {
                     }}
                   />
                 ) : (
-                  <advantage.icon
-                    className={`${
-                      advantage.size === "small"
-                        ? "w-6 h-6 md:w-8 md:h-8"
-                        : "w-8 h-8 md:w-10 md:h-10"
-                    } text-primary`}
-                  />
+                  <advantage.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 )}
               </div>
 
