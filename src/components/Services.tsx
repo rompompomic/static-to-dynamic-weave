@@ -1,6 +1,4 @@
 import ServiceCard from "./ServiceCard";
-import { ArrowUpRight } from "lucide-react";
-
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
@@ -23,7 +21,6 @@ const Services = () => {
       title: "Ražošanas ēku demontāža",
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
-      height: "short" as const,
     },
     {
       id: 3,
@@ -31,7 +28,6 @@ const Services = () => {
       title: "Zemes darbi",
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
-      height: "short" as const,
     },
     {
       id: 4,
@@ -39,7 +35,6 @@ const Services = () => {
       title: "Labiekārtošana",
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
-      height: "short" as const,
     },
     {
       id: 5,
@@ -47,7 +42,6 @@ const Services = () => {
       title: "Būvgružu izvešana un utilizācija",
       description:
         "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām.",
-      height: "short" as const,
     },
   ];
 
@@ -57,53 +51,29 @@ const Services = () => {
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8">
           Mūsu pakalpojumi
         </h2>
-
-        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl">
-          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo
-          ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
+        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-10 max-w-4xl">
+          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        {/* === Сетка карточек === */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
+        <div className="hidden lg:grid grid-cols-3 gap-[25px]">
           <div className="flex flex-col">
-            <ServiceCard {...services[0]} hideButton />
+            <ServiceCard {...services[0]} />
           </div>
-          <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[1]} hideButton />
-            <ServiceCard {...services[2]} hideButton />
+          <div className="flex flex-col gap-[25px]">
+            <ServiceCard {...services[1]} />
+            <ServiceCard {...services[2]} />
           </div>
-          <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[4]} hideButton />
-            <ServiceCard {...services[3]} hideButton />
+          <div className="flex flex-col gap-[25px]">
+            <ServiceCard {...services[3]} />
+            <ServiceCard {...services[4]} />
           </div>
         </div>
 
-        {/* === Мобильная сетка === */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 md:gap-8">
+        {/* Mobile layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
           {services.map((s) => (
-            <ServiceCard key={s.id} {...s} hideButton />
+            <ServiceCard key={s.id} {...s} />
           ))}
-        </div>
-
-        {/* === ОДНА кнопка снизу === */}
-        <div className="flex justify-center mt-12 md:mt-16">
-          <a
-            href="/lv/pakalpojumi"
-            className="
-              group relative inline-flex items-center justify-center gap-2.5
-              h-12 px-8 rounded-lg
-              bg-primary text-white font-sans font-bold
-              shadow-sm hover:shadow-md transition ease-out duration-200
-              hover:scale-[1.02] active:scale-[0.97]
-              overflow-hidden
-              before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-              before:from-transparent before:via-white/20 before:to-transparent
-              group-hover:before:translate-x-full before:transition-transform before:duration-700
-            "
-          >
-            <span className="text-base md:text-lg">Skatīt visus pakalpojumus</span>
-            <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-          </a>
         </div>
       </div>
     </section>

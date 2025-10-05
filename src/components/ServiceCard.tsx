@@ -16,14 +16,14 @@ const ServiceCard = ({
   const IMG_HEIGHT_CLASS =
     height === "tall"
       ? "h-[400px] lg:h-[520px]"
-      : "h-[180px] md:h-[200px] lg:h-[200px]";
+      : "h-[180px] md:h-[220px] lg:h-[200px]";
 
   return (
     <div
-      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col w-full bg-white border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
     >
-      {/* === Изображение === */}
-      <div className={`w-full ${IMG_HEIGHT_CLASS}`}>
+      {/* Картинка */}
+      <div className={`relative w-full ${IMG_HEIGHT_CLASS}`}>
         <img
           src={image}
           alt={title}
@@ -32,12 +32,12 @@ const ServiceCard = ({
         />
       </div>
 
-      {/* === Контент === */}
-      <div className="p-4 md:p-5 lg:p-5 pt-[10px]">
-        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+      {/* Текст */}
+      <div className="flex flex-col justify-start flex-1 px-5 py-4">
+        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight mb-1">
           {title}
         </h3>
-        <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug mt-1">
+        <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug tracking-[0.01em]">
           {description}
         </p>
       </div>
