@@ -19,7 +19,7 @@ const AboutUs = () => {
       description: "Pieredzējuši speciālisti",
     },
     {
-      icon: "tractor", // помечаем как спец-тип
+      icon: "tractor",
       title: "Mūsdienīga tehnika",
       description: "Jaunākais aprīkojums",
     },
@@ -62,10 +62,10 @@ const AboutUs = () => {
               key={index}
               className="flex flex-col items-start gap-4 p-6 bg-background border border-border hover:border-primary/50 transition-colors"
             >
-              <div className="p-3 bg-primary/10">
+              <div className="p-3 bg-primary/10 flex items-center justify-center">
                 {advantage.icon === "tractor" ? (
                   <div
-                    className="w-8 h-8 bg-primary"
+                    className="w-10 h-10 md:w-12 md:h-12 bg-primary"
                     style={{
                       WebkitMaskImage: `url(${tractor})`,
                       maskImage: `url(${tractor})`,
@@ -78,7 +78,7 @@ const AboutUs = () => {
                     }}
                   />
                 ) : (
-                  <advantage.icon className="w-8 h-8 text-primary" />
+                  <advantage.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 )}
               </div>
 
