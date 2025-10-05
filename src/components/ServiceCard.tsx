@@ -3,7 +3,6 @@ interface ServiceCardProps {
   title: string;
   description: string;
   height?: "tall" | "short";
-  hideButton?: boolean;
 }
 
 const ServiceCard = ({
@@ -20,11 +19,11 @@ const ServiceCard = ({
       : "h-[180px] md:h-[200px] lg:h-[200px]";
 
   return (
-    <article
+    <div
       className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
     >
       {/* === Изображение === */}
-      <div className={`w-full ${IMG_HEIGHT_CLASS} shrink-0`}>
+      <div className={`w-full ${IMG_HEIGHT_CLASS}`}>
         <img
           src={image}
           alt={title}
@@ -42,7 +41,7 @@ const ServiceCard = ({
           {description}
         </p>
       </div>
-    </article>
+    </div>
   );
 };
 
