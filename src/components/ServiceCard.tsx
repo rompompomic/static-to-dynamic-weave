@@ -2,7 +2,8 @@ interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
-  height?: "tall" | "short"; // оставим, если где-то используешь
+  height?: "tall" | "short";
+  imageHeight?: string;
 }
 
 const ServiceCard = ({
@@ -10,26 +11,30 @@ const ServiceCard = ({
   title,
   description,
   height = "short",
+  imageHeight,
 }: ServiceCardProps) => {
-  // Фиксируем только высоту изображения, НО НЕ всей карточки
+  const CARD_TOTAL_CLASS =
+    height === "tall" ? "lg:h-[849px]" : "lg:h-[410px]";
   const IMG_HEIGHT_CLASS =
-    height === "tall"
-      ? "h-[400px] md:h-[420px] lg:h-[460px]"
-      : "h-[180px] md:h-[220px] lg:h-[240px]";
+    imageHeight || (height === "tall" ? "h-[520px]" : "h-[180px]");
 
   return (
-    <div className="flex flex-col w-full bg-card border border-border rounded-lg shadow-md overflow-hidden">
-      {/* Изображение — без паддингов, без маргинов */}
-      <div className={`w-full ${IMG_HEIGHT_CLASS}`}>
-        <img src={image} alt={title} className="block w-full h-full object-cover" loading="lazy" />
+    <div
+      className={`flex flex-col bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
+    >
+      <div className={`relative w-full ${IMG_HEIGHT_CLASS}`}>
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
       </div>
 
-      {/* Текст — никаких внешних отступов, только небольшой внутренний */}
-      <div className="px-5 pt-3 pb-5">
-        <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+      <div className="flex flex-col justify-end p-5 md:p-6 flex-1">
+        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl mb-2">
           {title}
         </h3>
-        <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug">
+        <p className="font-sans text-muted-foreground text-sm md:text-base leading-normal">
           {description}
         </p>
       </div>

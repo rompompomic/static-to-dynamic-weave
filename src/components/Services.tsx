@@ -21,6 +21,7 @@ const Services = () => {
       title: "Ražošanas ēku demontāža",
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
+      height: "short" as const,
     },
     {
       id: 3,
@@ -28,6 +29,7 @@ const Services = () => {
       title: "Zemes darbi",
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
+      height: "short" as const,
     },
     {
       id: 4,
@@ -35,6 +37,7 @@ const Services = () => {
       title: "Labiekārtošana",
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
+      height: "short" as const,
     },
     {
       id: 5,
@@ -42,6 +45,7 @@ const Services = () => {
       title: "Būvgružu izvešana un utilizācija",
       description:
         "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām.",
+      height: "short" as const,
     },
   ];
 
@@ -51,29 +55,26 @@ const Services = () => {
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8">
           Mūsu pakalpojumi
         </h2>
-        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-10 max-w-4xl">
-          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
+        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl">
+          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo
+          ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        <div className="hidden lg:grid grid-cols-3 gap-[25px]">
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-stretch">
           <div className="flex flex-col">
             <ServiceCard {...services[0]} />
           </div>
-          <div className="flex flex-col gap-[25px]">
-            <ServiceCard {...services[1]} />
-            <ServiceCard {...services[2]} />
-          </div>
-          <div className="flex flex-col gap-[25px]">
-            <ServiceCard {...services[3]} />
-            <ServiceCard {...services[4]} />
-          </div>
-        </div>
 
-        {/* Mobile layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
-          {services.map((s) => (
-            <ServiceCard key={s.id} {...s} />
-          ))}
+          <div className="flex flex-col gap-[29px]">
+            <ServiceCard {...services[1]} imageHeight="h-[160px]" />
+            <ServiceCard {...services[2]} imageHeight="h-[160px]" />
+          </div>
+
+          <div className="flex flex-col gap-[29px]">
+            <ServiceCard {...services[3]} imageHeight="h-[160px]" />
+            <ServiceCard {...services[4]} imageHeight="h-[160px]" />
+          </div>
         </div>
       </div>
     </section>
