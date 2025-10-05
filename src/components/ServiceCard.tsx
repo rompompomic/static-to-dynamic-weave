@@ -4,7 +4,6 @@ interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
-  variant?: "default" | "accent";
   height?: "tall" | "short";
   showCursor?: boolean;
   href?: string;
@@ -14,7 +13,6 @@ const ServiceCard = ({
   image,
   title,
   description,
-  variant = "default",
   height = "short",
   showCursor = false,
   href = "/lv/pakalpojumi",
@@ -27,24 +25,21 @@ const ServiceCard = ({
       : "h-[180px] md:h-[220px] lg:h-[200px]";
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
+  // shimmer эффект
   const shimmer =
     "before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r " +
     "before:from-transparent before:via-white/20 before:to-transparent " +
     "group-hover:before:translate-x-full before:transition-transform before:duration-700";
 
-  // Цветовая схема кнопки
-  const buttonColor =
-    variant === "accent"
-      ? "bg-primary text-white hover:bg-primary/90"
-      : "bg-white text-primary hover:bg-white/90 border border-border";
-
+  // кнопка в цвете Zemes darbi (accent/primary)
   const buttonClass = `
     group relative inline-flex items-center justify-center gap-2
     w-full h-11 px-6 rounded-lg font-sans font-bold text-base
-    shadow-sm hover:shadow-md transition ease-out duration-300
-    hover:scale-[1.02] active:scale-[0.97]
+    bg-primary text-white shadow-sm hover:shadow-md
+    transition ease-out duration-300
+    hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.97]
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-    overflow-hidden ${buttonColor} ${shimmer}
+    overflow-hidden ${shimmer}
   `;
 
   return (
