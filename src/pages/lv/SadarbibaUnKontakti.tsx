@@ -64,7 +64,7 @@ const SadarbibaUnKontakti = () => {
                   xl:pr-[calc(48%+131px)] 2xl:pr-[calc(45%+131px)]
                 ">
                 <div className="w-[800px] xl:w-[1000px] 2xl:w-[1200px]">
-                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight whitespace-nowrap">
+                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight xl:whitespace-nowrap">
                     Sadarbība un kontakti
                   </h1>
                   <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px]">
