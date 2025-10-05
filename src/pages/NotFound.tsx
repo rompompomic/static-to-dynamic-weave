@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 import heroImage from "@/assets/hero-image.webp";
-import heroStrip from "@/assets/hero-strip.svg";
 
 const NotFound = () => {
   const location = useLocation();
@@ -62,13 +61,6 @@ const NotFound = () => {
             </div>
           </div>
         </div>
-      
-        {/* Right strip (tablet+desktop) */}
-        <img
-          src={heroStrip}
-          alt=""
-          className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
-        />
       
         {/* Content */}
         <div className="relative z-10">
