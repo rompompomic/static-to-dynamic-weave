@@ -62,8 +62,8 @@ const SadarbibaUnKontakti = () => {
                   md:min-h-[635px] md:flex md:items-center
                   md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
                 ">
-                <div className="w-[800px]">
-                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] xl:text-[60px] 2xl:text-[70px] leading-tight">
+                <div className="w-[800px] xl:w-[1000px] 2xl:w-[1200px]">
+                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                     Sadarbība un kontakti
                   </h1>
                   <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
@@ -79,7 +79,7 @@ const SadarbibaUnKontakti = () => {
           {/* How to Apply Section */}
           <section className="w-full py-12 md:py-16 lg:py-20 bg-white/0">
             <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-              <h1 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] xl:text-[60px] 2xl:text-[70px] leading-tight mb-8 text-center animate-fade-in">
+              <h1 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 text-center animate-fade-in">
                 Kā pieteikties pakalpojumam
               </h1>
               
@@ -124,7 +124,7 @@ const SadarbibaUnKontakti = () => {
           {/* Contact Form Section */}
           <section className="w-full py-12 md:py-16 lg:py-20 bg-muted/30">
             <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-              <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] xl:text-[60px] 2xl:text-[70px] leading-tight mb-12 text-center animate-fade-in">
+              <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-12 text-center animate-fade-in">
                 Tiešsaistes forma
               </h2>
               <ContactForm />
