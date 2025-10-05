@@ -1,52 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
-  // Detect current language from URL
-  const currentLang = typeof window !== 'undefined' 
-    ? window.location.pathname.startsWith('/en/') ? 'en' 
-      : window.location.pathname.startsWith('/ru/') ? 'ru' 
-      : 'lv'
-    : 'lv';
-  
-  const getLocalizedPath = (path: string) => {
-    return `/${currentLang}${path}`;
-  };
-
-  const t = {
-    lv: {
-      companyDesc: "Jūsu uzticams partneris būvniecībā ar vairāk nekā 10 gadu pieredzi.",
-      navigation: "Navigācija",
-      home: "Galvenā",
-      services: "Pakalpojumi",
-      contacts: "Sadarbība un kontakti",
-      contactInfo: "Kontaktinformācija",
-      rights: "© 2025 SIA \"DEMCO\"",
-      privacy: "Privātuma politika"
-    },
-    en: {
-      companyDesc: "Your trusted construction partner with over 10 years of experience.",
-      navigation: "Navigation",
-      home: "Home",
-      services: "Services",
-      contacts: "Cooperation and Contacts",
-      contactInfo: "Contact Information",
-      rights: "© 2025 SIA \"DEMCO\"",
-      privacy: "Privacy Policy"
-    },
-    ru: {
-      companyDesc: "Ваш надежный партнер в строительстве с опытом более 10 лет.",
-      navigation: "Навигация",
-      home: "Главная",
-      services: "Услуги",
-      contacts: "Сотрудничество и контакты",
-      contactInfo: "Контактная информация",
-      rights: "© 2025 SIA \"DEMCO\"",
-      privacy: "Политика конфиденциальности"
-    }
-  };
-
-  const trans = t[currentLang];
-
   return (
     <footer className="w-full bg-card border-t border-border">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-12">
@@ -60,49 +14,49 @@ const Footer = () => {
               alt="Demco Logo"
             />
             <p className="font-sans text-muted-foreground text-sm">
-              {trans.companyDesc}
+              Jūsu uzticams partneris būvniecībā ar vairāk nekā 10 gadu pieredzi.
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Navigācija — центр на md+, слева на мобилке */}
           <div className="space-y-4 justify-self-start md:justify-self-center">
             <h3 className="font-sans font-bold text-foreground text-base">
-              {trans.navigation}
+              Navigācija
             </h3>
             <nav>
               <ul className="flex flex-col gap-3">
                 <li>
                   <a
-                    href={`/${currentLang}/`}
+                    href="/"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
-                    {trans.home}
+                    Galvenā
                   </a>
                 </li>
                 <li>
                   <a
-                    href={getLocalizedPath('/pakalpojumi')}
+                    href="/lv/pakalpojumi"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
-                    {trans.services}
+                    Pakalpojumi
                   </a>
                 </li>
                 <li>
                   <a
-                    href={getLocalizedPath('/sadarbiba-un-kontakti')}
+                    href="/lv/sadarbiba-un-kontakti"
                     className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
-                    {trans.contacts}
+                    Sadarbība un kontakti
                   </a>
                 </li>
               </ul>
             </nav>
           </div>
 
-          {/* Contact Information */}
+          {/* Kontaktinformācija — справа на md+, слева на мобилке */}
           <div className="space-y-4 justify-self-start md:justify-self-end">
             <h3 className="font-sans font-bold text-foreground text-base">
-              {trans.contactInfo}
+              Kontaktinformācija
             </h3>
             <div className="flex flex-col gap-3 text-muted-foreground">
               <a
@@ -132,17 +86,17 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Left part */}
+            {/* Левая часть */}
             <p className="font-sans text-muted-foreground text-sm text-center md:text-left whitespace-nowrap">
-              {trans.rights}
+              © 2025 SIA "DEMCO"
             </p>
 
-            {/* Right part – privacy policy link */}
+            {/* Правая часть — кнопка политики */}
             <a
-              href={getLocalizedPath('/privatuma-politika')}
+              href="/lv/privatuma-politika"
               className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-2 whitespace-nowrap"
             >
-              {trans.privacy}
+              Privātuma politika
             </a>
           </div>
         </div>
