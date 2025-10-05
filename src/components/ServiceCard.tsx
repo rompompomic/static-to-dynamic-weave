@@ -27,10 +27,29 @@ const ServiceCard = ({
       : "h-[180px] md:h-[220px] lg:h-[200px]";
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
-  // Карточка
+  const shimmer =
+    "before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r " +
+    "before:from-transparent before:via-white/20 before:to-transparent " +
+    "group-hover:before:translate-x-full before:transition-transform before:duration-700";
+
+  const buttonClass = `
+    group relative inline-flex items-center justify-center gap-2
+    w-full h-11 px-6 rounded-lg font-sans font-bold text-base
+    bg-white text-primary shadow-sm hover:shadow-md
+    transition ease-out duration-300
+    hover:scale-[1.02] active:scale-[0.97]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+    overflow-hidden ${shimmer}
+  `;
+
+  if (variant === "accent") {
+    // если карточка акцентная — делаем заливку
+    buttonClass.replace("bg-white text-primary", "bg-primary text-white");
+  }
+
   return (
     <article
-      className={`flex flex-col w-full h-full bg-white border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300`}
+      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
     >
       {/* Изображение */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
@@ -64,17 +83,9 @@ const ServiceCard = ({
 
         {/* Кнопка */}
         <div className="mt-6">
-          <a
-            href={href}
-            className={`group inline-flex items-center justify-center gap-2 w-full h-11 rounded-md font-sans font-semibold text-sm transition-transform duration-200 
-            ${
-              variant === "accent"
-                ? "bg-primary text-white hover:bg-primary/90"
-                : "bg-[#f5f5f5] text-primary hover:bg-[#ececec]"
-            }`}
-          >
-            Uzzināt vairāk
-            <ArrowUpRight className="w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+          <a href={href} className={buttonClass}>
+            <span>Uzzināt vairāk</span>
+            <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
           </a>
         </div>
       </div>
