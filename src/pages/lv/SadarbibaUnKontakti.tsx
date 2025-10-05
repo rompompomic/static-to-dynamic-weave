@@ -62,7 +62,7 @@ const SadarbibaUnKontakti = () => {
                   md:min-h-[635px] md:flex md:items-center
                   md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
                 ">
-                <div className="w-[800px] xl:w-[1000px] 2xl:w-[1200px]">
+                <div className="w-[800px]">
                   <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                     Sadarbība un kontakti
                   </h1>
