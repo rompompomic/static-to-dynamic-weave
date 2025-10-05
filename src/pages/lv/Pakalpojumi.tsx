@@ -399,9 +399,9 @@ const Pakalpojumi = () => {
               </ul>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="tel:+37100000000" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
+                <a href="tel:+37128663429" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Phone className="w-5 h-5" />
-                  +371 00 000 000
+                  +371 2866 3429
                 </a>
                 <a href="mailto:info@demco.lv" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border hover:bg-muted transition">
                   <Mail className="w-5 h-5" />
