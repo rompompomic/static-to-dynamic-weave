@@ -38,7 +38,7 @@ const Gallery = () => {
   const prev = () => setActive((i) => (i - 1 + total) % total);
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-white/0">
+    <section id="galerija" className="w-full py-12 md:py-16 lg:py-20 bg-white/0">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8 animate-fade-in">
           Galerija

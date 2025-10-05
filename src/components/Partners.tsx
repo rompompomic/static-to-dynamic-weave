@@ -25,7 +25,7 @@ const Partners = () => {
     name: "Partner 6",
     logo: "/images/partner-logo-equipment-supplier.png"
   }];
-  return <section className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
+  return <section id="partneri" className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8 animate-fade-in">
           Mūsu sadarbības partneri
