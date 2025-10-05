@@ -49,6 +49,10 @@
     height: 100%;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
