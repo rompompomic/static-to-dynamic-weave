@@ -10,6 +10,7 @@ const Services = () => {
   return (
     <section className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+        {/* === Заголовок и описание === */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8">
           Mūsu pakalpojumi
         </h2>
@@ -19,8 +20,9 @@ const Services = () => {
           ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        {/* === DESKTOP как было === */}
+        {/* === DESKTOP (как было) === */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-start">
+          {/* Левая высокая карточка */}
           <div className="flex flex-col">
             <ServiceCard
               image={buvjuUnEkuDemontaza}
@@ -31,6 +33,7 @@ const Services = () => {
             />
           </div>
 
+          {/* Средняя колонка */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard
               image={razosanasEkuDemontaza}
@@ -48,6 +51,7 @@ const Services = () => {
             />
           </div>
 
+          {/* Правая колонка */}
           <div className="flex flex-col gap-[29px]">
             <ServiceCard
               image={labiekartosana}
@@ -66,7 +70,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* === MOBILE / TABLET фиксим размеры === */}
+        {/* === MOBILE / TABLET (равные карточки, без пустот) === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           <ServiceCard
             image={buvjuUnEkuDemontaza}
@@ -127,14 +131,16 @@ const Services = () => {
 
 export default Services;
 
+//
 // === КОМПОНЕНТ КАРТОЧКИ ===
+//
 interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
   size?: "tall" | "default";
   imageHeight?: string;
-  fixed?: boolean; // добавлено для mobile/tablet одинаковой высоты
+  fixed?: boolean; // для моб/таб одинаковой структуры
 }
 
 const ServiceCard = ({
@@ -145,34 +151,37 @@ const ServiceCard = ({
   imageHeight,
   fixed = false,
 }: ServiceCardProps) => {
-  // если фикс, то используем фиксированную высоту карточки
-  const imgH = imageHeight
-    ? imageHeight
-    : size === "tall"
-    ? "h-[460px] md:h-[500px] lg:h-[520px]"
-    : "h-[200px] md:h-[220px] lg:h-[240px]";
+  const imgH =
+    imageHeight ||
+    (size === "tall"
+      ? "h-[460px] md:h-[500px] lg:h-[520px]"
+      : "h-[200px] md:h-[220px] lg:h-[240px]");
 
   return (
     <div
       className={`
-        w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden 
-        flex flex-col 
-        ${fixed ? "h-[380px] md:h-[400px]" : "h-auto"}
+        w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg 
+        transition duration-300 overflow-hidden flex flex-col
       `}
     >
+      {/* Картинка фиксированной высоты */}
       <div className={`w-full ${fixed ? "h-[200px]" : imgH} flex-shrink-0`}>
-        <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
 
-      <div className="flex flex-col justify-between px-5 pt-3 pb-5 flex-grow">
-        <div>
-          <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-            {title}
-          </h3>
-          <p className="mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug line-clamp-3">
-            {description}
-          </p>
-        </div>
+      {/* Текстовый блок — авто-высота */}
+      <div className="px-5 pt-3 pb-5 flex flex-col justify-start flex-grow">
+        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+          {title}
+        </h3>
+        <p className="mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug line-clamp-3">
+          {description}
+        </p>
       </div>
     </div>
   );
