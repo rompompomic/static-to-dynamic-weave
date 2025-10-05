@@ -460,7 +460,7 @@ const Pakalpojumi = () => {
                 </div>
               </div>
 
-              <a href="/lv/sadarbiba-un-kontakti#forma" className="
+              <a href="/lv/sadarbiba-un-kontakti" className="
                   mt-8 w-full group relative inline-flex items-center justify-center gap-2
                   h-11 px-6 md:px-8 rounded-xl
                   bg-foreground text-background font-sans font-bold
