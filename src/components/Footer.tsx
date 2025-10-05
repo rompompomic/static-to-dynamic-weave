@@ -85,7 +85,13 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-sans text-muted-foreground text-sm text-center md:text-left whitespace-nowrap">
-              © 2025 SIA DEMCO · Privātuma politika
+              © 2025 SIA DEMCO ·{" "}
+              <a
+                href="/lv/privatuma-politika"
+                className="hover:text-primary transition-colors underline underline-offset-2"
+              >
+                Privātuma politika
+              </a>
             </p>
           </div>
         </div>
