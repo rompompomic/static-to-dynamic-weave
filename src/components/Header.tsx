@@ -6,31 +6,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
-  // 🚫 Полное отключение любых скроллов
-  useEffect(() => {
-    // Отключаем восстановление позиции скролла браузером (F5, Back/Forward)
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    // Принудительно стоим в самом верху страницы при загрузке
-    window.scrollTo(0, 0);
-
-    // Блокируем переходы по якорям (#galerija, #partneri и т.д.)
-    const blockAnchorScroll = (e: Event) => {
-      const target = e.target as HTMLElement;
-      if (target instanceof HTMLAnchorElement) {
-        const href = target.getAttribute("href");
-        if (href && href.startsWith("#")) {
-          e.preventDefault();
-        }
-      }
-    };
-
-    document.addEventListener("click", blockAnchorScroll, true);
-    return () => document.removeEventListener("click", blockAnchorScroll, true);
-  }, []);
-
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-card border-b border-border backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
