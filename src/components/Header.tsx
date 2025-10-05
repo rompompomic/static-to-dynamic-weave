@@ -1,10 +1,29 @@
+import { useState, useEffect } from "react";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
-import { useState } from "react";
 import demcoLogo from "@/assets/demco-logo.webp";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+
+  // 🔧 1. Блокируем автопрокрутку при загрузке, если URL содержит #hash
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && document.querySelector(hash)) {
+      // Скроллим вверх и убираем хэш, чтобы при загрузке не прыгало
+      window.scrollTo({ top: 0 });
+      history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
+  // 🔧 2. Плавная прокрутка к секции
+  const handleSmoothScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-card border-b border-border backdrop-blur-sm">
@@ -21,21 +40,36 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="/lv/pakalpojumi" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <a
+              href="/lv/pakalpojumi"
+              className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+            >
               PAKALPOJUMI
             </a>
-            <a href="/lv/sadarbiba-un-kontakti" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <a
+              href="/lv/sadarbiba-un-kontakti"
+              className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+            >
               SADARBĪBA UN KONTAKTI
             </a>
-            <a href="#par-mums" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => handleSmoothScroll("par-mums")}
+              className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+            >
               PAR MUMS
-            </a>
-            <a href="#galerija" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("galerija")}
+              className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+            >
               GALERIJA
-            </a>
-            <a href="#partneri" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("partneri")}
+              className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+            >
               PARTNERI
-            </a>
+            </button>
           </nav>
 
           {/* Desktop Actions */}
@@ -51,8 +85,12 @@ const Header = () => {
 
               {langDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 bg-card border border-border shadow-lg min-w-[80px] animate-slide-down">
-                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">EN</button>
-                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">RU</button>
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
+                    EN
+                  </button>
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
+                    RU
+                  </button>
                 </div>
               )}
             </div>
@@ -110,32 +148,35 @@ const Header = () => {
               >
                 SADARBĪBA UN KONTAKTI
               </a>
-              <a
-                href="#par-mums"
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              <button
+                onClick={() => handleSmoothScroll("par-mums")}
+                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PAR MUMS
-              </a>
-              <a
-                href="#galerija"
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              </button>
+              <button
+                onClick={() => handleSmoothScroll("galerija")}
+                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 GALERIJA
-              </a>
-              <a
-                href="#partneri"
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              </button>
+              <button
+                onClick={() => handleSmoothScroll("partneri")}
+                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PARTNERI
-              </a>
+              </button>
 
               <div className="flex gap-2 pt-2 border-t border-border">
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">LV</button>
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">EN</button>
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">RU</button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  LV
+                </button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  EN
+                </button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
+                  RU
+                </button>
               </div>
 
               <a
