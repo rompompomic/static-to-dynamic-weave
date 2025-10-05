@@ -23,7 +23,7 @@ const ContactInfo = () => {
                   </div>
                   <div>
                     <p className="font-sans text-sm text-muted-foreground">Telefons</p>
-                    <p className="font-sans font-bold text-foreground">+371 2000 0000</p>
+                    <p className="font-sans font-bold text-foreground">+371 2866 3429</p>
                   </div>
                 </a>
 
@@ -46,7 +46,7 @@ const ContactInfo = () => {
                   </div>
                   <div>
                     <p className="font-sans text-sm text-muted-foreground">Adrese</p>
-                    <p className="font-sans font-bold text-foreground">Rīga, Latvija</p>
+                    <p className="font-sans font-bold text-foreground">Malienas iela 78 - 5, Rīga, LV-1064</p>
                   </div>
                 </div>
               </div>
