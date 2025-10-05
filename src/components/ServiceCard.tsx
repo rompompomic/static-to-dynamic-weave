@@ -1,117 +1,99 @@
-import ServiceCard from "./ServiceCard";
 import { ArrowUpRight } from "lucide-react";
 
-import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
-import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
-import zemesDarbi from "@/assets/zemes-darbi.webp";
-import labiekartosana from "@/assets/labiekartosana.webp";
-import buvgruzuIzvesana from "@/assets/buvgruzu-izvesana-un-utilizacija.webp";
+interface ServiceCardProps {
+  image: string;
+  title: string;
+  description: string;
+  height?: "tall" | "short";
+  showCursor?: boolean;
+  href?: string;
+  hideButton?: boolean;
+}
 
-const Services = () => {
-  const services = [
-    {
-      id: 1,
-      image: buvjuUnEkuDemontaza,
-      title: "Būvju un ēku demontāža",
-      description:
-        "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
-      height: "tall" as const,
-    },
-    {
-      id: 2,
-      image: razosanasEkuDemontaza,
-      title: "Ražošanas ēku demontāža",
-      description:
-        "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
-      height: "short" as const,
-    },
-    {
-      id: 3,
-      image: zemesDarbi,
-      title: "Zemes darbi",
-      description:
-        "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
-      height: "short" as const,
-    },
-    {
-      id: 4,
-      image: labiekartosana,
-      title: "Labiekārtošana",
-      description:
-        "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
-      height: "short" as const,
-    },
-    {
-      id: 5,
-      image: buvgruzuIzvesana,
-      title: "Būvgružu izvešana un utilizācija",
-      description:
-        "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām. Pēc darbiem nodrošinām tīru un drošu teritoriju.",
-      height: "short" as const,
-    },
-  ];
+const ServiceCard = ({
+  image,
+  title,
+  description,
+  height = "short",
+  showCursor = false,
+  href = "/lv/pakalpojumi",
+  hideButton = false,
+}: ServiceCardProps) => {
+  // карточки нормальной высоты, но картинка занимает больше места
+  const CARD_TOTAL_CLASS =
+    height === "tall" ? "lg:h-[820px]" : "lg:h-[460px]";
+
+  // увеличиваем высоту изображения
+  const IMG_HEIGHT_CLASS =
+    height === "tall"
+      ? "h-[280px] md:h-[300px] lg:h-[580px]"
+      : "h-[220px] md:h-[260px] lg:h-[300px]";
+
+  const CLAMP_LINES = height === "tall" ? 4 : 2;
+
+  // shimmer эффект
+  const shimmer =
+    "before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r " +
+    "before:from-transparent before:via-white/20 before:to-transparent " +
+    "group-hover:before:translate-x-full before:transition-transform before:duration-700";
+
+  // кнопка в цвете Zemes darbi
+  const buttonClass = `
+    group relative inline-flex items-center justify-center gap-2
+    w-full h-11 px-6 rounded-lg font-sans font-bold text-base
+    bg-primary text-white shadow-sm hover:shadow-md
+    transition ease-out duration-300
+    hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.97]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+    overflow-hidden ${shimmer}
+  `;
 
   return (
-    <section
-      id="pakalpojumi"
-      className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]"
+    <article
+      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
     >
-      <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-        <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8 animate-fade-in">
-          Mūsu pakalpojumi
-        </h2>
-
-        <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl animate-fade-in">
-          Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo
-          ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
-        </p>
-
-        {/* === Сетка === */}
-        <div
-          className="
-            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-            gap-6 md:gap-8
-            auto-rows-[1fr] md:auto-rows-[minmax(280px,1fr)] lg:auto-rows-[minmax(350px,1fr)]
-          "
-        >
-          {services.map((service, i) => (
-            <div
-              key={service.id}
-              className={`h-full ${
-                service.height === "tall"
-                  ? "lg:row-span-2" // 👈 растягивает большую карточку на 2 строки
-                  : ""
-              }`}
-            >
-              <ServiceCard {...service} hideButton />
-            </div>
-          ))}
-        </div>
-
-        {/* CTA кнопка снизу */}
-        <div className="flex justify-center mt-12 md:mt-16">
-          <a
-            href="/lv/pakalpojumi"
-            className="
-              group relative inline-flex items-center justify-center gap-2.5
-              h-12 px-8 rounded-lg
-              bg-primary text-white font-sans font-bold
-              shadow-sm hover:shadow-md transition ease-out duration-200
-              hover:scale-[1.02] active:scale-[0.97]
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-              overflow-hidden
-              before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-              before:from-transparent before:via-white/20 before:to-transparent
-              group-hover:before:translate-x-full before:transition-transform before:duration-700
-            "
-          >
-            <span className="text-base md:text-lg">Skatīt visus pakalpojumus</span>
-            <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-          </a>
-        </div>
+      {/* Изображение (увеличенное) */}
+      <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500 ease-out"
+          loading="lazy"
+        />
+        {showCursor && null}
       </div>
-    </section>
+
+      {/* Контент */}
+      <div className="flex-1 flex flex-col justify-between p-5 md:p-6">
+        <div>
+          <h3 className="font-sans font-bold text-foreground text-lg md:text-xl mb-3 leading-snug">
+            {title}
+          </h3>
+          <p
+            className="font-sans text-muted-foreground text-sm md:text-base leading-normal"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: CLAMP_LINES,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
+            {description}
+          </p>
+        </div>
+
+        {/* Кнопка (если не скрыта) */}
+        {!hideButton && (
+          <div className="mt-5">
+            <a href={href} className={buttonClass}>
+              <span>Uzzināt vairāk</span>
+              <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+            </a>
+          </div>
+        )}
+      </div>
+    </article>
   );
 };
 
-export default Services;
+export default ServiceCard;
