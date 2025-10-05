@@ -96,19 +96,39 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
-              <a href="/lv/pakalpojumi" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a
+                href="/lv/pakalpojumi"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              >
                 PAKALPOJUMI
               </a>
-              <a href="/lv/sadarbiba-un-kontakti#forma" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a
+                href="/lv/sadarbiba-un-kontakti#forma"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              >
                 SADARBĪBA UN KONTAKTI
               </a>
-              <a href="#par-mums" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a
+                href="#par-mums"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              >
                 PAR MUMS
               </a>
-              <a href="#galerija" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a
+                href="#galerija"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              >
                 GALERIJA
               </a>
-              <a href="#partneri" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a
+                href="#partneri"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              >
                 PARTNERI
               </a>
 
@@ -120,6 +140,7 @@ const Header = () => {
 
               <a
                 href="/lv/pakalpojumi"
+                onClick={() => setMobileMenuOpen(false)}
                 className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2"
               >
                 <span className="font-sans font-bold text-white text-base">
