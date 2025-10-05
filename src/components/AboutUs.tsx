@@ -1,4 +1,5 @@
 import { Award, Clock, Shield, Users } from "lucide-react";
+import tractor from "@/assets/tractor.webp"
 const AboutUs = () => {
   const advantages = [{
     icon: Clock,
@@ -13,7 +14,7 @@ const AboutUs = () => {
     title: "Profesionāla komanda",
     description: "Pieredzējuši speciālisti"
   }, {
-    icon: Award,
+    icon: tractor,
     title: "Mūsdienīga tehnika",
     description: "Jaunākā aprīkojums"
   }];
