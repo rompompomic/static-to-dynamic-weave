@@ -10,12 +10,13 @@ import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
-  // Prevent auto-scroll to hash anchors on initial page load
   useEffect(() => {
-    // Only run on initial mount
+    // Если в URL есть хэш (#galerija, #partneri и т.д.)
     if (window.location.hash) {
-      // Remove hash from URL without triggering scroll
-      window.history.replaceState(null, "", window.location.pathname);
+      // Убираем его из адреса
+      history.replaceState(null, "", window.location.pathname);
+      // Скроллим в начало
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, []);
 
