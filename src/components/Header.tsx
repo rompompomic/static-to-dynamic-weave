@@ -18,9 +18,27 @@ const Header = () => {
               alt="Demco Logo"
             />
           </a>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
+            <a
+              href="/lv/#par-mums"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              PAR MUMS
+            </a>
+            <a
+              href="/lv/#galerija"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              GALERIJA
+            </a>
+            <a
+              href="/lv/#partneri"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              PARTNERI
+            </a>
             <a
               href="/lv/pakalpojumi"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
@@ -38,7 +56,7 @@ const Header = () => {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-2.5">
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 className="inline-flex h-14 justify-center gap-2.5 px-3 py-4 items-center hover:bg-muted transition-colors"
               >
@@ -47,7 +65,7 @@ const Header = () => {
                 </span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              
+
               {langDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 bg-card border border-border shadow-lg min-w-[80px] animate-slide-down">
                   <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
@@ -59,8 +77,8 @@ const Header = () => {
                 </div>
               )}
             </div>
-            
-            <a 
+
+            <a
               href="/lv/pakalpojumi"
               className="
                 group relative inline-flex items-center justify-center gap-2.5
@@ -100,6 +118,24 @@ const Header = () => {
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
               <a
+                href="/lv/#par-mums"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                PAR MUMS
+              </a>
+              <a
+                href="/lv/#galerija"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                GALERIJA
+              </a>
+              <a
+                href="/lv/#partneri"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                PARTNERI
+              </a>
+              <a
                 href="/lv/pakalpojumi"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
@@ -111,7 +147,7 @@ const Header = () => {
               >
                 SADARBĪBA UN KONTAKTI
               </a>
-              
+
               <div className="flex gap-2 pt-2 border-t border-border">
                 <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
                   LV
@@ -123,8 +159,8 @@ const Header = () => {
                   RU
                 </button>
               </div>
-              
-              <a 
+
+              <a
                 href="/lv/pakalpojumi"
                 className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2"
               >
