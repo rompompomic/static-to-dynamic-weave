@@ -13,7 +13,7 @@ const ServiceCard = ({
   size = "default",
   imageHeight,
 }: ServiceCardProps) => {
-  // Только высота ИЗОБРАЖЕНИЯ, у всей карточки высота авто → пустот снизу не будет
+  // Высота картинки
   const imgH =
     imageHeight ||
     (size === "tall"
@@ -21,9 +21,16 @@ const ServiceCard = ({
       : "h-[200px] md:h-[220px] lg:h-[240px]");
 
   return (
-    <div className="w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-      {/* Картинка: блок, заполняет контейнер */}
-      <div className={`w-full ${imgH}`}>
+    <div
+      className={`
+        w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg 
+        transition duration-300 overflow-hidden 
+        flex flex-col 
+        h-[360px] md:h-[380px] lg:h-auto
+      `}
+    >
+      {/* Картинка */}
+      <div className={`w-full ${imgH} flex-shrink-0`}>
         <img
           src={image}
           alt={title}
@@ -32,17 +39,17 @@ const ServiceCard = ({
         />
       </div>
 
-      {/* Текст: никаких внешних маргинов, только внутренние паддинги */}
-      <div className="px-5 pt-3 pb-5">
-        <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-          {title}
-        </h3>
-        <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug">
-          {description}
-        </p>
+      {/* Текст */}
+      <div className="flex flex-col justify-between px-5 pt-3 pb-5 flex-grow">
+        <div>
+          <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+            {title}
+          </h3>
+          <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug line-clamp-3">
+            {description}
+          </p>
+        </div>
       </div>
     </div>
   );
 };
-
-export default ServiceCard;
