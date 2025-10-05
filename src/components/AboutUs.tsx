@@ -65,7 +65,7 @@ const AboutUs = () => {
               <div className="p-3 bg-primary/10 flex items-center justify-center">
                 {advantage.icon === "tractor" ? (
                   <div
-                    className="w-10 h-10 md:w-12 md:h-12 bg-primary"
+                    className="w-14 h-14 md:w-16 md:h-16 bg-primary"
                     style={{
                       WebkitMaskImage: `url(${tractor})`,
                       maskImage: `url(${tractor})`,
