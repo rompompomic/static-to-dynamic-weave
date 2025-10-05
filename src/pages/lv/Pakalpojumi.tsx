@@ -85,14 +85,14 @@ const Pakalpojumi = () => {
               className="
                 container mx-auto px-8 lg:px-[75px]
                 md:min-h-[635px] md:flex md:items-center
-                md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+                md:pr-[45%] lg:pr-[48%]
               "
             >
-              <div className="w-full">
-                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight tracking-wide">
+              <div className="w-full max-w-[720px]">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[52px] leading-tight tracking-wide">
                   Mūsu būvniecības pakalpojumi
                 </h1>
-                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
+                <p className="mt-6 font-sans text-white text-lg leading-relaxed">
                   No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
                   kas pielāgoti gan privātiem, gan industriāliem projektiem.
                 </p>
