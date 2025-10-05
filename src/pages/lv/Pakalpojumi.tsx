@@ -88,11 +88,11 @@ const Pakalpojumi = () => {
                 md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
               "
             >
-              <div className="w-[800px]">
-                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-                  Pakalpojumi
+              <div className="max-w-[1100px]">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[52px] leading-tight mb-6">
+                  Profesionāli demontāžas, zemes un labiekārtošanas pakalpojumi
                 </h1>
-                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
+                <p className="font-sans text-white text-lg leading-relaxed max-w-[800px]">
                   No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
                   kas pielāgoti gan privātiem, gan industriāliem projektiem.
                 </p>
