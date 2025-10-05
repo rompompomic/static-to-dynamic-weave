@@ -17,12 +17,10 @@ const Header = () => {
   return (
     <header
       className={[
-        // остаёмся липкими к верху страницы
-        "sticky top-0 z-40 w-full transition-all duration-300",
-        // стили до скролла и после
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
         isScrolled
           ? "bg-card/90 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent border-b border-transparent"
+          : "bg-transparent"
       ].join(" ")}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
