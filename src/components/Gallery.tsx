@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import pirmsImg from "@/assets/pirms.webp";
@@ -37,6 +37,21 @@ const Gallery = () => {
   const next = () => setActive((i) => (i + 1) % total);
   const prev = () => setActive((i) => (i - 1 + total) % total);
 
+  // === Thumbnail auto-scroll ===
+  const thumbsRef = useRef<HTMLDivElement | null>(null);
+  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  useEffect(() => {
+    const el = thumbRefs.current[active];
+    if (el && thumbsRef.current) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [active]);
+
   return (
     <section id="galerija" className="w-full py-12 md:py-16 lg:py-20 bg-white/0">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
@@ -71,7 +86,7 @@ const Gallery = () => {
             />
           </div>
 
-          {/* Controls (стрелки) */}
+          {/* Controls */}
           <div className="mt-4 flex items-center justify-between">
             <button
               type="button"
@@ -102,6 +117,7 @@ const Gallery = () => {
               flex gap-3 md:gap-4 overflow-x-auto pb-1
               [scrollbar-width:none] [-ms-overflow-style:none]
             "
+            ref={thumbsRef}
             style={{ scrollbarWidth: "none" } as React.CSSProperties}
           >
             {images.map((img, idx) => {
@@ -119,6 +135,7 @@ const Gallery = () => {
                     aspect-[4/3]
                   `}
                   aria-label={img.label}
+                  ref={(el) => (thumbRefs.current[idx] = el)}
                 >
                   <img
                     src={img.url}
@@ -127,7 +144,9 @@ const Gallery = () => {
                     draggable={false}
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white px-2 py-1">
-                    <span className="block text-xs font-sans font-semibold truncate">{img.label}</span>
+                    <span className="block text-xs font-sans font-semibold truncate">
+                      {img.label}
+                    </span>
                   </div>
                 </button>
               );
