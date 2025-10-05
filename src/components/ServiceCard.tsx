@@ -21,21 +21,20 @@ const ServiceCard = ({
 
   return (
     <article
-      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
     >
       {/* === Изображение === */}
-      <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
+      <div className={`w-full ${IMG_HEIGHT_CLASS} shrink-0`}>
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover block"
           loading="lazy"
         />
       </div>
 
       {/* === Контент === */}
-      <div className="flex flex-col justify-start p-4 md:p-5 lg:p-5 pt-2"> 
-        {/* 👆 pt-2 — минимальный отступ, чтобы текст не прилипал к фото */}
+      <div className="p-4 md:p-5 lg:p-5 pt-[10px]">
         <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
           {title}
         </h3>
