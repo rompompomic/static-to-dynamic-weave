@@ -46,7 +46,7 @@ const Services = () => {
             <ServiceCard
               image={zemesDarbi}
               title="Zemes darbi"
-              description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
+              description="Rakšana un grunts izlīdzināšana, pamatu sagatavošana un drenāža."
               size="default"
               imageHeight="h-[220px]"
             />
