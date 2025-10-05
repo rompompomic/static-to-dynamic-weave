@@ -1,29 +1,36 @@
+import partner1 from "@/assets/partner1.webp";
+import partner2 from "@/assets/partner2.webp";
+import partner3 from "@/assets/partner3.webp";
+import partner4 from "@/assets/partner4.webp";
+import partner5 from "@/assets/partner5.webp";
+import partner6 from "@/assets/partner6.webp";
+
 const Partners = () => {
   // Placeholder partner logos - replace with actual logos when available
   const partners = [{
     id: 1,
     name: "Partner 1",
-    logo: "/images/partner-logo-construction-company-1.png"
+    logo: {partner2}
   }, {
     id: 2,
     name: "Partner 2",
-    logo: "/images/partner-logo-construction-company-2.png"
+    logo: {partner3}
   }, {
     id: 3,
     name: "Partner 3",
-    logo: "/images/partner-logo-industrial-company-1.png"
+    logo: {partner3}
   }, {
     id: 4,
     name: "Partner 4",
-    logo: "/images/partner-logo-industrial-company-2.png"
+    logo: {partner4}
   }, {
     id: 5,
     name: "Partner 5",
-    logo: "/images/partner-logo-engineering-company.png"
+    logo: {partner5}
   }, {
     id: 6,
     name: "Partner 6",
-    logo: "/images/partner-logo-equipment-supplier.png"
+    logo: {partner6}
   }];
   return <section id="partneri" className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
