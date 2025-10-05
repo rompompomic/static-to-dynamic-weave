@@ -1,4 +1,4 @@
-import { Award, Clock, Shield, Users } from "lucide-react";
+import { Clock, Shield, Users } from "lucide-react";
 import tractor from "@/assets/tractor.webp";
 
 const AboutUs = () => {
@@ -7,21 +7,25 @@ const AboutUs = () => {
       icon: Clock,
       title: "Ātrums",
       description: "Efektīva darbu izpilde",
+      size: "small",
     },
     {
       icon: Shield,
       title: "Drošība",
       description: "Atbilstība standartiem",
+      size: "small",
     },
     {
       icon: Users,
       title: "Profesionāla komanda",
       description: "Pieredzējuši speciālisti",
+      size: "small",
     },
     {
       icon: "tractor",
       title: "Mūsdienīga tehnika",
       description: "Jaunākais aprīkojums",
+      size: "large",
     },
   ];
 
@@ -78,7 +82,13 @@ const AboutUs = () => {
                     }}
                   />
                 ) : (
-                  <advantage.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+                  <advantage.icon
+                    className={`${
+                      advantage.size === "small"
+                        ? "w-6 h-6 md:w-8 md:h-8"
+                        : "w-8 h-8 md:w-10 md:h-10"
+                    } text-primary`}
+                  />
                 )}
               </div>
 
