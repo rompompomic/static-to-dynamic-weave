@@ -1,3 +1,4 @@
+// ServiceCard.tsx
 interface ServiceCardProps {
   image: string;
   title: string;
@@ -11,19 +12,18 @@ const ServiceCard = ({
   description,
   height = "short",
 }: ServiceCardProps) => {
-  const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[850px]" : "lg:h-[410px]";
+  // heights: big left card vs smaller ones on the right
+  const CARD_TOTAL_CLASS = height === "tall" ? "lg:h-[850px]" : "lg:h-[410px]";
   const IMG_HEIGHT_CLASS =
-    height === "tall"
-      ? "h-[400px] lg:h-[520px]"
-      : "h-[180px] md:h-[220px] lg:h-[200px]";
+    height === "tall" ? "h-[520px] lg:h-[520px]" : "h-[200px] lg:h-[200px]";
 
   return (
     <div
-      className={`flex flex-col w-full bg-white border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
+      className={`w-full bg-white border border-border rounded-lg shadow-md overflow-hidden ${CARD_TOTAL_CLASS}`}
+      role="group"
     >
-      {/* Картинка */}
-      <div className={`relative w-full ${IMG_HEIGHT_CLASS}`}>
+      {/* image container: no padding, no gap */}
+      <div className={`${IMG_HEIGHT_CLASS} w-full block`}>
         <img
           src={image}
           alt={title}
@@ -32,12 +32,12 @@ const ServiceCard = ({
         />
       </div>
 
-      {/* Текст */}
-      <div className="flex flex-col justify-start flex-1 px-5 py-4">
-        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight mb-1">
+      {/* text container: no top margin, tight spacing */}
+      <div className="px-5 pb-5 pt-3">
+        <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
           {title}
         </h3>
-        <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug tracking-[0.01em]">
+        <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug">
           {description}
         </p>
       </div>
