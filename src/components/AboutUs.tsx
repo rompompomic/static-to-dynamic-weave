@@ -1,4 +1,6 @@
 import { Award, Clock, Shield, Users } from "lucide-react";
+import { FaTractor } from "react-icons/fa";
+
 const AboutUs = () => {
   const advantages = [{
     icon: Clock,
@@ -13,7 +15,7 @@ const AboutUs = () => {
     title: "Profesionāla komanda",
     description: "Pieredzējuši speciālisti"
   }, {
-    icon: Award,
+    icon: FaTractor,
     title: "Mūsdienīga tehnika",
     description: "Jaunākā aprīkojums"
   }];
