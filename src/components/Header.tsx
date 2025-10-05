@@ -112,7 +112,7 @@ const Header = () => {
               <a href="/lv/pakalpojumi" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 PAKALPOJUMI
               </a>
-              <a href="/lv/sadarbiba-un-kontakti#" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a href="/lv/sadarbiba-un-kontakti" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 SADARBĪBA UN KONTAKTI
               </a>
               <a href="#par-mums" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
