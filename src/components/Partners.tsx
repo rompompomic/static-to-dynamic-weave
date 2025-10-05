@@ -46,7 +46,7 @@ const Partners = () => {
                 loading="lazy"
                 width={200}
                 height={80}
-                className="max-w-[180px] w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+                className="max-w-[180px] w-full h-auto object-contain opacity-100 transition-none"
               />
             </div>
           ))}
