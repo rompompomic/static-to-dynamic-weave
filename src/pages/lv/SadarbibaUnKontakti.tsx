@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
+import heroImage from "@/assets/hero-image.webp";
+import heroStrip from "@/assets/hero-strip.svg";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 
 const SadarbibaUnKontakti = () => {
