@@ -124,7 +124,7 @@ const SadarbibaUnKontakti = () => {
           </section>
 
           {/* Contact Form Section */}
-          <section className="w-full py-12 md:py-16 lg:py-20 bg-muted/30">
+          <section className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
             <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
               <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-12 text-center animate-fade-in">
                 Tiešsaistes forma
