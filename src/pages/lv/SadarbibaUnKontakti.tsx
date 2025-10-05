@@ -66,7 +66,7 @@ const SadarbibaUnKontakti = () => {
                   <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
                     Sadarbība un kontakti
                   </h1>
-                  <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
+                  <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px]">
                     Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                   </p>
                 </div>
