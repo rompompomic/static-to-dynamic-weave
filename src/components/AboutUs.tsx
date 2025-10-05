@@ -17,7 +17,7 @@ const AboutUs = () => {
     title: "Mūsdienīga tehnika",
     description: "Jaunākā aprīkojums"
   }];
-  return <section id="par-nums" className="w-full py-12 md:py-16 lg:py-20 bg-white">
+  return <section id="par-mums" className="w-full py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 md:mb-12 animate-fade-in">
           Par mums
