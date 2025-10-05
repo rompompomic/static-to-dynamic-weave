@@ -6,24 +6,30 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
-  // 🔧 1. Блокируем автопрокрутку при загрузке, если URL содержит #hash
+  // 🚫 Полное отключение любых скроллов
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash && document.querySelector(hash)) {
-      // Скроллим вверх и убираем хэш, чтобы при загрузке не прыгало
-      window.scrollTo({ top: 0 });
-      history.replaceState(null, "", window.location.pathname);
+    // Отключаем восстановление позиции скролла браузером (F5, Back/Forward)
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
     }
-  }, []);
 
-  // 🔧 2. Плавная прокрутка к секции
-  const handleSmoothScroll = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMobileMenuOpen(false);
-    }
-  };
+    // Принудительно стоим в самом верху страницы при загрузке
+    window.scrollTo(0, 0);
+
+    // Блокируем переходы по якорям (#galerija, #partneri и т.д.)
+    const blockAnchorScroll = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target instanceof HTMLAnchorElement) {
+        const href = target.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    document.addEventListener("click", blockAnchorScroll, true);
+    return () => document.removeEventListener("click", blockAnchorScroll, true);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-card border-b border-border backdrop-blur-sm">
@@ -52,24 +58,24 @@ const Header = () => {
             >
               SADARBĪBA UN KONTAKTI
             </a>
-            <button
-              onClick={() => handleSmoothScroll("par-mums")}
+            <a
+              href="#par-mums"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               PAR MUMS
-            </button>
-            <button
-              onClick={() => handleSmoothScroll("galerija")}
+            </a>
+            <a
+              href="#galerija"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               GALERIJA
-            </button>
-            <button
-              onClick={() => handleSmoothScroll("partneri")}
+            </a>
+            <a
+              href="#partneri"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               PARTNERI
-            </button>
+            </a>
           </nav>
 
           {/* Desktop Actions */}
@@ -148,24 +154,27 @@ const Header = () => {
               >
                 SADARBĪBA UN KONTAKTI
               </a>
-              <button
-                onClick={() => handleSmoothScroll("par-mums")}
-                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              <a
+                href="#par-mums"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PAR MUMS
-              </button>
-              <button
-                onClick={() => handleSmoothScroll("galerija")}
-                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              </a>
+              <a
+                href="#galerija"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 GALERIJA
-              </button>
-              <button
-                onClick={() => handleSmoothScroll("partneri")}
-                className="text-left font-sans text-base text-foreground hover:text-primary transition-colors py-2"
+              </a>
+              <a
+                href="#partneri"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PARTNERI
-              </button>
+              </a>
 
               <div className="flex gap-2 pt-2 border-t border-border">
                 <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
