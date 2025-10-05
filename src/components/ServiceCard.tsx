@@ -19,17 +19,10 @@ const ServiceCard = ({
   href = "/lv/pakalpojumi",
   hideButton = false,
 }: ServiceCardProps) => {
-  // карточки нормальной высоты, но картинка занимает больше места
-  const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[820px]" : "lg:h-[460px]";
-
-  // увеличиваем высоту изображения
-  const IMG_HEIGHT_CLASS =
-    height === "tall"
-      ? "h-[280px] md:h-[300px] lg:h-[580px]"
-      : "h-[220px] md:h-[260px] lg:h-[300px]";
-
-  const CLAMP_LINES = height === "tall" ? 4 : 2;
+  // Все карточки одинаковой высоты
+  const CARD_TOTAL_CLASS = "lg:h-[580px]";
+  const IMG_HEIGHT_CLASS = "h-[320px] md:h-[360px] lg:h-[380px]";
+  const CLAMP_LINES = 3;
 
   // shimmer эффект
   const shimmer =
@@ -50,9 +43,9 @@ const ServiceCard = ({
 
   return (
     <article
-      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
     >
-      {/* Изображение (увеличенное) */}
+      {/* Изображение */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
         <img
           src={image}
@@ -82,7 +75,7 @@ const ServiceCard = ({
           </p>
         </div>
 
-        {/* Кнопка (если не скрыта) */}
+        {/* Кнопка */}
         {!hideButton && (
           <div className="mt-5">
             <a href={href} className={buttonClass}>
