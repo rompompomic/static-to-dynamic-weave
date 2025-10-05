@@ -55,12 +55,12 @@ const Services = () => {
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8">
           Mūsu pakalpojumi
         </h2>
+
         <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-4xl">
           Mēs piedāvājam plašu demontāžas un zemes darbu klāstu – no dzīvojamo
           ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        {/* Desktop */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-stretch">
           <div className="flex flex-col">
             <ServiceCard {...services[0]} />

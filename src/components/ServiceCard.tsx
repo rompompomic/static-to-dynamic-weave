@@ -20,9 +20,9 @@ const ServiceCard = ({
 
   return (
     <div
-      className={`flex flex-col bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col justify-between bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
     >
-      {/* Изображение */}
+      {/* Картинка */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS}`}>
         <img
           src={image}
@@ -31,15 +31,18 @@ const ServiceCard = ({
         />
       </div>
 
-      {/* Контент без пустот */}
-      <div className="flex flex-col justify-between p-5 md:p-6 flex-1">
-        <div>
-          <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-            {title}
-          </h3>
-          <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug mt-1">
-            {description}
-          </p>
+      {/* Контент — без нижних отступов */}
+      <div className="flex flex-col flex-grow justify-between p-5 md:p-6">
+        <div className="flex flex-col justify-between h-full">
+          <div>
+            <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+              {title}
+            </h3>
+            <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug mt-1">
+              {description}
+            </p>
+          </div>
+          {/* пустоты снизу убраны */}
         </div>
       </div>
     </div>
