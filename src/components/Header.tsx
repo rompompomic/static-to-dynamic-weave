@@ -27,13 +27,13 @@ const Header = () => {
             <a href="/lv/sadarbiba-un-kontakti" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               SADARBĪBA UN KONTAKTI
             </a>
-            <a href="/#par-mums" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <a href="#par-mums" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               PAR MUMS
             </a>
-            <a href="/#galerija" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <a href="#galerija" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               GALERIJA
             </a>
-            <a href="/#partneri" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
+            <a href="#partneri" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               PARTNERI
             </a>
           </nav>
@@ -111,21 +111,21 @@ const Header = () => {
                 SADARBĪBA UN KONTAKTI
               </a>
               <a
-                href="/#par-mums"
+                href="#par-mums"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PAR MUMS
               </a>
               <a
-                href="/#galerija"
+                href="#galerija"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 GALERIJA
               </a>
               <a
-                href="/#partneri"
+                href="#partneri"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
