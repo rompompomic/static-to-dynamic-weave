@@ -1,34 +1,19 @@
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import demcoLogo from "@/assets/demco-logo.webp";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 12);
-    onScroll(); // инициализация
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
-    <header
-      className={[
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-card/90 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
-      ].join(" ")}
-    >
+    <header className="fixed top-0 left-0 w-full z-50 bg-card border-b border-border backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
-              className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain transition-all duration-300"
+              className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
               src={demcoLogo}
               alt="Demco Logo"
             />
@@ -57,7 +42,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-2.5">
             <div className="relative">
               <button
-                onClick={() => setLangDropdownOpen((v) => !v)}
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 className="inline-flex h-14 justify-center gap-2.5 px-3 py-4 items-center hover:bg-muted transition-colors"
               >
                 <span className="font-sans text-base text-foreground">LV</span>
@@ -95,11 +80,15 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen((v) => !v)}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
           </button>
         </div>
 
@@ -110,7 +99,7 @@ const Header = () => {
               <a href="/lv/pakalpojumi" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 PAKALPOJUMI
               </a>
-              <a href="/lv/sadarbiba-un-kontakti" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
+              <a href="/lv/sadarbiba-un-kontakti#forma" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 SADARBĪBA UN KONTAKTI
               </a>
               <a href="#par-mums" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
@@ -133,7 +122,9 @@ const Header = () => {
                 href="/lv/pakalpojumi"
                 className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2"
               >
-                <span className="font-sans font-bold text-white text-base">Skatīt pakalpojumus</span>
+                <span className="font-sans font-bold text-white text-base">
+                  Skatīt pakalpojumus
+                </span>
                 <ArrowUpRight className="w-5 h-5 text-white" />
               </a>
             </nav>
