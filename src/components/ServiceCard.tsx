@@ -49,8 +49,8 @@ const ServiceCard = ({
 
   const buttonClass =
     variant === "accent"
-      ? `bg-accent text-white ${baseButton} ${shimmer}`
-      : `bg-muted text-primary ${baseButton} ${shimmer}`;
+      ? `bg-primary text-white ${baseButton} ${shimmer}`
+      : `bg-white text-primary border border-border ${baseButton} ${shimmer}`;
 
   return (
     <article
