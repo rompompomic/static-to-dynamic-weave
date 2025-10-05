@@ -118,24 +118,6 @@ const Header = () => {
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
               <a
-                href="/lv/#par-mums"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
-                PAR MUMS
-              </a>
-              <a
-                href="/lv/#galerija"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
-                GALERIJA
-              </a>
-              <a
-                href="/lv/#partneri"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
-                PARTNERI
-              </a>
-              <a
                 href="/lv/pakalpojumi"
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
@@ -146,6 +128,24 @@ const Header = () => {
                 className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
               >
                 SADARBĪBA UN KONTAKTI
+              </a>
+              <a
+                href="#par-mums"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                PAR MUMS
+              </a>
+              <a
+                href="#galerija"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                GALERIJA
+              </a>
+              <a
+                href="#partneri"
+                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
+              >
+                PARTNERI
               </a>
 
               <div className="flex gap-2 pt-2 border-t border-border">
