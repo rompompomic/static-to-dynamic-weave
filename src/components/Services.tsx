@@ -23,7 +23,7 @@ const Services = () => {
       title: "Ražošanas ēku demontāža",
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
-      height: "sm" as const,
+      height: "short" as const,
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const Services = () => {
       title: "Zemes darbi",
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
-      height: "sm" as const,
+      height: "short" as const,
     },
     {
       id: 4,
@@ -39,15 +39,15 @@ const Services = () => {
       title: "Labiekārtošana",
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
-      height: "sm" as const,
+      height: "short" as const,
     },
     {
       id: 5,
       image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
       description:
-        "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām. Pēc darbiem nodrošinām tīru un drošu teritoriju.",
-      height: "sm" as const,
+        "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām.",
+      height: "short" as const,
     },
   ];
 
@@ -66,26 +66,26 @@ const Services = () => {
         {/* === Сетка карточек === */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
           <div className="flex flex-col">
-            <ServiceCard {...services[0]} />
+            <ServiceCard {...services[0]} hideButton />
           </div>
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[1]} />
-            <ServiceCard {...services[2]} />
+            <ServiceCard {...services[1]} hideButton />
+            <ServiceCard {...services[2]} hideButton />
           </div>
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[4]} />
-            <ServiceCard {...services[3]} />
+            <ServiceCard {...services[4]} hideButton />
+            <ServiceCard {...services[3]} hideButton />
           </div>
         </div>
 
-        {/* === Мобильная и планшетная сетка === */}
+        {/* === Мобильная сетка === */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 md:gap-8">
           {services.map((s) => (
-            <ServiceCard key={s.id} {...s} />
+            <ServiceCard key={s.id} {...s} hideButton />
           ))}
         </div>
 
-        {/* CTA кнопка снизу */}
+        {/* === ОДНА кнопка снизу === */}
         <div className="flex justify-center mt-12 md:mt-16">
           <a
             href="/lv/pakalpojumi"
