@@ -19,18 +19,17 @@ const ServiceCard = ({
   href = "/lv/pakalpojumi",
   hideButton = false,
 }: ServiceCardProps) => {
-  // === размеры ===
-  // теперь все карточки крупнее, одинаковые
+  // карточки нормальной высоты, но картинка занимает больше места
   const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[580px]" : "lg:h-[580px]";
+    height === "tall" ? "lg:h-[820px]" : "lg:h-[460px]";
 
-  // увеличенные картинки
+  // увеличиваем высоту изображения
   const IMG_HEIGHT_CLASS =
     height === "tall"
-      ? "h-[320px] md:h-[360px] lg:h-[380px]"
-      : "h-[320px] md:h-[360px] lg:h-[380px]";
+      ? "h-[280px] md:h-[300px] lg:h-[580px]"
+      : "h-[220px] md:h-[260px] lg:h-[300px]";
 
-  const CLAMP_LINES = height === "tall" ? 4 : 3;
+  const CLAMP_LINES = height === "tall" ? 4 : 2;
 
   // shimmer эффект
   const shimmer =
@@ -49,12 +48,11 @@ const ServiceCard = ({
     overflow-hidden ${shimmer}
   `;
 
-  // === основной блок ===
   return (
     <article
-      className={`relative flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
     >
-      {/* Изображение */}
+      {/* Изображение (увеличенное) */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
         <img
           src={image}
@@ -63,50 +61,37 @@ const ServiceCard = ({
           loading="lazy"
         />
         {showCursor && null}
+      </div>
 
-        {/* Если tall — текст прямо поверх картинки у нижнего края */}
-        {height === "tall" && (
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-            <h3 className="font-sans font-bold text-white text-xl md:text-2xl mb-2">
-              {title}
-            </h3>
-            <p className="font-sans text-white/90 text-sm md:text-base leading-normal">
-              {description}
-            </p>
+      {/* Контент */}
+      <div className="flex-1 flex flex-col justify-between p-5 md:p-6">
+        <div>
+          <h3 className="font-sans font-bold text-foreground text-lg md:text-xl mb-3 leading-snug">
+            {title}
+          </h3>
+          <p
+            className="font-sans text-muted-foreground text-sm md:text-base leading-normal"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: CLAMP_LINES,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
+            {description}
+          </p>
+        </div>
+
+        {/* Кнопка (если не скрыта) */}
+        {!hideButton && (
+          <div className="mt-5">
+            <a href={href} className={buttonClass}>
+              <span>Uzzināt vairāk</span>
+              <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+            </a>
           </div>
         )}
       </div>
-
-      {/* Контент под картинкой — только если не tall */}
-      {height !== "tall" && (
-        <div className="flex-1 flex flex-col justify-between p-5 md:p-6">
-          <div>
-            <h3 className="font-sans font-bold text-foreground text-lg md:text-xl mb-3 leading-snug">
-              {title}
-            </h3>
-            <p
-              className="font-sans text-muted-foreground text-sm md:text-base leading-normal"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: CLAMP_LINES,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-              }}
-            >
-              {description}
-            </p>
-          </div>
-
-          {!hideButton && (
-            <div className="mt-5">
-              <a href={href} className={buttonClass}>
-                <span>Uzzināt vairāk</span>
-                <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-              </a>
-            </div>
-          )}
-        </div>
-      )}
     </article>
   );
 };
