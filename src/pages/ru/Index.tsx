@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
+import HeroRU from "@/components/ru/Hero";
+import AboutUsRU from "@/components/ru/AboutUs";
+import ServicesRU from "@/components/ru/Services";
 import Gallery from "@/components/Gallery";
-import Partners from "@/components/Partners";
-import HowToApply from "@/components/HowToApply";
+import PartnersRU from "@/components/ru/Partners";
+import HowToApplyRU from "@/components/ru/HowToApply";
 import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 
@@ -34,12 +34,12 @@ const IndexRU = () => {
       
       <main className="bg-background overflow-x-hidden w-full min-h-screen pt-[72px] md:pt-[80px]">
         <Header />
-        <Hero />
-        <AboutUs />
-        <Services />
+        <HeroRU />
+        <AboutUsRU />
+        <ServicesRU />
         <Gallery />
-        <Partners />
-        <HowToApply />
+        <PartnersRU />
+        <HowToApplyRU />
         <Footer />
         <MobileCallButton />
       </main>
