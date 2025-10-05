@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-image.webp";
-import heroStrip from "@/assets/hero-strip.svg";
 
 const Hero = () => {
   return (
@@ -37,13 +36,6 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-
-      {/* Правая декоративная полоса (tablet+desktop) */}
-      <img
-        src={heroStrip}
-        alt="Decorative stripe"
-        className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none"
-      />
 
       {/* Контент */}
       <div className="relative z-10">

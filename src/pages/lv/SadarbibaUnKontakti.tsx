@@ -5,7 +5,6 @@ import MobileCallButton from "@/components/MobileCallButton";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
 import heroImage from "@/assets/hero-image.webp";
-import heroStrip from "@/assets/hero-strip.svg";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 const SadarbibaUnKontakti = () => {
   return <>
@@ -39,9 +38,6 @@ const SadarbibaUnKontakti = () => {
               </h1>
             </div>
           </div>
-        
-          {/* Right strip (tablet+desktop) */}
-          <img src={heroStrip} alt="" className="hidden md:block absolute right-0 top-0 z-20 h-full w-[131px] object-cover pointer-events-none" />
         
           {/* Content */}
           <div className="relative z-10">
