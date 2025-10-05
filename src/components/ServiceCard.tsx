@@ -21,9 +21,9 @@ const ServiceCard = ({
 
   return (
     <article
-      className={`flex flex-col w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
+      className={`flex flex-col justify-between w-full h-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 ${CARD_TOTAL_CLASS}`}
     >
-      {/* Изображение */}
+      {/* === Изображение === */}
       <div className={`relative w-full ${IMG_HEIGHT_CLASS} overflow-hidden`}>
         <img
           src={image}
@@ -33,8 +33,14 @@ const ServiceCard = ({
         />
       </div>
 
-      {/* Контент */}
-      <div className="flex-1 flex flex-col justify-start p-4 md:p-5 lg:p-5">
+      {/* === Контент === */}
+      <div
+        className={`
+          flex flex-col justify-end
+          p-4 md:p-5 lg:p-5
+          mt-auto
+        `}
+      >
         <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight mb-1">
           {title}
         </h3>
