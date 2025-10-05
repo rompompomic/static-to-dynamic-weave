@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
 import demcoLogo from "@/assets/demco-logo.webp";
 
@@ -11,7 +11,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <a href="/lv/" className="flex items-center">
             <img
               className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
               src={demcoLogo}
@@ -34,19 +34,19 @@ const Header = () => {
               SADARBĪBA UN KONTAKTI
             </a>
             <a
-              href="#par-mums"
+              href="/lv/#par-mums"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               PAR MUMS
             </a>
             <a
-              href="#galerija"
+              href="/lv/#galerija"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               GALERIJA
             </a>
             <a
-              href="#partneri"
+              href="/lv/#partneri"
               className="font-sans text-sm text-foreground hover:text-primary transition-colors"
             >
               PARTNERI
@@ -130,21 +130,21 @@ const Header = () => {
                 SADARBĪBA UN KONTAKTI
               </a>
               <a
-                href="#par-mums"
+                href="/lv/#par-mums"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 PAR MUMS
               </a>
               <a
-                href="#galerija"
+                href="/lv/#galerija"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
                 GALERIJA
               </a>
               <a
-                href="#partneri"
+                href="/lv/#partneri"
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-sans text-base text-foreground hover:text-primary transition-colors py-2"
               >
