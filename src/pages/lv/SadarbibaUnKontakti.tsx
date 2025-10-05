@@ -36,7 +36,7 @@ const SadarbibaUnKontakti = () => {
             paddingLeft: "max(env(safe-area-inset-left), 1rem)"
           }}>
               <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[10px]">
-                Pakalpojumi
+                Sadarbība un kontakti
               </h1>
             </div>
           </div>
@@ -52,8 +52,7 @@ const SadarbibaUnKontakti = () => {
           }}>
               <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
                 <p className="font-sans text-white text-base leading-relaxed my-[18px]">
-                  No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
-                  kas pielāgoti gan privātiem, gan industriāliem projektiem.
+                  Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                 </p>
               </div>
             </div>
@@ -67,11 +66,10 @@ const SadarbibaUnKontakti = () => {
                 ">
                 <div className="w-[800px]">
                   <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-                    Pakalpojumi
+                    Sadarbība un kontakti
                   </h1>
                   <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
-                    No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
-                    kas pielāgoti gan privātiem, gan industriāliem projektiem.
+                    Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                   </p>
                 </div>
               </div>
