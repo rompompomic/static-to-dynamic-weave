@@ -34,7 +34,7 @@ const Header = () => {
               SADARBĪBA UN KONTAKTI
             </a>
             <a
-              href="#par-mums"
+              href="#AboutUs"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
               PAR MUMS
