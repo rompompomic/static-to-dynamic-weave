@@ -11,13 +11,17 @@ import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
   useEffect(() => {
-    // Если в URL есть хэш (#galerija, #partneri и т.д.)
-    if (window.location.hash) {
-      // Убираем его из адреса
-      history.replaceState(null, "", window.location.pathname);
-      // Скроллим в начало
+    // Даем браузеру дорендерить и выполнить автоскролл, потом сбрасываем
+    const timer = setTimeout(() => {
+      if (window.location.hash) {
+        // Убираем хэш из адресной строки
+        history.replaceState(null, "", window.location.pathname);
+      }
+      // Принудительно возвращаем страницу наверх
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }
+    }, 50); // 50–100 мс — оптимально, чтобы браузер успел отработать автоскролл
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
