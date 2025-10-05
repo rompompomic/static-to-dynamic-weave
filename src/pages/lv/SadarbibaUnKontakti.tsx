@@ -33,7 +33,7 @@ const SadarbibaUnKontakti = () => {
             <div className="absolute inset-0 flex items-center z-10" style={{
             paddingLeft: "max(env(safe-area-inset-left), 1rem)"
           }}>
-              <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[10px]">
+              <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px]">
                 Sadarbība un kontakti
               </h1>
             </div>
