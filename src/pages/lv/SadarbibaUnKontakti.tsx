@@ -7,10 +7,8 @@ import ContactInfo from "@/components/ContactInfo";
 import heroImage from "@/assets/hero-image.webp";
 import heroStrip from "@/assets/hero-strip.svg";
 import { Phone, Mail, MessageSquare } from "lucide-react";
-
 const SadarbibaUnKontakti = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Sadarbība un kontakti | DEMCO</title>
         <meta name="description" content="Sazinieties ar DEMCO – jūsu uzticamo partneri būvniecībā. Piedāvājam risinājumus jūsu objektam." />
@@ -51,7 +49,7 @@ const SadarbibaUnKontakti = () => {
             clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)"
           }}>
               <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
-                <p className="font-sans text-white text-base leading-relaxed my-[18px]">
+                <p className="font-sans text-white text-base leading-relaxed my-[30px]">
                   Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                 </p>
               </div>
@@ -139,8 +137,6 @@ const SadarbibaUnKontakti = () => {
         <Footer />
         <MobileCallButton />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default SadarbibaUnKontakti;
