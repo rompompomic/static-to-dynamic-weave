@@ -7,6 +7,7 @@ interface ServiceCardProps {
   height?: "tall" | "short";
   showCursor?: boolean;
   href?: string;
+  hideButton?: boolean; // 👈 новый проп
 }
 
 const ServiceCard = ({
@@ -16,6 +17,7 @@ const ServiceCard = ({
   height = "short",
   showCursor = false,
   href = "/lv/pakalpojumi",
+  hideButton = false, // 👈 по умолчанию показываем кнопку
 }: ServiceCardProps) => {
   const CARD_TOTAL_CLASS =
     height === "tall" ? "lg:h-[849px]" : "lg:h-[410px]";
@@ -76,13 +78,15 @@ const ServiceCard = ({
           </p>
         </div>
 
-        {/* Кнопка */}
-        <div className="mt-6">
-          <a href={href} className={buttonClass}>
-            <span>Uzzināt vairāk</span>
-            <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-          </a>
-        </div>
+        {/* Кнопка — только если не скрыта */}
+        {!hideButton && (
+          <div className="mt-6">
+            <a href={href} className={buttonClass}>
+              <span>Uzzināt vairāk</span>
+              <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );
