@@ -32,20 +32,20 @@ const ServiceCard = ({
     "before:from-transparent before:via-white/20 before:to-transparent " +
     "group-hover:before:translate-x-full before:transition-transform before:duration-700";
 
+  // Цветовая схема кнопки
+  const buttonColor =
+    variant === "accent"
+      ? "bg-primary text-white hover:bg-primary/90"
+      : "bg-white text-primary hover:bg-white/90 border border-border";
+
   const buttonClass = `
     group relative inline-flex items-center justify-center gap-2
     w-full h-11 px-6 rounded-lg font-sans font-bold text-base
-    bg-white text-primary shadow-sm hover:shadow-md
-    transition ease-out duration-300
+    shadow-sm hover:shadow-md transition ease-out duration-300
     hover:scale-[1.02] active:scale-[0.97]
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-    overflow-hidden ${shimmer}
+    overflow-hidden ${buttonColor} ${shimmer}
   `;
-
-  if (variant === "accent") {
-    // если карточка акцентная — делаем заливку
-    buttonClass.replace("bg-white text-primary", "bg-primary text-white");
-  }
 
   return (
     <article
