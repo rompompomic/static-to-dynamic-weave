@@ -56,7 +56,7 @@ const Pakalpojumi = () => {
             }}
           >
             <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[10px]">
-              Pakalpojumi
+              Mūsu būvniecības pakalpojumi
             </h1>
           </div>
         </div>
@@ -88,9 +88,9 @@ const Pakalpojumi = () => {
                 md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
               "
             >
-              <div className="w-[800px]">
-                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
-                  Pakalpojumi
+              <div className="w-full">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight tracking-wide">
+                  Mūsu būvniecības pakalpojumi
                 </h1>
                 <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
                   No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
