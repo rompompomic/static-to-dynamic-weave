@@ -60,11 +60,11 @@ const Footer = () => {
             </h3>
             <div className="flex flex-col gap-3 text-muted-foreground">
               <a
-                href="tel:+37120000000"
+                href="tel:+37128663429"
                 className="flex items-center gap-2 hover:text-primary transition-colors whitespace-nowrap"
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-sans text-sm">+371 2000 0000</span>
+                <span className="font-sans text-sm">+371 2866 3429</span>
               </a>
               <a
                 href="mailto:info@demco.lv"
@@ -75,7 +75,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-2 whitespace-nowrap">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span className="font-sans text-sm">Rīga, Latvija</span>
+                <span className="font-sans text-sm">Malienas iela 78 - 5, Rīga, LV-1064</span>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-sans text-muted-foreground text-sm text-center md:text-left whitespace-nowrap">
-              © 2025 SIA DEMCO ·{" "}
+              © 2025 SIA "DEMCO" ·{" "}
               <a
                 href="/lv/privatuma-politika"
                 className="hover:text-primary transition-colors underline underline-offset-2"
