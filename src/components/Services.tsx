@@ -21,7 +21,7 @@ const Services = () => {
       title: "Ražošanas ēku demontāža",
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
-      height: "short" as const,
+      imageHeight: "h-[150px]",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Services = () => {
       title: "Zemes darbi",
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
-      height: "short" as const,
+      imageHeight: "h-[150px]",
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const Services = () => {
       title: "Labiekārtošana",
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
-      height: "short" as const,
+      imageHeight: "h-[150px]",
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ const Services = () => {
       title: "Būvgružu izvešana un utilizācija",
       description:
         "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām.",
-      height: "short" as const,
+      imageHeight: "h-[150px]",
     },
   ];
 
@@ -60,20 +60,20 @@ const Services = () => {
           ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        {/* Desktop Layout */}
+        {/* Desktop */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-stretch">
           <div className="flex flex-col">
             <ServiceCard {...services[0]} />
           </div>
 
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[1]} imageHeight="h-[160px]" />
-            <ServiceCard {...services[2]} imageHeight="h-[160px]" />
+            <ServiceCard {...services[1]} />
+            <ServiceCard {...services[2]} />
           </div>
 
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[3]} imageHeight="h-[160px]" />
-            <ServiceCard {...services[4]} imageHeight="h-[160px]" />
+            <ServiceCard {...services[3]} />
+            <ServiceCard {...services[4]} />
           </div>
         </div>
       </div>
