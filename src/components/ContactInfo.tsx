@@ -65,7 +65,7 @@ const ContactInfo = () => {
           {/* Google Maps */}
           <div className="bg-background border border-border rounded overflow-hidden h-[460px] md:h-[500px] lg:h-[540px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139895.74485817535!2d23.885837287109373!3d56.94929939999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2sRiga%2C%20Latvia!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8706.48181405081!2d24.25305345871394!3d56.97587409933749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slv!2slv!4v1728148800000!5m2!1slv!2slv"
               className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
