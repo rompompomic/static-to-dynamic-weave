@@ -64,11 +64,11 @@ const SadarbibaUnKontakti = () => {
                   md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
                 "
               >
-                <div className="w-[900px] max-w-[900px]">
-                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
+                <div className="max-w-[640px] lg:max-w-[700px]">
+                  <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight break-words">
                     Sadarbība un kontakti
                   </h1>
-                  <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[720px] lg:max-w-[800px]">
+                  <p className="mt-6 font-sans text-white text-lg leading-relaxed">
                     Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim labāko risinājumu jūsu objektam.
                   </p>
                 </div>
