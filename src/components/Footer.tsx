@@ -75,7 +75,9 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-2 whitespace-nowrap">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span className="font-sans text-sm">Malienas iela 78 - 5, Rīga, LV-1064</span>
+                <span className="font-sans text-sm">
+                  Malienas iela 78 - 5, Rīga, LV-1064
+                </span>
               </div>
             </div>
           </div>
@@ -84,15 +86,18 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Левая часть */}
             <p className="font-sans text-muted-foreground text-sm text-center md:text-left whitespace-nowrap">
-              © 2025 SIA "DEMCO" ·{" "}
-              <a
-                href="/lv/privatuma-politika"
-                className="hover:text-primary transition-colors underline underline-offset-2"
-              >
-                Privātuma politika
-              </a>
+              © 2025 SIA "DEMCO"
             </p>
+
+            {/* Правая часть — кнопка политики */}
+            <a
+              href="/lv/privatuma-politika"
+              className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-2 whitespace-nowrap"
+            >
+              Privātuma politika
+            </a>
           </div>
         </div>
       </div>
