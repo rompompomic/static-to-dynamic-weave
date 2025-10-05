@@ -1,19 +1,36 @@
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import demcoLogo from "@/assets/demco-logo.webp";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 12);
+    onScroll(); // инициализация
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-card border-b border-border backdrop-blur-sm bg-card/95">
+    <header
+      className={[
+        // остаёмся липкими к верху страницы
+        "sticky top-0 z-40 w-full transition-all duration-300",
+        // стили до скролла и после
+        isScrolled
+          ? "bg-card/90 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      ].join(" ")}
+    >
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
-              className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain"
+              className="w-[140px] md:w-[184px] h-10 md:h-14 object-contain transition-all duration-300"
               src={demcoLogo}
               alt="Demco Logo"
             />
@@ -21,34 +38,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <a
-              href="/lv/pakalpojumi"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
+            <a href="/lv/pakalpojumi" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               PAKALPOJUMI
             </a>
-            <a
-              href="/lv/sadarbiba-un-kontakti"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
+            <a href="/lv/sadarbiba-un-kontakti" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               SADARBĪBA UN KONTAKTI
             </a>
-            <a
-              href="#par-mums"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
+            <a href="#par-mums" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               PAR MUMS
             </a>
-            <a
-              href="#galerija"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
+            <a href="#galerija" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               GALERIJA
             </a>
-            <a
-              href="#partneri"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
+            <a href="#partneri" className="font-sans text-sm text-foreground hover:text-primary transition-colors">
               PARTNERI
             </a>
           </nav>
@@ -57,23 +59,17 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-2.5">
             <div className="relative">
               <button
-                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                onClick={() => setLangDropdownOpen((v) => !v)}
                 className="inline-flex h-14 justify-center gap-2.5 px-3 py-4 items-center hover:bg-muted transition-colors"
               >
-                <span className="font-sans font-normal text-foreground text-base">
-                  LV
-                </span>
+                <span className="font-sans text-base text-foreground">LV</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
 
               {langDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 bg-card border border-border shadow-lg min-w-[80px] animate-slide-down">
-                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
-                    EN
-                  </button>
-                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">
-                    RU
-                  </button>
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">EN</button>
+                  <button className="w-full px-4 py-2 text-left font-sans text-sm hover:bg-muted transition-colors">RU</button>
                 </div>
               )}
             </div>
@@ -101,15 +97,11 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen((v) => !v)}
             className="lg:hidden p-2 hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
           </button>
         </div>
 
@@ -117,56 +109,33 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden pt-4 pb-4 animate-slide-down">
             <nav className="flex flex-col gap-4">
-              <a
-                href="/lv/pakalpojumi"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
+              <a href="/lv/pakalpojumi" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 PAKALPOJUMI
               </a>
-              <a
-                href="/lv/sadarbiba-un-kontakti#forma"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
+              <a href="/lv/sadarbiba-un-kontakti#" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 SADARBĪBA UN KONTAKTI
               </a>
-              <a
-                href="#par-mums"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
+              <a href="#par-mums" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 PAR MUMS
               </a>
-              <a
-                href="#galerija"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
+              <a href="#galerija" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 GALERIJA
               </a>
-              <a
-                href="#partneri"
-                className="font-sans font-normal text-foreground text-base hover:text-primary transition-colors py-2"
-              >
+              <a href="#partneri" className="font-sans text-base text-foreground hover:text-primary transition-colors py-2">
                 PARTNERI
               </a>
 
               <div className="flex gap-2 pt-2 border-t border-border">
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
-                  LV
-                </button>
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
-                  EN
-                </button>
-                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">
-                  RU
-                </button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">LV</button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">EN</button>
+                <button className="px-4 py-2 font-sans text-sm hover:bg-muted transition-colors">RU</button>
               </div>
 
               <a
                 href="/lv/pakalpojumi"
                 className="inline-flex justify-center gap-2.5 px-6 py-3 bg-gradient-hero items-center hover:opacity-90 transition-opacity mt-2"
               >
-                <span className="font-sans font-bold text-white text-base">
-                  Skatīt pakalpojumus
-                </span>
+                <span className="font-sans font-bold text-white text-base">Skatīt pakalpojumus</span>
                 <ArrowUpRight className="w-5 h-5 text-white" />
               </a>
             </nav>
