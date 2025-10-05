@@ -80,7 +80,7 @@ const Pakalpojumi = () => {
             }}
           >
             <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
-              <p className="font-sans text-white text-base leading-relaxed my-[18px] text-center">
+              <p className="font-sans text-white text-base leading-relaxed my-[18px] text-left">
                 No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
                 kas pielāgoti gan privātiem, gan industriāliem projektiem.
               </p>
