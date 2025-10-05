@@ -22,24 +22,6 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <a
-              href="/lv/#par-mums"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
-              PAR MUMS
-            </a>
-            <a
-              href="/lv/#galerija"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
-              GALERIJA
-            </a>
-            <a
-              href="/lv/#partneri"
-              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
-            >
-              PARTNERI
-            </a>
-            <a
               href="/lv/pakalpojumi"
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
@@ -50,6 +32,24 @@ const Header = () => {
               className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
             >
               SADARBĪBA UN KONTAKTI
+            </a>
+            <a
+              href="#par-mums"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              PAR MUMS
+            </a>
+            <a
+              href="#galerija"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              GALERIJA
+            </a>
+            <a
+              href="#partneri"
+              className="font-sans font-normal text-foreground text-sm hover:text-primary transition-colors"
+            >
+              PARTNERI
             </a>
           </nav>
 
