@@ -37,7 +37,7 @@ const Pakalpojumi = () => {
             className="h-full w-auto object-cover object-center"
           />
         </div>
-
+      
         {/* MOBILE image */}
         <div className="md:hidden relative z-0 -mx-4">
           <img
@@ -55,12 +55,12 @@ const Pakalpojumi = () => {
               paddingRight: "max(env(safe-area-inset-right), 1rem)",
             }}
           >
-            <h1 className="font-mono font-bold text-white text-[26px] leading-snug px-[10px] max-w-[340px]">
-              Profesionāli demontāžas un zemes darbu pakalpojumi
+            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[10px]">
+              Pakalpojumi
             </h1>
           </div>
         </div>
-
+      
         {/* Content */}
         <div className="relative z-10">
           {/* Mobile toothed block */}
@@ -73,13 +73,12 @@ const Pakalpojumi = () => {
           >
             <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
               <p className="font-sans text-white text-base leading-relaxed my-[18px] text-left">
-                No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru
-                risinājumu, kas pielāgoti gan privātiem, gan industriāliem
-                projektiem.
+                No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
+                kas pielāgoti gan privātiem, gan industriāliem projektiem.
               </p>
             </div>
           </div>
-
+      
           {/* Desktop / Tablet */}
           <div className="hidden md:block">
             <div
@@ -89,14 +88,13 @@ const Pakalpojumi = () => {
                 md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
               "
             >
-              <div className="max-w-[950px]">
-                <h1 className="font-mono font-bold text-white text-4xl lg:text-[52px] leading-tight mb-6">
-                  Profesionāli demontāžas un zemes darbu pakalpojumi
+              <div className="w-[800px]">
+                <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
+                  Pakalpojumi
                 </h1>
-                <p className="font-sans text-white text-lg leading-relaxed max-w-[700px]">
-                  No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru
-                  risinājumu, kas pielāgoti gan privātiem, gan industriāliem
-                  projektiem.
+                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px]">
+                  No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu,
+                  kas pielāgoti gan privātiem, gan industriāliem projektiem.
                 </p>
               </div>
             </div>
