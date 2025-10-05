@@ -16,7 +16,6 @@ const Services = () => {
       description:
         "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
       height: "tall" as const,
-      variant: "default" as const,
     },
     {
       id: 2,
@@ -25,7 +24,6 @@ const Services = () => {
       description:
         "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
       height: "short" as const,
-      variant: "default" as const,
     },
     {
       id: 3,
@@ -34,8 +32,6 @@ const Services = () => {
       description:
         "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
       height: "short" as const,
-      variant: "accent" as const,
-      showCursor: true,
     },
     {
       id: 4,
@@ -44,7 +40,6 @@ const Services = () => {
       description:
         "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
       height: "short" as const,
-      variant: "default" as const,
     },
     {
       id: 5,
@@ -53,12 +48,14 @@ const Services = () => {
       description:
         "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām. Pēc darbiem nodrošinām tīru un drošu teritoriju.",
       height: "short" as const,
-      variant: "default" as const,
     },
   ];
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
+    <section
+      id="pakalpojumi"
+      className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]"
+    >
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-6 md:mb-8 animate-fade-in">
           Mūsu pakalpojumi
@@ -69,45 +66,36 @@ const Services = () => {
           ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        {/* Mobile & Tablet Layout */}
+        {/* === Сетка карточек === */}
         <div
           className="
-            grid grid-cols-1 md:grid-cols-2 lg:hidden
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
             gap-6 md:gap-8
-            md:[grid-auto-rows:minmax(0,1fr)]
-            items-stretch
+            lg:auto-rows-[minmax(280px,1fr)]
           "
         >
-          {services.map((service) => (
-            <div key={service.id} className="h-full">
+          {services.map((service, i) => (
+            <div
+              key={service.id}
+              className={`${
+                service.id === 1
+                  ? "lg:row-span-2" // 👈 первая растягивается на 2 строки
+                  : ""
+              }`}
+            >
               <ServiceCard {...service} hideButton />
             </div>
           ))}
         </div>
 
-        {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px]">
-          <div className="flex flex-col">
-            <ServiceCard {...services[0]} hideButton />
-          </div>
-          <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[1]} hideButton />
-            <ServiceCard {...services[2]} hideButton />
-          </div>
-          <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[4]} hideButton />
-            <ServiceCard {...services[3]} hideButton />
-          </div>
-        </div>
-
-        {/* === CTA кнопка снизу === */}
+        {/* CTA кнопка снизу */}
         <div className="flex justify-center mt-12 md:mt-16">
           <a
             href="/lv/pakalpojumi"
             className="
               group relative inline-flex items-center justify-center gap-2.5
               h-12 px-8 rounded-lg
-              bg-accent text-white font-sans font-bold
+              bg-primary text-white font-sans font-bold
               shadow-sm hover:shadow-md transition ease-out duration-200
               hover:scale-[1.02] active:scale-[0.97]
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
