@@ -21,13 +21,18 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   // карточки нормальной высоты, но картинка занимает больше места
   const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[820px]" : "lg:h-[460px]";
-
-  // увеличиваем высоту изображения
+    height === "tall"
+      ? "lg:h-[849px]"
+      : height === "sm"
+      ? "lg:h-[340px]" // 👈 меньше, чем было
+      : "lg:h-[410px]";
+  
   const IMG_HEIGHT_CLASS =
     height === "tall"
-      ? "h-[280px] md:h-[300px] lg:h-[580px]"
-      : "h-[220px] md:h-[260px] lg:h-[300px]";
+      ? "h-[220px] md:h-[220px] lg:h-[520px]"
+      : height === "sm"
+      ? "h-[160px] md:h-[200px] lg:h-[160px]" // 👈 компактная версия
+      : "h-[180px] md:h-[220px] lg:h-[200px]";
 
   const CLAMP_LINES = height === "tall" ? 4 : 2;
 
