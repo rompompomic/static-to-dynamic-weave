@@ -2,48 +2,44 @@ interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
-  height?: "tall" | "short";
-  imageHeight?: string;
+  size?: "tall" | "default";
+  imageHeight?: string; // опционально переопределить высоту картинки
 }
 
 const ServiceCard = ({
   image,
   title,
   description,
-  height = "short",
+  size = "default",
   imageHeight,
 }: ServiceCardProps) => {
-  const CARD_TOTAL_CLASS =
-    height === "tall" ? "lg:h-[849px]" : "lg:h-[410px]";
-  const IMG_HEIGHT_CLASS =
-    imageHeight || (height === "tall" ? "h-[520px]" : "h-[180px]");
+  // Только высота ИЗОБРАЖЕНИЯ, у всей карточки высота авто → пустот снизу не будет
+  const imgH =
+    imageHeight ||
+    (size === "tall"
+      ? "h-[460px] md:h-[500px] lg:h-[520px]"
+      : "h-[200px] md:h-[220px] lg:h-[240px]");
 
   return (
-    <div
-      className={`flex flex-col justify-between bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden ${CARD_TOTAL_CLASS}`}
-    >
-      {/* Картинка */}
-      <div className={`relative w-full ${IMG_HEIGHT_CLASS}`}>
+    <div className="w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+      {/* Картинка: блок, заполняет контейнер */}
+      <div className={`w-full ${imgH}`}>
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="block w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 
-      {/* Контент — без нижних отступов */}
-      <div className="flex flex-col flex-grow justify-between p-5 md:p-6">
-        <div className="flex flex-col justify-between h-full">
-          <div>
-            <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-              {title}
-            </h3>
-            <p className="font-sans text-muted-foreground text-sm md:text-base leading-snug mt-1">
-              {description}
-            </p>
-          </div>
-          {/* пустоты снизу убраны */}
-        </div>
+      {/* Текст: никаких внешних маргинов, только внутренние паддинги */}
+      <div className="px-5 pt-3 pb-5">
+        <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
+          {title}
+        </h3>
+        <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug">
+          {description}
+        </p>
       </div>
     </div>
   );

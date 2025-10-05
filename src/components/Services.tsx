@@ -1,4 +1,6 @@
 import ServiceCard from "./ServiceCard";
+import { ArrowUpRight } from "lucide-react";
+
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
@@ -6,49 +8,6 @@ import labiekartosana from "@/assets/labiekartosana.webp";
 import buvgruzuIzvesana from "@/assets/buvgruzu-izvesana-un-utilizacija.webp";
 
 const Services = () => {
-  const services = [
-    {
-      id: 1,
-      image: buvjuUnEkuDemontaza,
-      title: "Būvju un ēku demontāža",
-      description:
-        "Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu.",
-      height: "tall" as const,
-    },
-    {
-      id: 2,
-      image: razosanasEkuDemontaza,
-      title: "Ražošanas ēku demontāža",
-      description:
-        "Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija.",
-      imageHeight: "h-[150px]",
-    },
-    {
-      id: 3,
-      image: zemesDarbi,
-      title: "Zemes darbi",
-      description:
-        "Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija.",
-      imageHeight: "h-[150px]",
-    },
-    {
-      id: 4,
-      image: labiekartosana,
-      title: "Labiekārtošana",
-      description:
-        "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas.",
-      imageHeight: "h-[150px]",
-    },
-    {
-      id: 5,
-      image: buvgruzuIzvesana,
-      title: "Būvgružu izvešana un utilizācija",
-      description:
-        "Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām.",
-      imageHeight: "h-[150px]",
-    },
-  ];
-
   return (
     <section className="w-full py-12 md:py-16 lg:py-20 bg-[#a4a4a4]/[0.08]">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
@@ -61,20 +20,111 @@ const Services = () => {
           ēku nojaukšanas līdz industriālām būvēm un labiekārtošanai.
         </p>
 
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-stretch">
+        {/* Desktop */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-start">
+          {/* Левая — высокая карточка (за счёт большей высоты картинки, без фикс-высоты всей карточки) */}
           <div className="flex flex-col">
-            <ServiceCard {...services[0]} />
+            <ServiceCard
+              image={buvjuUnEkuDemontaza}
+              title="Būvju un ēku demontāža"
+              description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
+              size="tall"
+              // эту высоту можно подкрутить под ваш текст, чтобы визуально = двум малым
+              imageHeight="h-[500px]"
+            />
           </div>
 
+          {/* Средняя колонка */}
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[1]} />
-            <ServiceCard {...services[2]} />
+            <ServiceCard
+              image={razosanasEkuDemontaza}
+              title="Ražošanas ēku demontāža"
+              description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
+              size="default"
+              imageHeight="h-[220px]"
+            />
+            <ServiceCard
+              image={zemesDarbi}
+              title="Zemes darbi"
+              description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
+              size="default"
+              imageHeight="h-[220px]"
+            />
           </div>
 
+          {/* Правая колонка */}
           <div className="flex flex-col gap-[29px]">
-            <ServiceCard {...services[3]} />
-            <ServiceCard {...services[4]} />
+            <ServiceCard
+              image={labiekartosana}
+              title="Labiekārtošana"
+              description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
+              size="default"
+              imageHeight="h-[220px]"
+            />
+            <ServiceCard
+              image={buvgruzuIzvesana}
+              title="Būvgružu izvešana un utilizācija"
+              description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
+              size="default"
+              imageHeight="h-[220px]"
+            />
           </div>
+        </div>
+
+        {/* Mobile / Tablet */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
+          <ServiceCard
+            image={buvjuUnEkuDemontaza}
+            title="Būvju un ēku demонтāža"
+            description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
+            size="tall"
+            imageHeight="h-[360px]"
+          />
+          <ServiceCard
+            image={razosanasEkuDemontaza}
+            title="Ražošanas ēku demontāža"
+            description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
+            imageHeight="h-[200px]"
+          />
+          <ServiceCard
+            image={zemesDarbi}
+            title="Zemes darbi"
+            description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
+            imageHeight="h-[200px]"
+          />
+          <ServiceCard
+            image={labiekartosana}
+            title="Labiekārtošana"
+            description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
+            imageHeight="h-[200px]"
+          />
+          <ServiceCard
+            image={buvgruzuIzvesana}
+            title="Būvgružu izvešana un utilizācija"
+            description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
+            imageHeight="h-[200px]"
+          />
+        </div>
+
+        {/* CTA внизу секции */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          <a
+            href="/lv/pakalpojumi"
+            className="
+              group relative inline-flex items-center justify-center gap-2.5
+              h-12 px-8 rounded-lg
+              bg-primary text-white font-sans font-bold
+              shadow-sm hover:shadow-md transition ease-out duration-200
+              hover:scale-[1.02] active:scale-[0.97]
+              overflow-hidden
+              before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+              before:from-transparent before:via-white/20 before:to-transparent
+              group-hover:before:translate-x-full before:transition-transform before:duration-700
+            "
+          >
+            <span className="text-base md:text-lg">Skatīt visus pakalpojumus</span>
+            <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>
