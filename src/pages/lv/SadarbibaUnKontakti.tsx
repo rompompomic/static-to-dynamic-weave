@@ -61,6 +61,7 @@ const SadarbibaUnKontakti = () => {
                   container mx-auto px-8 lg:px-[75px]
                   md:min-h-[635px] md:flex md:items-center
                   md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+                  xl:pr-[calc(48%+131px)] 2xl:pr-[calc(45%+131px)]
                 ">
                 <div className="w-[800px] xl:w-[1000px] 2xl:w-[1200px]">
                   <h1 className="font-mono font-bold text-white text-4xl lg:text-[50px] leading-tight">
