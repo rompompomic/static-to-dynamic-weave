@@ -11,33 +11,32 @@ const Services = () => {
     {
       image: buvjuUnEkuDemontaza,
       title: "Būvju un ēku demontāža",
-      description: "Droša ēku nojaukšana ar modernu tehniku un pilnīgu kontroli.",
+      description: "Droša un efektīva dažāda tipa ēku nojaukšana ar mūsdienīgu tehniku un normatīvu ievērošanu",
       href: "/lv/pakalpojumi#eku-demontaza",
       large: true,
     },
     {
       image: razosanasEkuDemontaza,
       title: "Ražošanas ēku demontāža",
-      description: "Industriālo objektu izjaukšana ar precīzu plānošanu un drošību.",
+      description: "Rūpīga industriālo konstrukciju plānošana, izjaukšana un būvgružu utilizācija",
       href: "/lv/pakalpojumi#razosanas-eku-demontaza",
     },
     {
       image: labiekartosana,
       title: "Labiekārtošana",
-      description: "Laukumu un zaļo zonu veidošana ar kvalitatīvu rezultātu.",
+      description: "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas",
       href: "/lv/pakalpojumi#labiekartosana",
     },
     {
       image: zemesDarbi,
       title: "Zemes darbi",
-      description: "Rakšana, drenāža un pamatu sagatavošana ar precizitāti.",
+      description: "Grunts rakšana, izlīdzināšana, pamatu sagatavošana un drenāža",
       href: "/lv/pakalpojumi#zemes-darbi",
-      special: true,
     },
     {
       image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
-      description: "Savākšana un utilizācija atbilstoši vides standartiem.",
+      description: "Būvgružu savākšana, transportēšana un utilizācija saskaņā ar vides normām",
       href: "/lv/pakalpojumi#buvgruzu-izvesana",
     },
   ];
@@ -45,30 +44,30 @@ const Services = () => {
   return (
     <section id="pakalpojumi" className="w-full py-16 md:py-20 bg-[#f9f9f9] scroll-mt-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-        {/* Заголовок */}
+        {/* === Заголовок === */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-10">
           Mūsu pakalpojumi
         </h2>
 
-        {/* Desktop */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[24px] items-start">
-          {/* Левая высокая */}
+        {/* === DESKTOP === */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[28px] items-start">
+          {/* Левая высокая карточка */}
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          {/* Остальные */}
-          <div className="col-span-2 grid grid-cols-2 gap-[24px]">
-            {services.slice(1).map((s, i) => (
-              <ServiceCard key={i} {...s} />
+          {/* Правые карточки (4 шт.) */}
+          <div className="grid grid-cols-2 gap-[28px] col-span-2">
+            {services.slice(1).map((service, i) => (
+              <ServiceCard key={i} {...service} />
             ))}
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* === MOBILE / TABLET === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
-          {services.map((s, i) => (
-            <ServiceCard key={i} {...s} />
+          {services.map((service, i) => (
+            <ServiceCard key={i} {...service} />
           ))}
         </div>
       </div>
@@ -78,9 +77,10 @@ const Services = () => {
 
 export default Services;
 
+/* === Компонент карточки === */
 const ServiceCard = ({ image, title, description, href, large = false, special = false }: any) => {
-  // === новые, меньшие высоты ===
-  const imgH = large ? 380 : 190;
+  // Увеличиваем только главную карточку
+  const imgH = large ? 480 : 190;
 
   return (
     <article className="w-full bg-white rounded-none overflow-hidden flex flex-col">
