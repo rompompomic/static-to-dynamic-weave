@@ -44,19 +44,16 @@ const Services = () => {
   return (
     <section id="pakalpojumi" className="w-full py-16 md:py-20 bg-[#f9f9f9] scroll-mt-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
-        {/* === Заголовок === */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-10">
           Mūsu pakalpojumi
         </h2>
 
-        {/* === DESKTOP === */}
+        {/* DESKTOP */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[28px] items-start">
-          {/* Левая высокая карточка */}
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          {/* Правые карточки (4 шт.) */}
           <div className="grid grid-cols-2 gap-[28px] col-span-2">
             {services.slice(1).map((service, i) => (
               <ServiceCard key={i} {...service} />
@@ -64,7 +61,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* === MOBILE / TABLET === */}
+        {/* MOBILE / TABLET */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} />
@@ -77,21 +74,26 @@ const Services = () => {
 
 export default Services;
 
-/* === Компонент карточки === */
-const ServiceCard = ({ image, title, description, href, large = false, special = false }: any) => {
-  // Размеры изображений
-  const imgH = large ? 480 : 160; // ← фиксированная высота для второстепенных карточек
+/* === КАРТОЧКА === */
+const ServiceCard = ({ image, title, description, href, large = false }: any) => {
+  const imgH = large ? 480 : 160;
 
   return (
-    <article
+    <a
+      href={href}
       className={`
-        w-full bg-white overflow-hidden flex flex-col 
-        rounded-none
+        group w-full bg-white overflow-hidden flex flex-col rounded-none 
+        transition-all duration-200 hover:shadow-md hover:scale-[1.01]
       `}
     >
       {/* Изображение */}
       <div style={{ height: `${imgH}px` }} className="w-full">
-        <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
       </div>
 
       {/* Контент */}
@@ -102,23 +104,19 @@ const ServiceCard = ({ image, title, description, href, large = false, special =
         </div>
 
         {/* Кнопка */}
-        <a
-          href={href}
+        <div
           className={`
-            mt-3 group relative inline-flex items-center justify-between gap-1.5
+            mt-3 relative inline-flex items-center justify-center gap-1.5
             h-9 px-4 font-sans font-bold text-[13px]
-            rounded-none transition ease-out duration-200 overflow-hidden
-            shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]
-            before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-            before:from-transparent before:via-white/20 before:to-transparent
-            group-hover:before:translate-x-full before:transition-transform before:duration-700
-            ${special ? "bg-[#19ae89] text-white" : "bg-[#f6f6f6] text-[#19ae89]"}
+            rounded-none transition-all duration-200 border border-[#19ae89]
+            text-[#19ae89] bg-white group-hover:bg-[#19ae89] group-hover:text-white
+            shadow-sm overflow-hidden
           `}
         >
           <span>Uzzināt vairāk</span>
           <ArrowUpRight className="w-4 h-4 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-        </a>
+        </div>
       </div>
-    </article>
+    </a>
   );
 };
