@@ -11,33 +11,36 @@ const Services = () => {
     {
       image: buvjuUnEkuDemontaza,
       title: "Būvju un ēku demontāža",
-      description: "Droša un efektīva dažāda tipa ēku nojaukšana ar mūsdienīgu tehniku un normatīvu ievērošanu",
+      description:
+        "Dažāda tipa ēku demontāža tiek veikta droši, precīzi un efektīvi, izmantojot modernu tehniku un ievērojot visus normatīvus",
       href: "/lv/pakalpojumi#eku-demontaza",
-      large: true,
     },
     {
       image: razosanasEkuDemontaza,
       title: "Ražošanas ēku demontāža",
-      description: "Rūpīga industriālo konstrukciju plānošana, izjaukšana un būvgružu utilizācija",
+      description:
+        "Industriālo konstrukciju izjaukšana ar detalizētu plānošanu, darba drošības ievērošanu un būvgružu utilizāciju",
       href: "/lv/pakalpojumi#razosanas-eku-demontaza",
-    },
-    {
-      image: zemesDarbi,
-      title: "Zemes darbi",
-      description: "Grunts rakšana, izlīdzināšana, pamatu sagatavošana un drenāža",
-      href: "/lv/pakalpojumi#zemes-darbi",
-      highlight: true,
     },
     {
       image: labiekartosana,
       title: "Labiekārtošana",
-      description: "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas",
+      description: "Ceļu, laukumu un zaļo zonu labiekārtošana pēc demontāžas, nodrošinot estētisku un funkcionālu vidi",
       href: "/lv/pakalpojumi#labiekartosana",
+    },
+    {
+      image: zemesDarbi,
+      title: "Zemes darbi",
+      description:
+        "Grunts rakšana, izlīdzināšana, drenāžas un pamatu sagatavošana ar kvalitatīvu tehniku un pieredzējušu komandu",
+      href: "/lv/pakalpojumi#zemes-darbi",
+      highlight: true, // зелёная кнопка
     },
     {
       image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
-      description: "Būvgružu savākšana, transportēšana un utilizācija saskaņā ar vides normām",
+      description:
+        "Būvgružu savākšana, transportēšana un utilizācija tiek veikta saskaņā ar vides aizsardzības prasībām un normām",
       href: "/lv/pakalpojumi#buvgruzu-izvesana",
     },
   ];
@@ -49,7 +52,7 @@ const Services = () => {
           Mūsu pakalpojumi
         </h2>
 
-        {/* === DESKTOP === */}
+        {/* === Desktop layout === */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[28px]">
           {/* Левая высокая карточка */}
           <div className="row-span-2">
@@ -64,7 +67,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* === MOBILE / TABLET === */}
+        {/* === Mobile / Tablet === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} />
@@ -77,38 +80,34 @@ const Services = () => {
 
 export default Services;
 
-/* === Компонент карточки === */
+/* === Card component === */
 const ServiceCard = ({ image, title, description, href, highlight = false, large = false }: any) => {
-  const buttonBase =
-    "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md transition-transform duration-200 ease-out group";
-  const buttonStyle = highlight
-    ? "bg-[#19ae89] text-white hover:opacity-90"
-    : "bg-[#f6f6f6] text-[#19ae89] hover:bg-[#e8e8e8]";
-
   return (
-    <div
-      className={`w-full bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col`}
+    <article
+      className={`flex flex-col w-full rounded-2xl overflow-hidden bg-cover bg-center border border-gray-200`}
       style={{
+        backgroundImage: `url(${image})`,
         height: large ? "500px" : "240px",
       }}
     >
-      {/* Изображение */}
-      <div className="w-full h-[60%]">
-        <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
-      </div>
+      <div className="flex flex-col items-start gap-4 p-4 mt-auto bg-white w-full">
+        <header className="flex flex-col items-start gap-1.5">
+          <h3 className="font-[Onest] font-bold text-[#222] text-[21px] leading-tight">{title}</h3>
+          <p className="font-[Onest] text-base text-[#222] leading-snug">{description}</p>
+        </header>
 
-      {/* Контент */}
-      <div className="h-[40%] flex flex-col justify-between px-6 py-4">
-        <div>
-          <h3 className="font-mono font-bold text-lg md:text-xl text-foreground mb-1">{title}</h3>
-          <p className="font-sans text-sm text-muted-foreground leading-relaxed">{description}</p>
-        </div>
+        <a
+          href={href}
+          className={`group flex items-center justify-between pl-8 pr-7 py-4 w-full no-underline transition-colors focus:outline-none focus:ring-2 focus:ring-[#27ab8c] focus:ring-offset-2 rounded-md ${
+            highlight ? "bg-[#19ae89] text-white hover:opacity-90" : "bg-[#f6f6f6] text-[#27ab8c] hover:bg-[#eeeeee]"
+          }`}
+          aria-label={`Uzzināt vairāk par ${title}`}
+        >
+          <span className="font-[Onest] font-bold text-base leading-normal">Uzzināt vairāk</span>
 
-        <a href={href} className={`${buttonBase} ${buttonStyle}`}>
-          <span className="font-sans font-bold text-base">Uzzināt vairāk</span>
-          <ArrowUpRight className="ml-1 w-4 h-4 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+          <ArrowUpRight className="ml-2 w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
         </a>
       </div>
-    </div>
+    </article>
   );
 };
