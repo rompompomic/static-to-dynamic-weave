@@ -26,10 +26,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section
-      id="par-mums"
-      className="w-full py-12 md:py-16 lg:py-20 bg-white"
-    >
+    <section id="par-mums" className="w-full py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 md:mb-12 animate-fade-in">
           Par mums
@@ -37,16 +34,13 @@ const AboutUs = () => {
 
         <div className="max-w-4xl mb-12 animate-fade-in">
           <p className="font-sans text-foreground text-base md:text-lg leading-relaxed mb-6">
-            SIA DEMCO ir būvniecības uzņēmums ar vairāk nekā 10 gadu pieredzi
-            demontāžas un zemes darbu jomā. Mēs nodrošinām pilnu ciklu – no
-            sākotnējās objekta izvērtēšanas līdz pilnīgai darbu pabeigšanai.
+            SIA DEMCO ir būvniecības uzņēmums ar vairāk nekā 10 gadu pieredzi demontāžas un zemes darbu jomā. Mēs
+            nodrošinām pilnu ciklu – no sākotnējās objekta izvērtēšanas līdz pilnīgai darbu pabeigšanai.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-8">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20">
-              <span className="font-sans font-bold text-primary text-sm md:text-base">
-                10+ gadu pieredze
-              </span>
+              <span className="font-sans font-bold text-primary text-sm md:text-base">10+ gadu pieredze</span>
             </div>
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20">
               <span className="font-sans font-bold text-primary text-sm md:text-base">
@@ -60,12 +54,13 @@ const AboutUs = () => {
           {advantages.map((advantage, index) => (
             <div
               key={index}
-              className="flex flex-col items-start gap-4 p-6 bg-background border border-border hover:border-primary/50 transition-colors"
+              className="flex items-center gap-4 p-6 bg-background border border-border hover:border-primary/50 transition-colors rounded-md"
             >
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-primary/10 rounded-md">
+              {/* Иконка */}
+              <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary/10 rounded-md shrink-0">
                 {advantage.icon === "tractor" ? (
                   <div
-                    className="w-10 h-10 md:w-14 md:h-14 bg-primary"
+                    className="w-8 h-8 md:w-10 md:h-10 bg-primary"
                     style={{
                       WebkitMaskImage: `url(${tractor})`,
                       maskImage: `url(${tractor})`,
@@ -82,13 +77,10 @@ const AboutUs = () => {
                 )}
               </div>
 
-              <div>
-                <h3 className="font-sans font-bold text-foreground text-lg mb-2">
-                  {advantage.title}
-                </h3>
-                <p className="font-sans text-muted-foreground text-sm">
-                  {advantage.description}
-                </p>
+              {/* Текст */}
+              <div className="flex flex-col">
+                <h3 className="font-sans font-bold text-foreground text-lg mb-1">{advantage.title}</h3>
+                <p className="font-sans text-muted-foreground text-sm leading-snug">{advantage.description}</p>
               </div>
             </div>
           ))}
