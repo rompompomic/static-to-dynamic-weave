@@ -12,35 +12,34 @@ const Services = () => {
       image: buvjuUnEkuDemontaza,
       title: "Būvju un ēku demontāža",
       description:
-        "Dažāda tipa ēku demontāža tiek veikta droši, precīzi un efektīvi, izmantojot modernu tehniku un ievērojot visus normatīvus",
+        "Droša un efektīva ēku nojaukšana ar modernu tehniku, ievērojot visus drošības un normatīvos standartus.",
       href: "/lv/pakalpojumi#eku-demontaza",
     },
     {
       image: razosanasEkuDemontaza,
       title: "Ražošanas ēku demontāža",
       description:
-        "Industriālo konstrukciju izjaukšana ar detalizētu plānošanu, darba drošības ievērošanu un būvgružu utilizāciju",
+        "Industriālo ēku izjaukšana ar rūpīgu plānošanu, drošības pasākumiem un pilnīgu būvgružu utilizāciju.",
       href: "/lv/pakalpojumi#razosanas-eku-demontaza",
     },
     {
       image: labiekartosana,
       title: "Labiekārtošana",
-      description: "Ceļu, laukumu un zaļo zonu labiekārtošana pēc demontāžas, nodrošinot estētisku un funkcionālu vidi",
+      description: "Ceļu, laukumu un zaļo zonu labiekārtošana pēc būvdarbiem, radot estētisku un funkcionālu vidi.",
       href: "/lv/pakalpojumi#labiekartosana",
     },
     {
       image: zemesDarbi,
       title: "Zemes darbi",
       description:
-        "Grunts rakšana, izlīdzināšana, drenāžas un pamatu sagatavošana ar kvalitatīvu tehniku un pieredzējušu komandu",
+        "Grunts rakšana, izlīdzināšana, drenāža un pamatu sagatavošana ar kvalitatīvu tehniku un profesionālu pieeju.",
       href: "/lv/pakalpojumi#zemes-darbi",
-      highlight: true, // зелёная кнопка
+      highlight: true,
     },
     {
       image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
-      description:
-        "Būvgružu savākšana, transportēšana un utilizācija tiek veikta saskaņā ar vides aizsardzības prasībām un normām",
+      description: "Būvgružu savākšana, transportēšana un utilizācija tiek veikta saskaņā ar visām vides prasībām.",
       href: "/lv/pakalpojumi#buvgruzu-izvesana",
     },
   ];
@@ -52,14 +51,11 @@ const Services = () => {
           Mūsu pakalpojumi
         </h2>
 
-        {/* === Desktop layout === */}
+        {/* === DESKTOP === */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[28px]">
-          {/* Левая высокая карточка */}
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
-
-          {/* Правая сетка 2x2 */}
           <div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-[28px]">
             {services.slice(1).map((service, i) => (
               <ServiceCard key={i} {...service} />
@@ -67,7 +63,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* === Mobile / Tablet === */}
+        {/* === MOBILE / TABLET === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} />
@@ -80,7 +76,7 @@ const Services = () => {
 
 export default Services;
 
-/* === Card component === */
+/* === Компонент карточки === */
 const ServiceCard = ({ image, title, description, href, highlight = false, large = false }: any) => {
   return (
     <article
@@ -104,7 +100,6 @@ const ServiceCard = ({ image, title, description, href, highlight = false, large
           aria-label={`Uzzināt vairāk par ${title}`}
         >
           <span className="font-[Onest] font-bold text-base leading-normal">Uzzināt vairāk</span>
-
           <ArrowUpRight className="ml-2 w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
         </a>
       </div>
