@@ -166,7 +166,7 @@ const Pakalpojumi = () => {
       </section>
       
       {/* 2. Ražošanas ēku demontāža */}
-      <section id="razosanas-demontaza" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
+      <section id="razosanas-eku-demontaza" className="w-full py-12 md:py-16 bg-[#a4a4a4]/[0.08]">
         <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
             <div className="order-2 md:order-1">
