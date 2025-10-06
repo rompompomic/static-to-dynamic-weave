@@ -47,12 +47,10 @@ const NotFound = () => {
               paddingRight: "max(env(safe-area-inset-right), 1rem)",
             }}
           >
-            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px] text-center">
-              404
-            </h1>
+            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px] text-center">404</h1>
             <h2 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px] text-center">
-              LAPA NAV ATRASTA  
-            <h2/>
+              LAPA NAV ATRASTA
+            </h2>
           </div>
         </div>
 
