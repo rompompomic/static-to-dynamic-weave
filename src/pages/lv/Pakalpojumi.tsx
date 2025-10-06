@@ -15,7 +15,7 @@ const Pakalpojumi = () => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const headerOffset = 100; // Adjust for fixed header height
+      const headerOffset = 120; // Adjust for fixed header height
       const elementPosition = el.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -34,7 +34,7 @@ const Pakalpojumi = () => {
         const id = hash.replace('#', '');
         const el = document.getElementById(id);
         if (el) {
-          const headerOffset = 100;
+          const headerOffset = 120;
           const elementPosition = el.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           
