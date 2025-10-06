@@ -27,7 +27,7 @@ const ServiceCard = ({ image, title, description, href, size = "square", buttonS
   };
 
   return (
-    <div className="w-full bg-white border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
+    <div className="w-full h-full bg-white border border-border shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
       <div className={`w-full ${imgHeight} overflow-hidden`}>
         <img
           src={image}
@@ -40,7 +40,7 @@ const ServiceCard = ({ image, title, description, href, size = "square", buttonS
       <div className="p-5 flex flex-col flex-grow justify-between">
         <div>
           <h3 className="font-sans font-bold text-lg text-foreground mb-2 leading-tight">{title}</h3>
-          <p className="font-sans text-sm text-muted-foreground leading-relaxed">{description}</p>
+          <p className="font-sans text-sm text-muted-foreground line-clamp-1">{description}</p>
         </div>
 
         {href && (
