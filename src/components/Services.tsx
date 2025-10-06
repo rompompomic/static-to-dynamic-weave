@@ -13,6 +13,7 @@ const Services = () => {
       title: "Būvju un ēku demontāža",
       description: "Droša ēku nojaukšana ar modernu tehniku un pilnīgu atkritumu kontroli.",
       href: "/lv/pakalpojumi#eku-demontaza",
+      large: true,
     },
     {
       image: razosanasEkuDemontaza,
@@ -48,14 +49,17 @@ const Services = () => {
           Mūsu pakalpojumi
         </h2>
 
-        {/* Desktop */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[28px] items-start">
+        {/* Desktop layout */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[24px] items-start">
+          {/* Левая высокая карточка */}
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
-          <div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-[28px]">
+
+          {/* Правая сетка 2x2 с уменьшенным зазором и увеличенной высотой */}
+          <div className="col-span-2 grid grid-cols-2 gap-y-[18px] gap-x-[24px]">
             {services.slice(1).map((service, i) => (
-              <ServiceCard key={i} {...service} />
+              <ServiceCard key={i} {...service} rightSide />
             ))}
           </div>
         </div>
@@ -73,14 +77,17 @@ const Services = () => {
 
 export default Services;
 
-/* === CARD COMPONENT === */
-const ServiceCard = ({ image, title, description, href, highlight = false, large = false }: any) => {
+/* === Карточка === */
+const ServiceCard = ({ image, title, description, href, highlight = false, large = false, rightSide = false }: any) => {
+  // увеличиваем высоту только у правых карточек
+  const height = large ? "520px" : rightSide ? "290px" : "260px";
+
   return (
     <article
       className={`flex flex-col w-full overflow-hidden bg-cover bg-center`}
       style={{
         backgroundImage: `url(${image})`,
-        height: large ? "520px" : "260px",
+        height,
       }}
     >
       <div className="flex flex-col justify-between p-5 mt-auto bg-white w-full">
@@ -89,9 +96,10 @@ const ServiceCard = ({ image, title, description, href, highlight = false, large
           <p className="font-[Onest] text-[13px] text-[#444] leading-snug">{description}</p>
         </header>
 
+        {/* Кнопка с плавной анимацией */}
         <a
           href={href}
-          className={`relative group inline-flex items-center justify-between gap-2 mt-4 h-11 px-6 rounded-none font-[Onest] font-bold text-[14px] transition ease-out duration-200 overflow-hidden
+          className={`relative group inline-flex items-center justify-between gap-2 mt-4 h-11 px-6 font-[Onest] font-bold text-[14px] transition ease-out duration-200 overflow-hidden
             before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
             group-hover:before:translate-x-full before:transition-transform before:duration-700
             ${
