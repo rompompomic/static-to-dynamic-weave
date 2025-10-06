@@ -68,7 +68,7 @@ const NotFound = () => {
                 Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
               </p>
             </div>
-            <div className="mt-6">
+            <div className="inline-flex justify-center gap-2.5 px-6 py-3 bg-white items-center hover:bg-opacity-90 transition-all">
               <a
                 href="/"
                 className="
