@@ -10,16 +10,33 @@ import Footer from "@/components/Footer";
 import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
-  useEffect(() => {
-    // Reset scroll to top on mount
-    const timer = setTimeout(() => {
-      if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname);
-      }
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }, 50);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    return () => clearTimeout(timer);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash.substring(1);
+    
+    if (hash) {
+      // Delay to ensure content is rendered
+      const timer = setTimeout(() => {
+        scrollToSection(hash);
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      // Only scroll to top if there's no hash
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
   }, []);
 
   return (
