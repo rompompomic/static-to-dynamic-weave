@@ -109,7 +109,7 @@ const NotFound = () => {
                 <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1000px]">
                   Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
                 </p>
-                <div className="mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+                <div>
                   <a
                     href="/"
                     className="
