@@ -11,33 +11,32 @@ const Services = () => {
     {
       image: buvjuUnEkuDemontaza,
       title: "Būvju un ēku demontāža",
-      description: "Droša ēku nojaukšana ar modernu tehniku un pilnīgu atkritumu kontroli.",
+      description: "Droša un efektīva dažāda tipa ēku nojaukšana ar mūsdienīgu tehniku un normatīvu ievērošanu",
       href: "/lv/pakalpojumi#eku-demontaza",
       large: true,
     },
     {
       image: razosanasEkuDemontaza,
       title: "Ražošanas ēku demontāža",
-      description: "Industriālo objektu izjaukšana ar precīzu plānošanu un drošību.",
+      description: "Rūpīga industriālo konstrukciju plānošana, izjaukšana un būvgružu utilizācija",
       href: "/lv/pakalpojumi#razosanas-eku-demontaza",
     },
     {
       image: labiekartosana,
       title: "Labiekārtošana",
-      description: "Laukumu un zaļo zonu veidošana ar kvalitatīvu rezultātu.",
+      description: "Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas",
       href: "/lv/pakalpojumi#labiekartosana",
     },
     {
       image: zemesDarbi,
       title: "Zemes darbi",
-      description: "Rakšana, drenāža un pamatu sagatavošana ar precizitāti.",
+      description: "Grunts rakšana, izlīdzināšana, pamatu sagatavošana un drenāža",
       href: "/lv/pakalpojumi#zemes-darbi",
-      highlight: true,
     },
     {
       image: buvgruzuIzvesana,
       title: "Būvgružu izvešana un utilizācija",
-      description: "Savākšana un utilizācija saskaņā ar vides standartiem.",
+      description: "Būvgružu savākšana, transportēšana un utilizācija saskaņā ar vides normām",
       href: "/lv/pakalpojumi#buvgruzu-izvesana",
     },
   ];
@@ -45,26 +44,27 @@ const Services = () => {
   return (
     <section id="pakalpojumi" className="w-full py-16 md:py-20 bg-[#f9f9f9] scroll-mt-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+        {/* === Заголовок === */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-10">
           Mūsu pakalpojumi
         </h2>
 
-        {/* Desktop layout */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[24px] items-start">
+        {/* === DESKTOP === */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[28px] items-start">
           {/* Левая высокая карточка */}
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          {/* Правая сетка 2x2 с уменьшенным зазором и увеличенной высотой */}
-          <div className="col-span-2 grid grid-cols-2 gap-y-[18px] gap-x-[24px]">
+          {/* Правые карточки (4 шт.) */}
+          <div className="grid grid-cols-2 gap-[28px] col-span-2">
             {services.slice(1).map((service, i) => (
-              <ServiceCard key={i} {...service} rightSide />
+              <ServiceCard key={i} {...service} />
             ))}
           </div>
         </div>
 
-        {/* Mobile / Tablet */}
+        {/* === MOBILE / TABLET === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} />
@@ -77,41 +77,34 @@ const Services = () => {
 
 export default Services;
 
-/* === Карточка === */
-const ServiceCard = ({ image, title, description, href, highlight = false, large = false, rightSide = false }: any) => {
-  // увеличиваем высоту только у правых карточек
-  const height = large ? "520px" : rightSide ? "290px" : "260px";
-
+/* === Компонент карточки === */
+const ServiceCard = ({ image, title, description, href, large }: any) => {
   return (
-    <article
-      className={`flex flex-col w-full overflow-hidden bg-cover bg-center`}
-      style={{
-        backgroundImage: `url(${image})`,
-        height,
-      }}
+    <div
+      className={`w-full bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col ${
+        large ? "h-full" : ""
+      }`}
     >
-      <div className="flex flex-col justify-between p-5 mt-auto bg-white w-full">
-        <header>
-          <h3 className="font-[Onest] font-bold text-[#222] text-[18px] mb-1 leading-tight">{title}</h3>
-          <p className="font-[Onest] text-[13px] text-[#444] leading-snug">{description}</p>
-        </header>
+      {/* Изображение */}
+      <div className={`${large ? "h-[460px]" : "h-[320px]"} w-full`}>
+        <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+      </div>
 
-        {/* Кнопка с плавной анимацией */}
+      {/* Контент */}
+      <div className="px-6 py-5 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 className="font-mono font-bold text-lg md:text-xl text-foreground mb-1">{title}</h3>
+          <p className="font-sans text-sm text-muted-foreground">{description}</p>
+        </div>
+
         <a
           href={href}
-          className={`relative group inline-flex items-center justify-between gap-2 mt-4 h-11 px-6 font-[Onest] font-bold text-[14px] transition ease-out duration-200 overflow-hidden
-            before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
-            group-hover:before:translate-x-full before:transition-transform before:duration-700
-            ${
-              highlight
-                ? "bg-[#19ae89] text-white shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.97]"
-                : "bg-[#f6f6f6] text-[#19ae89] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.97]"
-            }`}
+          className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary/10 text-primary font-sans font-semibold rounded-md hover:bg-primary/20 transition-transform duration-200 hover:scale-[1.05]"
         >
           <span>Uzzināt vairāk</span>
-          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+          <ArrowUpRight className="w-4 h-4" />
         </a>
       </div>
-    </article>
+    </div>
   );
 };
