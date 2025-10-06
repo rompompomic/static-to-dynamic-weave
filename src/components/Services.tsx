@@ -50,12 +50,12 @@ const Services = () => {
         </h2>
 
         {/* Desktop layout */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[22px] items-start">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[24px] items-start">
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          <div className="grid grid-cols-2 gap-[22px] col-span-2">
+          <div className="grid grid-cols-2 gap-[24px] col-span-2">
             {services.slice(1).map((service, i) => (
               <ServiceCard key={i} {...service} />
             ))}
@@ -80,23 +80,23 @@ const ServiceCard = ({ image, title, description, href, large, special }: any) =
   return (
     <div className="w-full bg-white rounded-none overflow-hidden flex flex-col h-full">
       {/* Изображение */}
-      <div className={`${large ? "h-[500px]" : "h-[260px]"} w-full`}>
+      <div className={`${large ? "h-[430px]" : "h-[200px]"} w-full`}>
         <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
       </div>
 
-      {/* Контент */}
-      <div className="px-6 py-5 flex flex-col justify-between flex-grow">
+      {/* Контент — уменьшен по высоте */}
+      <div className="px-6 py-4 flex flex-col justify-between flex-grow min-h-[150px]">
         <div>
-          <h3 className="font-mono font-bold text-lg md:text-xl text-foreground mb-1">{title}</h3>
-          <p className="font-sans text-[13px] text-muted-foreground leading-snug">{description}</p>
+          <h3 className="font-mono font-bold text-base md:text-lg text-foreground mb-1 leading-tight">{title}</h3>
+          <p className="font-sans text-[12px] text-muted-foreground leading-snug">{description}</p>
         </div>
 
         {/* Кнопка */}
         <a
           href={href}
           className={`
-            mt-4 group relative inline-flex items-center justify-center gap-2 
-            h-11 px-6 rounded-none font-sans font-bold text-sm md:text-base
+            mt-3 group relative inline-flex items-center justify-center gap-2 
+            h-10 px-5 rounded-none font-sans font-bold text-sm
             transition ease-out duration-200
             ${special ? "bg-[#19ae89] text-white" : "bg-[#f6f6f6] text-[#19ae89]"}
             hover:scale-[1.03] active:scale-[0.98]
