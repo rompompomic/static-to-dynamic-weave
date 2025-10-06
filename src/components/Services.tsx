@@ -50,12 +50,12 @@ const Services = () => {
         </h2>
 
         {/* Desktop layout */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[20px] items-start">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[24px] items-start">
           <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          <div className="grid grid-cols-2 gap-[20px] col-span-2">
+          <div className="grid grid-cols-2 gap-[24px] col-span-2">
             {services.slice(1).map((service, i) => (
               <ServiceCard key={i} {...service} />
             ))}
@@ -80,14 +80,14 @@ const ServiceCard = ({ image, title, description, href, large, special }: any) =
   return (
     <div className="w-full bg-white rounded-none overflow-hidden flex flex-col h-full">
       {/* Изображение */}
-      <div className={`${large ? "h-[370px]" : "h-[160px]"} w-full`}>
+      <div className={`${large ? "h-[430px]" : "h-[200px]"} w-full`}>
         <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
       </div>
 
-      {/* Контент (уменьшено по высоте) */}
-      <div className="px-5 py-3 flex flex-col justify-between flex-grow min-h-[130px]">
+      {/* Контент — уменьшен по высоте */}
+      <div className="px-6 py-4 flex flex-col justify-between flex-grow min-h-[150px]">
         <div>
-          <h3 className="font-mono font-bold text-[15px] md:text-base text-foreground mb-1 leading-tight">{title}</h3>
+          <h3 className="font-mono font-bold text-base md:text-lg text-foreground mb-1 leading-tight">{title}</h3>
           <p className="font-sans text-[12px] text-muted-foreground leading-snug">{description}</p>
         </div>
 
@@ -96,7 +96,7 @@ const ServiceCard = ({ image, title, description, href, large, special }: any) =
           href={href}
           className={`
             mt-3 group relative inline-flex items-center justify-center gap-2 
-            h-9 px-4 rounded-none font-sans font-bold text-[13px]
+            h-10 px-5 rounded-none font-sans font-bold text-sm
             transition ease-out duration-200
             ${special ? "bg-[#19ae89] text-white" : "bg-[#f6f6f6] text-[#19ae89]"}
             hover:scale-[1.03] active:scale-[0.98]
@@ -107,7 +107,7 @@ const ServiceCard = ({ image, title, description, href, large, special }: any) =
           `}
         >
           <span>Uzzināt vairāk</span>
-          <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 ease-out group-hover:translate-x-1" />
         </a>
       </div>
     </div>
