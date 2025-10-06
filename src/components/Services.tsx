@@ -4,7 +4,7 @@ import buvjuUnEkuDemontaza from "@/assets/services-buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/services-razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/services-zemes-darbi.webp";
 import labiekartosana from "@/assets/services-labiekartosana.webp";
-import buvgruzuIzvesana from "@/assets/assets-buvgruzu-izvesana-un-utilizacija.webp";
+import buvgruzuIzvesana from "@/assets/services-buvgruzu-izvesana-un-utilizacija.webp";
 
 const Services = () => {
   const services = [
