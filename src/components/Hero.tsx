@@ -8,11 +8,7 @@ const Hero = () => {
       {/* === IMAGE: desktop (правый край), mobile (вверху) === */}
       {/* Desktop */}
       <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end w-[52%] pointer-events-none select-none">
-        <img
-          src={heroImage}
-          alt="Construction site"
-          className="h-full w-auto object-cover object-center"
-        />
+        <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
       </div>
 
       {/* Mobile (full-bleed) */}
@@ -43,20 +39,16 @@ const Hero = () => {
         <div
           className="md:hidden bg-gradient-hero"
           style={{
-            clipPath:
-              "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
+            clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
           }}
         >
           <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
             <p className="font-sans text-white text-base leading-relaxed mb-6 text-left">
-              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
-              kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
-              gataviem projektiem.
+              Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu –
+              no sākotnējām idejām līdz gataviem projektiem.
             </p>
             <button className="inline-flex justify-center gap-2.5 px-6 py-3 bg-white items-center hover:bg-opacity-90 transition-all">
-              <span className="font-sans font-bold text-primary text-sm">
-                Uzzināt vairāk
-              </span>
+              <span className="font-sans font-bold text-primary text-sm">Uzzināt vairāk</span>
               <ArrowUpRight className="w-5 h-5 text-primary" />
             </button>
 
@@ -64,20 +56,12 @@ const Hero = () => {
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-1">
-                  <span className="font-mono font-bold text-white text-4xl leading-none">
-                    120+
-                  </span>
-                  <span className="font-sans text-white text-sm">
-                    Pabeigti projekti
-                  </span>
+                  <span className="font-mono font-bold text-white text-4xl leading-none">120+</span>
+                  <span className="font-sans text-white text-sm">Pabeigti projekti</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-mono font-bold text-white text-4xl leading-none">
-                    32
-                  </span>
-                  <span className="font-sans text-white text-sm">
-                    Profesionāļi komandā
-                  </span>
+                  <span className="font-mono font-bold text-white text-4xl leading-none">32</span>
+                  <span className="font-sans text-white text-sm">Profesionāļi komandā</span>
                 </div>
               </div>
             </div>
@@ -93,11 +77,11 @@ const Hero = () => {
                 Jūsu uzticams partneris būvniecībā
               </h1>
               <p className="mt-4 md:mt-6 font-sans text-white text-base md:text-lg leading-relaxed">
-                Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus,
-                kas aptver visu būvniecības procesu – no sākotnējām idejām līdz
-                gataviem projektiem.
+                Mūsu būvniecības uzņēmums piedāvā augstas kvalitātes pakalpojumus, kas aptver visu būvniecības procesu –
+                no sākotnējām idejām līdz gataviem projektiem.
               </p>
-              <button
+              <a
+                href="/lv/pakalpojumi"
                 className="
                   mt-6 md:mt-8 group relative inline-flex items-center justify-center gap-2.5
                   h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
@@ -113,7 +97,7 @@ const Hero = () => {
               >
                 <span className="text-sm md:text-base">Uzzināt vairāk</span>
                 <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
-              </button>
+              </a>
 
               {/* Статистика */}
               <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-white/20">
@@ -122,17 +106,13 @@ const Hero = () => {
                     <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
                       120+
                     </span>
-                    <span className="font-sans text-white text-sm md:text-base">
-                      Pabeigti projekti
-                    </span>
+                    <span className="font-sans text-white text-sm md:text-base">Pabeigti projekti</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="font-mono font-bold text-white text-3xl md:text-[44px] lg:text-[50px] leading-none">
                       32
                     </span>
-                    <span className="font-sans text-white text-sm md:text-base">
-                      Profesionāļi komandā
-                    </span>
+                    <span className="font-sans text-white text-sm md:text-base">Profesionāļi komandā</span>
                   </div>
                 </div>
               </div>
