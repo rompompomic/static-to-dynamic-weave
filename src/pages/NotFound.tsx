@@ -27,13 +27,9 @@ const NotFound = () => {
       <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
         {/* DESKTOP image (справа) */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
-          <img
-            src={heroImage}
-            alt="Construction site"
-            className="h-full w-auto object-cover object-center"
-          />
+          <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
         </div>
-      
+
         {/* MOBILE image */}
         <div className="md:hidden relative z-0 -mx-4">
           <img
@@ -52,24 +48,19 @@ const NotFound = () => {
             }}
           >
             <div>
-              <h1 className="font-mono font-bold text-white text-[64px] leading-none mb-2">
-                404
-              </h1>
-              <h2 className="font-mono font-bold text-white text-[20px] leading-tight px-[10px]">
-                LAPA NAV ATRASTA
-              </h2>
+              <h1 className="font-mono font-bold text-white text-[64px] leading-none mb-2">404</h1>
+              <h2 className="font-mono font-bold text-white text-[20px] leading-tight px-[10px]">LAPA NAV ATRASTA</h2>
             </div>
           </div>
         </div>
-      
+
         {/* Content */}
         <div className="relative z-10">
           {/* Mobile toothed block */}
           <div
             className="md:hidden bg-gradient-hero"
             style={{
-              clipPath:
-                "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
+              clipPath: "polygon(0 56px, 18% 56px, 25% 36px, 75% 36px, 82% 56px, 100% 56px, 100% 100%, 0 100%)",
             }}
           >
             <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
@@ -80,14 +71,12 @@ const NotFound = () => {
                 href="/"
                 className="inline-flex justify-center gap-2.5 px-6 py-3 bg-white items-center hover:bg-opacity-90 transition-all"
               >
-                <span className="font-sans font-bold text-primary text-sm">
-                  Atgriezties uz sākumu
-                </span>
+                <span className="font-sans font-bold text-primary text-sm">Atgriezties uz sākumu</span>
                 <ArrowRight className="w-5 h-5 text-primary" />
               </a>
             </div>
           </div>
-      
+
           {/* Desktop / Tablet */}
           <div className="hidden md:block">
             <div
@@ -98,9 +87,7 @@ const NotFound = () => {
               "
             >
               <div className="w-full max-w-[600px]">
-                <h1 className="font-mono font-bold text-white text-[80px] md:text-[100px] leading-none mb-4">
-                  404
-                </h1>
+                <h1 className="font-mono font-bold text-white text-[80px] md:text-[100px] leading-none mb-4">404</h1>
                 <h2 className="font-mono font-bold text-white text-3xl md:text-4xl leading-tight mb-4">
                   LAPA NAV ATRASTA
                 </h2>

@@ -44,6 +44,7 @@ const Services = () => {
   return (
     <section id="pakalpojumi" className="w-full py-16 md:py-20 bg-[#f9f9f9] scroll-mt-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+        {/* Заголовок */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-10">
           Mūsu pakalpojumi
         </h2>
@@ -61,10 +62,10 @@ const Services = () => {
           </div>
         </div>
 
-        {/* MOBILE / TABLET */}
+        {/* MOBILE / TABLET — все одинаковые */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
-            <ServiceCard key={i} {...service} />
+            <ServiceCard key={i} {...service} uniform />
           ))}
         </div>
       </div>
@@ -75,8 +76,9 @@ const Services = () => {
 export default Services;
 
 /* === КАРТОЧКА === */
-const ServiceCard = ({ image, title, description, href, large = false }: any) => {
-  const imgH = large ? 480 : 160;
+const ServiceCard = ({ image, title, description, href, large = false, uniform = false }: any) => {
+  // на мобилках и планшетах все одинаковые
+  const imgH = uniform ? 180 : large ? 480 : 160;
 
   return (
     <a
@@ -84,10 +86,11 @@ const ServiceCard = ({ image, title, description, href, large = false }: any) =>
       className={`
         group w-full bg-white overflow-hidden flex flex-col rounded-none 
         transition-all duration-200 hover:shadow-md hover:scale-[1.01]
+        cursor-pointer
       `}
     >
       {/* Изображение */}
-      <div style={{ height: `${imgH}px` }} className="w-full">
+      <div style={{ height: `${imgH}px` }} className="w-full flex-shrink-0">
         <img
           src={image}
           alt={title}
@@ -97,7 +100,12 @@ const ServiceCard = ({ image, title, description, href, large = false }: any) =>
       </div>
 
       {/* Контент */}
-      <div className="flex flex-col justify-between flex-1 px-5 py-3">
+      <div
+        className={`
+          flex flex-col justify-between flex-1 px-5 py-3
+          ${uniform ? "min-h-[190px]" : ""}
+        `}
+      >
         <div>
           <h3 className="font-mono font-bold text-[15px] md:text-[16px] text-foreground leading-tight mb-1">{title}</h3>
           <p className="font-sans text-[13px] text-muted-foreground leading-snug">{description}</p>
@@ -108,8 +116,9 @@ const ServiceCard = ({ image, title, description, href, large = false }: any) =>
           className={`
             mt-3 relative inline-flex items-center justify-center gap-1.5
             h-9 px-4 font-sans font-bold text-[13px]
-            rounded-none transition-all duration-200 border border-[#19ae89]
-            text-[#19ae89] bg-white group-hover:bg-[#19ae89] group-hover:text-white
+            rounded-none transition-all duration-200
+            text-[#19ae89] bg-[#f6f6f6]
+            group-hover:bg-[#19ae89] group-hover:text-white
             shadow-sm overflow-hidden
           `}
         >
