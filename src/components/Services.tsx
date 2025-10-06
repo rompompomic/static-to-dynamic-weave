@@ -79,8 +79,10 @@ export default Services;
 
 /* === Компонент карточки === */
 const ServiceCard = ({ image, title, description, href, large = false, special = false }: any) => {
-  // Увеличиваем только главную карточку
-  const imgH = large ? 480 : 190;
+  // — Размеры изображений
+  // Главная карточка — крупная
+  // Второстепенные — немного меньше
+  const imgH = large ? 480 : 170; // ← тут уменьшили с 190px до 170px
 
   return (
     <article className="w-full bg-white rounded-none overflow-hidden flex flex-col">
