@@ -7,8 +7,8 @@ interface ServiceCardProps {
   description: string;
   size?: "tall" | "default";
   imageHeight?: string;
-  href?: string; // anchor link to service section
-  fixed?: boolean; // for mobile/tablet equal structure
+  href?: string;
+  fixed?: boolean;
 }
 
 const ServiceCard = ({
@@ -20,54 +20,40 @@ const ServiceCard = ({
   href,
   fixed = false,
 }: ServiceCardProps) => {
-  // Высота картинки
-  const imgH =
-    imageHeight ||
-    (size === "tall"
-      ? "h-[460px] md:h-[500px] lg:h-[520px]"
-      : "h-[200px] md:h-[220px] lg:h-[240px]");
+  const imgH = imageHeight || (size === "tall" ? "h-[500px]" : "h-[220px]");
 
   return (
     <div
-      className={`
-        w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg 
-        transition duration-300 overflow-hidden 
-        flex flex-col 
-        h-[360px] md:h-[380px] lg:h-auto
-      `}
+      className="
+        w-full bg-card border border-border rounded-2xl shadow 
+        hover:shadow-lg transition-all duration-300 overflow-hidden
+        flex flex-col
+      "
     >
-      {/* Картинка */}
-      <div className={`w-full ${fixed ? "h-[200px]" : imgH} flex-shrink-0`}>
-        <img
-          src={image}
-          alt={title}
-          className="block w-full h-full object-cover"
-          loading="lazy"
-        />
+      {/* Изображение */}
+      <div className={`w-full ${fixed ? "h-[220px]" : imgH}`}>
+        <img src={image} alt={title} className="block w-full h-full object-cover" loading="lazy" />
       </div>
 
-      {/* Текст */}
-      <div className="flex flex-col justify-between px-5 pt-3 pb-5 flex-grow">
+      {/* Контент */}
+      <div className="flex flex-col justify-between px-6 py-5 flex-grow">
         <div>
-          <h3 className="m-0 font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-            {title}
-          </h3>
-          <p className="m-0 mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug line-clamp-3">
-            {description}
-          </p>
+          <h3 className="font-mono font-bold text-lg md:text-xl text-foreground mb-2">{title}</h3>
+          <p className="font-sans text-sm text-muted-foreground leading-relaxed">{description}</p>
         </div>
-        
+
         {href && (
           <Link
             to={href}
             className="
-              group inline-flex items-center gap-2 mt-4
-              text-primary font-sans font-semibold text-sm
-              hover:gap-3 transition-all duration-200
+              mt-4 inline-flex items-center justify-center gap-2
+              px-5 py-2.5 bg-primary/10 text-primary font-sans font-semibold
+              rounded-md hover:bg-primary/20 transition-colors duration-200
+              group
             "
           >
             <span>Uzzināt vairāk</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         )}
       </div>
