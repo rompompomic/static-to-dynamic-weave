@@ -44,6 +44,7 @@ const Services = () => {
   return (
     <section id="pakalpojumi" className="w-full py-16 md:py-20 bg-[#f9f9f9] scroll-mt-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+        {/* Заголовок */}
         <h2 className="font-mono font-bold text-foreground text-3xl md:text-4xl lg:text-[50px] leading-tight mb-10">
           Mūsu pakalpojumi
         </h2>
@@ -61,7 +62,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* MOBILE / TABLET */}
+        {/* MOBILE / TABLET — все одинаковые */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} uniform />
@@ -76,8 +77,8 @@ export default Services;
 
 /* === КАРТОЧКА === */
 const ServiceCard = ({ image, title, description, href, large = false, uniform = false }: any) => {
-  // Высоты для разных устройств
-  const imgH = large ? 480 : uniform ? 180 : 160; // мобильные и планшеты → 180
+  // на мобилках и планшетах все одинаковые
+  const imgH = uniform ? 180 : large ? 480 : 160;
 
   return (
     <a
@@ -86,7 +87,6 @@ const ServiceCard = ({ image, title, description, href, large = false, uniform =
         group w-full bg-white overflow-hidden flex flex-col rounded-none 
         transition-all duration-200 hover:shadow-md hover:scale-[1.01]
         cursor-pointer
-        ${uniform ? "h-full" : ""}
       `}
     >
       {/* Изображение */}
