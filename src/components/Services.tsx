@@ -5,7 +5,6 @@ import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import labiekartosana from "@/assets/labiekartosana.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
 import buvgruzuIzvesana from "@/assets/buvgruzu-izvesana-un-utilizacija.webp";
-import demontazaIndustrial from "@/assets/demontaza-industrial.webp";
 
 const Services = () => {
   const services = [
@@ -40,12 +39,6 @@ const Services = () => {
       description: "Būvgružu savākšana, transportēšana un utilizācija saskaņā ar vides normām",
       href: "/lv/pakalpojumi#buvgruzu-izvesana",
     },
-    {
-      image: demontazaIndustrial,
-      title: "Industriālo objektu nojaukšana",
-      description: "Kompleksa ražošanas teritoriju demontāža un attīrīšana",
-      href: "/lv/pakalpojumi#industrial-demontaza",
-    },
   ];
 
   return (
@@ -63,7 +56,7 @@ const Services = () => {
             <ServiceCard {...services[0]} large />
           </div>
 
-          {/* Правый блок из 5 карточек */}
+          {/* Правые карточки (4 шт.) */}
           <div className="grid grid-cols-2 gap-[28px] col-span-2">
             {services.slice(1).map((service, i) => (
               <ServiceCard key={i} {...service} />
