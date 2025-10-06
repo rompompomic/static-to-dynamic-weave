@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,16 +8,44 @@ import buvjuUnEkuDemontaza from "@/assets/services-buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/services-razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/services-zemes-darbi.webp";
 import labiekartosana from "@/assets/services-labiekartosana.webp";
+import buvgruzuIzvesana from "@/assets/buvgruzu-izvesana-un-utilizacija.webp";
 import excavator from "@/assets/excavator.webp";
 import { ArrowRight, ShieldCheck, Clock, Wallet, Recycle, Truck, HardHat, Handshake, Sparkles, Phone, Mail } from "lucide-react";
 const Pakalpojumi = () => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    if (el) {
+      const headerOffset = 100; // Adjust for fixed header height
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
+
+  // Handle anchor navigation on page load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const el = document.getElementById(id);
+        if (el) {
+          const headerOffset = 100;
+          const elementPosition = el.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, []);
   return <main className="bg-background overflow-x-hidden w-full min-h-screen">
       <Helmet>
         <title>Pakalpojumi – DEMCO</title>
@@ -266,6 +295,51 @@ const Pakalpojumi = () => {
                 alt="Labiekārtošana - teritoriju tīrīšana, ceļu izbūve un apzaļumošana"
                 className="w-full h-auto object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Būvgružu izvešana un utilizācija */}
+      <section id="buvgruzu-izvesana" className="w-full py-12 md:py-16 bg-white/0">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[75px]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in">
+            <div className="overflow-hidden">
+              <img
+                src={buvgruzuIzvesana}
+                alt="Būvgružu izvešana un utilizācija - būvgružu savākšana un transportēšana"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+      
+            <div>
+              <h2 className="font-mono font-bold text-foreground text-2xl md:text-3xl lg:text-4xl mb-4">
+                Būvgružu izvešana un utilizācija
+              </h2>
+              <p className="font-sans text-foreground text-base leading-relaxed mb-6">
+                Pilns cikls: būvgružu savākšana, šķirošana, transportēšana un nodošana 
+                sertificētiem poligoniem ar visiem nepieciešamajiem dokumentiem.
+              </p>
+      
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
+                    Savākšana & šķirošana
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
+                    Būvgružu savākšana uz vietas, šķirošana pēc materiālu veidiem atbilstoši normām.
+                  </p>
+                </div>
+      
+                <div className="rounded-2xl border border-border bg-card shadow p-6 min-w-[260px]">
+                  <h3 className="font-mono font-bold text-lg mb-2 break-words hyphens-auto">
+                    Transportēšana & utilizācija
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words hyphens-auto">
+                    Būvgružu transportēšana un nodošana sertificētiem poligoniem ar pilnām atskaitēm.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

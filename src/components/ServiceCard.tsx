@@ -1,9 +1,14 @@
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+
 interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
   size?: "tall" | "default";
-  imageHeight?: string; // опционально переопределить высоту картинки
+  imageHeight?: string;
+  href?: string; // anchor link to service section
+  fixed?: boolean; // for mobile/tablet equal structure
 }
 
 const ServiceCard = ({
@@ -12,6 +17,8 @@ const ServiceCard = ({
   description,
   size = "default",
   imageHeight,
+  href,
+  fixed = false,
 }: ServiceCardProps) => {
   // Высота картинки
   const imgH =
@@ -30,7 +37,7 @@ const ServiceCard = ({
       `}
     >
       {/* Картинка */}
-      <div className={`w-full ${imgH} flex-shrink-0`}>
+      <div className={`w-full ${fixed ? "h-[200px]" : imgH} flex-shrink-0`}>
         <img
           src={image}
           alt={title}
@@ -49,7 +56,23 @@ const ServiceCard = ({
             {description}
           </p>
         </div>
+        
+        {href && (
+          <Link
+            to={href}
+            className="
+              group inline-flex items-center gap-2 mt-4
+              text-primary font-sans font-semibold text-sm
+              hover:gap-3 transition-all duration-200
+            "
+          >
+            <span>Uzzināt vairāk</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        )}
       </div>
     </div>
   );
 };
+
+export default ServiceCard;

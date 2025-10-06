@@ -11,15 +11,13 @@ import MobileCallButton from "@/components/MobileCallButton";
 
 const Index = () => {
   useEffect(() => {
-    // Даем браузеру дорендерить и выполнить автоскролл, потом сбрасываем
+    // Reset scroll to top on mount
     const timer = setTimeout(() => {
       if (window.location.hash) {
-        // Убираем хэш из адресной строки
         history.replaceState(null, "", window.location.pathname);
       }
-      // Принудительно возвращаем страницу наверх
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }, 50); // 50–100 мс — оптимально, чтобы браузер успел отработать автоскролл
+    }, 50);
 
     return () => clearTimeout(timer);
   }, []);

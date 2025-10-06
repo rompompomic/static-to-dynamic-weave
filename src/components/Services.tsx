@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
 
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
@@ -30,6 +31,7 @@ const Services = () => {
               description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
               size="tall"
               imageHeight="h-[500px]"
+              href="/lv/pakalpojumi#eku-demontaza"
             />
           </div>
 
@@ -41,6 +43,7 @@ const Services = () => {
               description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
               size="default"
               imageHeight="h-[220px]"
+              href="/lv/pakalpojumi#razosanas-eku-demontaza"
             />
             <ServiceCard
               image={zemesDarbi}
@@ -48,6 +51,7 @@ const Services = () => {
               description="Rakšana un grunts izlīdzināšana, pamatu sagatavošana un drenāža."
               size="default"
               imageHeight="h-[220px]"
+              href="/lv/pakalpojumi#zemes-darbi"
             />
           </div>
 
@@ -59,6 +63,7 @@ const Services = () => {
               description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
               size="default"
               imageHeight="h-[220px]"
+              href="/lv/pakalpojumi#labiekartosana"
             />
             <ServiceCard
               image={buvgruzuIzvesana}
@@ -66,6 +71,7 @@ const Services = () => {
               description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
               size="default"
               imageHeight="h-[220px]"
+              href="/lv/pakalpojumi#buvgruzu-izvesana"
             />
           </div>
         </div>
@@ -77,52 +83,36 @@ const Services = () => {
             title="Būvju un ēku demontāža"
             description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
             fixed
+            href="/lv/pakalpojumi#eku-demontaza"
           />
           <ServiceCard
             image={razosanasEkuDemontaza}
             title="Ražošanas ēku demontāža"
             description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
             fixed
+            href="/lv/pakalpojumi#razosanas-eku-demontaza"
           />
           <ServiceCard
             image={zemesDarbi}
             title="Zemes darbi"
             description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
             fixed
+            href="/lv/pakalpojumi#zemes-darbi"
           />
           <ServiceCard
             image={labiekartosana}
             title="Labiekārtošana"
             description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
             fixed
+            href="/lv/pakalpojumi#labiekartosana"
           />
           <ServiceCard
             image={buvgruzuIzvesana}
             title="Būvgružu izvešana un utilizācija"
             description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
             fixed
+            href="/lv/pakalpojumi#buvgruzu-izvesana"
           />
-        </div>
-
-        {/* CTA */}
-        <div className="flex justify-center mt-12 md:mt-16">
-          <a
-            href="/lv/pakalpojumi"
-            className="
-              group relative inline-flex items-center justify-center gap-2.5
-              h-12 px-8 rounded-lg
-              bg-primary text-white font-sans font-bold
-              shadow-sm hover:shadow-md transition ease-out duration-200
-              hover:scale-[1.02] active:scale-[0.97]
-              overflow-hidden
-              before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-              before:from-transparent before:via-white/20 before:to-transparent
-              group-hover:before:translate-x-full before:transition-transform before:duration-700
-            "
-          >
-            <span className="text-base md:text-lg">Skatīt visus pakalpojumus</span>
-            <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-          </a>
         </div>
       </div>
     </section>
@@ -130,59 +120,3 @@ const Services = () => {
 };
 
 export default Services;
-
-//
-// === КОМПОНЕНТ КАРТОЧКИ ===
-//
-interface ServiceCardProps {
-  image: string;
-  title: string;
-  description: string;
-  size?: "tall" | "default";
-  imageHeight?: string;
-  fixed?: boolean; // для моб/таб одинаковой структуры
-}
-
-const ServiceCard = ({
-  image,
-  title,
-  description,
-  size = "default",
-  imageHeight,
-  fixed = false,
-}: ServiceCardProps) => {
-  const imgH =
-    imageHeight ||
-    (size === "tall"
-      ? "h-[460px] md:h-[500px] lg:h-[520px]"
-      : "h-[200px] md:h-[220px] lg:h-[240px]");
-
-  return (
-    <div
-      className={`
-        w-full bg-card border border-border rounded-lg shadow-md hover:shadow-lg 
-        transition duration-300 overflow-hidden flex flex-col
-      `}
-    >
-      {/* Картинка фиксированной высоты */}
-      <div className={`w-full ${fixed ? "h-[200px]" : imgH} flex-shrink-0`}>
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Текстовый блок — авто-высота */}
-      <div className="px-5 pt-3 pb-5 flex flex-col justify-start flex-grow">
-        <h3 className="font-sans font-bold text-foreground text-lg md:text-xl leading-tight">
-          {title}
-        </h3>
-        <p className="mt-2 font-sans text-muted-foreground text-sm md:text-base leading-snug line-clamp-3">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-};
