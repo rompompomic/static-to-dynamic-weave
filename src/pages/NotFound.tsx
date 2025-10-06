@@ -66,8 +66,9 @@ const NotFound = () => {
             <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
               <p className="font-sans text-white text-base leading-relaxed my-[30px]">
                 Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
-                <br />
               </p>
+            </div>
+            <div>
               <a
                 href="/"
                 className="
@@ -107,26 +108,27 @@ const NotFound = () => {
                 </h1>
                 <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1000px]">
                   Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
-                  <br />
                 </p>
-                <a
-                  href="/"
-                  className="
-                    group relative inline-flex items-center justify-center gap-2.5
-                    h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
-                    bg-white text-primary font-sans font-bold
-                    shadow-sm hover:shadow-md transition ease-out duration-200
-                    hover:scale-[1.02] active:scale-[0.97]
-                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
-                    overflow-hidden
-                    before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
-                    before:from-transparent before:via-white/20 before:to-transparent
-                    group-hover:before:translate-x-full before:transition-transform before:duration-700
-                  "
-                >
-                  <span className="text-sm md:text-base">Atgriezties uz sākumu</span>
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                </a>
+                <div>
+                  <a
+                    href="/"
+                    className="
+                      group relative inline-flex items-center justify-center gap-2.5
+                      h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
+                      bg-white text-primary font-sans font-bold
+                      shadow-sm hover:shadow-md transition ease-out duration-200
+                      hover:scale-[1.02] active:scale-[0.97]
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                      overflow-hidden
+                      before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                      before:from-transparent before:via-white/20 before:to-transparent
+                      group-hover:before:translate-x-full before:transition-transform before:duration-700
+                    "
+                  >
+                    <span className="text-sm md:text-base">Atgriezties uz sākumu</span>
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
