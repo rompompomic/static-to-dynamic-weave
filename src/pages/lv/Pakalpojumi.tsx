@@ -100,8 +100,10 @@ const Pakalpojumi = () => {
               paddingRight: "max(env(safe-area-inset-right), 1rem)",
             }}
           >
-            <h1 className="font-mono font-bold text-white text-[28px] leading-tight max-w-[320px]">
-              Profesionāli demontāžas un zemes darbu pakalpojumi
+            <h1 className="font-mono font-bold text-white text-[26px] leading-tight max-w-[320px]">
+              Profesionāli demontāžas
+              <br />
+              un zemes darbu pakalpojumi
             </h1>
           </div>
         </div>
@@ -134,8 +136,10 @@ const Pakalpojumi = () => {
               "
             >
               <div className="w-[800px] lg:w-[900px] xl:w-[1000px] 2xl:w-[1200px]">
-                <h1 className="font-mono font-bold text-white text-4xl md:text-[40px] lg:text-[50px] leading-[1.15] max-w-[680px] xl:max-w-[740px]">
-                  Profesionāli demontāžas un zemes darbu pakalpojumi
+                <h1 className="font-mono font-bold text-white text-4xl md:text-[40px] lg:text-[50px] leading-[1.15] max-w-[700px]">
+                  Profesionāli demontāžas un
+                  <br />
+                  zemes darbu pakalpojumi
                 </h1>
                 <p className="mt-5 font-sans text-white text-lg leading-relaxed max-w-[560px] lg:max-w-[640px]">
                   No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu, kas pielāgoti gan privātiem,
