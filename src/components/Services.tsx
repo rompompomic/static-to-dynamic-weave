@@ -79,13 +79,16 @@ export default Services;
 
 /* === Компонент карточки === */
 const ServiceCard = ({ image, title, description, href, large = false, special = false }: any) => {
-  // — Размеры изображений
-  // Главная карточка — крупная
-  // Второстепенные — немного меньше
-  const imgH = large ? 480 : 160; // ← тут уменьшили с 190px до 170px
+  // Размеры изображений
+  const imgH = large ? 480 : 160; // ← фиксированная высота для второстепенных карточек
 
   return (
-    <article className="w-full bg-white rounded-none overflow-hidden flex flex-col">
+    <article
+      className={`
+        w-full bg-white overflow-hidden flex flex-col 
+        rounded-none
+      `}
+    >
       {/* Изображение */}
       <div style={{ height: `${imgH}px` }} className="w-full">
         <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
@@ -98,6 +101,7 @@ const ServiceCard = ({ image, title, description, href, large = false, special =
           <p className="font-sans text-[13px] text-muted-foreground leading-snug">{description}</p>
         </div>
 
+        {/* Кнопка */}
         <a
           href={href}
           className={`
