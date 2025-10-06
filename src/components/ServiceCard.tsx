@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
+type ButtonVariant = "soft" | "solid";
+
 interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
   size?: "tall" | "default";
-  imageHeight?: string;
+  imageHeight?: string; // для tall карточки
   href?: string;
-  fixed?: boolean;
+  squareImage?: boolean; // делает картинку квадратной (для default)
+  buttonVariant?: ButtonVariant; // цвет кнопки: soft (по макету светлый) / solid (заливка)
 }
+
+const btnBase =
+  "group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-sans font-semibold " +
+  "shadow-sm hover:shadow-md transition ease-out duration-200 hover:scale-[1.02] active:scale-[0.97] " +
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40";
 
 const ServiceCard = ({
   image,
@@ -18,20 +26,18 @@ const ServiceCard = ({
   size = "default",
   imageHeight,
   href,
-  fixed = false,
+  squareImage = true,
+  buttonVariant = "soft",
 }: ServiceCardProps) => {
   const imgH = imageHeight || (size === "tall" ? "h-[500px]" : "h-[220px]");
 
+  const btnColor =
+    buttonVariant === "solid" ? "bg-primary text-white" : "bg-primary/10 text-primary hover:bg-primary/20";
+
   return (
-    <div
-      className="
-        w-full bg-card border border-border rounded-2xl shadow 
-        hover:shadow-lg transition-all duration-300 overflow-hidden
-        flex flex-col
-      "
-    >
+    <div className="w-full bg-card border border-border rounded-2xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
       {/* Изображение */}
-      <div className={`w-full ${fixed ? "h-[220px]" : imgH}`}>
+      <div className={`w-full ${size === "default" && squareImage ? "aspect-square" : imgH}`}>
         <img src={image} alt={title} className="block w-full h-full object-cover" loading="lazy" />
       </div>
 
@@ -43,17 +49,9 @@ const ServiceCard = ({
         </div>
 
         {href && (
-          <Link
-            to={href}
-            className="
-              mt-4 inline-flex items-center justify-center gap-2
-              px-5 py-2.5 bg-primary/10 text-primary font-sans font-semibold
-              rounded-md hover:bg-primary/20 transition-colors duration-200
-              group
-            "
-          >
+          <Link to={href} className={`${btnBase} ${btnColor} mt-4`}>
             <span>Uzzināt vairāk</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-1" />
           </Link>
         )}
       </div>
