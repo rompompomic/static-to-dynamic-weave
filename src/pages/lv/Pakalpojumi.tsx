@@ -92,15 +92,15 @@ const Pakalpojumi = () => {
           />
           {/* затемнение */}
           <div className="absolute inset-0 bg-black/45" />
-          {/* заголовок поверх фото */}
+          {/* заголовок по центру */}
           <div
-            className="absolute inset-0 flex items-center justify-center z-10"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4"
             style={{
               paddingLeft: "max(env(safe-area-inset-left), 1rem)",
               paddingRight: "max(env(safe-area-inset-right), 1rem)",
             }}
           >
-            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px] text-center">
+            <h1 className="font-mono font-bold text-white text-[28px] leading-tight max-w-[320px]">
               Profesionāli demontāžas un zemes darbu pakalpojumi
             </h1>
           </div>
@@ -127,17 +127,17 @@ const Pakalpojumi = () => {
           <div className="hidden md:block">
             <div
               className="
-                  container mx-auto px-8 lg:px-[75px]
-                  md:min-h-[635px] md:flex md:items-center
-                  md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
-                  xl:pr-[calc(48%+131px)] 2xl:pr-[calc(45%+131px)]
-                "
+                container mx-auto px-8 lg:px-[75px]
+                md:min-h-[635px] md:flex md:items-center
+                md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+                xl:pr-[calc(48%+131px)] 2xl:pr-[calc(45%+131px)]
+              "
             >
               <div className="w-[800px] lg:w-[900px] xl:w-[1000px] 2xl:w-[1200px]">
-                <h1 className="font-mono font-bold text-white text-4xl md:text-[40px] lg:text-[50px] leading-tight xl:whitespace-nowrap">
+                <h1 className="font-mono font-bold text-white text-4xl md:text-[40px] lg:text-[50px] leading-[1.15] max-w-[680px] xl:max-w-[740px]">
                   Profesionāli demontāžas un zemes darbu pakalpojumi
                 </h1>
-                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1000px]">
+                <p className="mt-5 font-sans text-white text-lg leading-relaxed max-w-[560px] lg:max-w-[640px]">
                   No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu, kas pielāgoti gan privātiem,
                   gan industriāliem projektiem.
                 </p>
