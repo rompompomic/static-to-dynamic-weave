@@ -13,6 +13,7 @@ const Services = () => {
       title: "Būvju un ēku demontāža",
       description: "Droša un efektīva dažāda tipa ēku nojaukšana ar mūsdienīgu tehniku un normatīvu ievērošanu",
       href: "/lv/pakalpojumi#eku-demontaza",
+      large: true,
     },
     {
       image: razosanasEkuDemontaza,
@@ -25,7 +26,7 @@ const Services = () => {
       title: "Zemes darbi",
       description: "Grunts rakšana, izlīdzināšana, pamatu sagatavošana un drenāža",
       href: "/lv/pakalpojumi#zemes-darbi",
-      highlight: true, // зелёная кнопка
+      highlight: true,
     },
     {
       image: labiekartosana,
@@ -49,22 +50,17 @@ const Services = () => {
         </h2>
 
         {/* === DESKTOP === */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[28px] items-start">
-          {/* Левая карточка */}
-          <div className="flex flex-col">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[28px]">
+          {/* Левая высокая карточка */}
+          <div className="row-span-2">
             <ServiceCard {...services[0]} large />
           </div>
 
-          {/* Средняя и правая часть */}
-          <div className="flex flex-col gap-[28px]">
-            <div className="grid grid-cols-2 gap-[28px]">
-              <ServiceCard {...services[1]} />
-              <ServiceCard {...services[2]} />
-            </div>
-            <div className="grid grid-cols-2 gap-[28px]">
-              <ServiceCard {...services[3]} />
-              <ServiceCard {...services[4]} />
-            </div>
+          {/* Правая сетка 2x2 */}
+          <div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-[28px]">
+            {services.slice(1).map((service, i) => (
+              <ServiceCard key={i} {...service} />
+            ))}
           </div>
         </div>
 
@@ -90,14 +86,19 @@ const ServiceCard = ({ image, title, description, href, highlight = false, large
     : "bg-[#f6f6f6] text-[#19ae89] hover:bg-[#e8e8e8]";
 
   return (
-    <div className={`w-full bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col`}>
+    <div
+      className={`w-full bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col`}
+      style={{
+        height: large ? "500px" : "240px",
+      }}
+    >
       {/* Изображение */}
-      <div className={`${large ? "h-[220px]" : "h-[220px]"} w-full`}>
+      <div className="w-full h-[60%]">
         <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
       </div>
 
       {/* Контент */}
-      <div className="px-6 py-5 flex flex-col justify-between flex-grow min-h-[200px]">
+      <div className="h-[40%] flex flex-col justify-between px-6 py-4">
         <div>
           <h3 className="font-mono font-bold text-lg md:text-xl text-foreground mb-1">{title}</h3>
           <p className="font-sans text-sm text-muted-foreground leading-relaxed">{description}</p>
