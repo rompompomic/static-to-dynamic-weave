@@ -77,7 +77,7 @@ const Pakalpojumi = () => {
       <Header />
 
       {/* HERO */}
-      <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero">
+      <section className="relative w-full overflow-hidden min-h-[500px] md:min-h-[635px] bg-gradient-hero pt-[72px] md:pt-0">
         {/* DESKTOP image (справа) */}
         <div className="hidden md:flex absolute inset-y-0 right-0 z-0 justify-end md:w-[50%] lg:w-[52%] pointer-events-none select-none">
           <img src={heroImage} alt="Construction site" className="h-full w-auto object-cover object-center" />
