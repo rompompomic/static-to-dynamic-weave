@@ -80,12 +80,12 @@ const ServiceCard = ({ image, title, description, href, large, special }: any) =
   return (
     <div className="w-full bg-white rounded-none overflow-hidden flex flex-col h-full">
       {/* Изображение */}
-      <div className={`${large ? "h-[370px]" : "h-[160px]"} w-full`}>
+      <div className={`${large ? "h-[370px]" : "h-[130px]"} w-full`}>
         <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
       </div>
 
-      {/* Контент (уменьшено по высоте) */}
-      <div className="px-5 py-3 flex flex-col justify-between flex-grow min-h-[130px]">
+      {/* Контент */}
+      <div className="px-5 py-3 flex flex-col justify-between flex-grow min-h-[120px]">
         <div>
           <h3 className="font-mono font-bold text-[15px] md:text-base text-foreground mb-1 leading-tight">{title}</h3>
           <p className="font-sans text-[12px] text-muted-foreground leading-snug">{description}</p>
