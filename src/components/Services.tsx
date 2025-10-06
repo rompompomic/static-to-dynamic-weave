@@ -1,5 +1,4 @@
 import ServiceCard from "@/components/ServiceCard";
-
 import buvjuUnEkuDemontaza from "@/assets/buvju-un-eku-demontaza.webp";
 import razosanasEkuDemontaza from "@/assets/razosanas-eku-demontaza.webp";
 import zemesDarbi from "@/assets/zemes-darbi.webp";
@@ -19,104 +18,102 @@ const Services = () => {
           un labiekārtošanai.
         </p>
 
-        {/* Desktop: 3 колонки, левая карточка — высокая, как две правые */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-[29px] items-start">
-          {/* Левая высокая карточка (та самая) */}
-          <div className="flex flex-col">
+        {/* Desktop layout: 1 высокая слева + 2×2 справа */}
+        <div className="hidden lg:grid gap-[29px] lg:grid-cols-[1.2fr,1fr,1fr] lg:grid-rows-2 items-stretch">
+          {/* 1 карточка — левая высокая, занимает 2 ряда */}
+          <div className="col-[1] row-[1/3]">
             <ServiceCard
               image={buvjuUnEkuDemontaza}
               title="Būvju un ēku demontāža"
               description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
               size="tall"
-              imageHeight="h-[500px]" // высота как две правые
               href="/lv/pakalpojumi#eku-demontaza"
-              squareImage={false} // у высокой — не квадрат
-              buttonVariant="soft" // цвет кнопки как в макете (светлый)
+              buttonVariant="soft"
+              className="h-full"
             />
           </div>
 
-          {/* Средняя колонка (квадратные карточки) */}
-          <div className="flex flex-col gap-[29px]">
+          {/* 2 карточка — верхний правый столбец (середина) */}
+          <div className="col-[2] row-[1]">
             <ServiceCard
               image={razosanasEkuDemontaza}
               title="Ražošanas ēku demontāža"
               description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
               href="/lv/pakalpojumi#razosanas-eku-demontaza"
-              squareImage // квадрат
               buttonVariant="soft"
-            />
-            <ServiceCard
-              image={zemesDarbi}
-              title="Zemes darbi"
-              description="Rakšana un grunts izlīdzināšana, pamatu sagatavošana un drenāža."
-              href="/lv/pakalpojumi#zemes-darbi"
-              squareImage
-              buttonVariant="solid" // пример «заливки», как на макете на одной карточке
+              className="h-full"
             />
           </div>
 
-          {/* Правая колонка (квадратные карточки) */}
-          <div className="flex flex-col gap-[29px]">
+          {/* 3 карточка — верхняя правая колонка */}
+          <div className="col-[3] row-[1]">
             <ServiceCard
               image={labiekartosana}
               title="Labiekārtošana"
               description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
               href="/lv/pakalpojumi#labiekartosana"
-              squareImage
               buttonVariant="soft"
+              className="h-full"
             />
+          </div>
+
+          {/* 4 карточка — нижняя средняя колонка */}
+          <div className="col-[2] row-[2]">
+            <ServiceCard
+              image={zemesDarbi}
+              title="Zemes darbi"
+              description="Rakšana un grunts izlīdzināšana, pamatu sagatavošana un drenāža."
+              href="/lv/pakalpojumi#zemes-darbi"
+              buttonVariant="solid" // заливка как в макете
+              className="h-full"
+            />
+          </div>
+
+          {/* 5 карточка — нижняя правая колонка */}
+          <div className="col-[3] row-[2]">
             <ServiceCard
               image={buvgruzuIzvesana}
               title="Būvgružu izvešana un utilizācija"
               description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
               href="/lv/pakalpojumi#buvgruzu-izvesana"
-              squareImage
               buttonVariant="soft"
+              className="h-full"
             />
           </div>
         </div>
 
-        {/* Mobile / Tablet — равные карточки, квадратные изображения */}
+        {/* Mobile / Tablet — обычная сетка 1-2 колонки */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:hidden">
           <ServiceCard
             image={buvjuUnEkuDemontaza}
             title="Būvju un ēku demontāža"
             description="Dažāda tipa ēku demontāža droši un efektīvi, ar mūsdienīgu tehniku un normatīvu ievērošanu."
             href="/lv/pakalpojumi#eku-demontaza"
-            squareImage
-            buttonVariant="soft"
           />
           <ServiceCard
             image={razosanasEkuDemontaza}
             title="Ražošanas ēku demontāža"
             description="Specifika industriālām konstrukcijām: rūpīga plānošana, izjaukšana, būvgružu utilizācija."
             href="/lv/pakalpojumi#razosanas-eku-demontaza"
-            squareImage
-            buttonVariant="soft"
-          />
-          <ServiceCard
-            image={zemesDarbi}
-            title="Zemes darbi"
-            description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
-            href="/lv/pakalpojumi#zemes-darbi"
-            squareImage
-            buttonVariant="solid"
           />
           <ServiceCard
             image={labiekartosana}
             title="Labiekārtošana"
             description="Ceļu un laukumu izbūve, ainavu labiekārtošana un zaļo zonu izveide pēc demontāžas."
             href="/lv/pakalpojumi#labiekartosana"
-            squareImage
-            buttonVariant="soft"
+          />
+          <ServiceCard
+            image={zemesDarbi}
+            title="Zemes darbi"
+            description="Rakšana, grunts izlīdzināšana, pamatu sagatavošana, drenāža un teritorijas stabilizācija."
+            href="/lv/pakalpojumi#zemes-darbi"
+            buttonVariant="solid"
           />
           <ServiceCard
             image={buvgruzuIzvesana}
             title="Būvgružu izvešana un utilizācija"
             description="Būvgružu savākšana, transportēšana un utilizācija atbilstoši vides aizsardzības normām."
             href="/lv/pakalpojumi#buvgruzu-izvesana"
-            squareImage
-            buttonVariant="soft"
           />
         </div>
       </div>
