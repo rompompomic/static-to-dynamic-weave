@@ -82,7 +82,7 @@ const ServiceCard = ({ image, title, description, href, large = false, special =
   // — Размеры изображений
   // Главная карточка — крупная
   // Второстепенные — немного меньше
-  const imgH = large ? 480 : 150; // ← тут уменьшили с 190px до 170px
+  const imgH = large ? 480 : 160; // ← тут уменьшили с 190px до 170px
 
   return (
     <article className="w-full bg-white rounded-none overflow-hidden flex flex-col">
