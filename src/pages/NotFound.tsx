@@ -41,15 +41,16 @@ const NotFound = () => {
           <div className="absolute inset-0 bg-black/45" />
           {/* заголовок поверх фото */}
           <div
-            className="absolute inset-0 flex items-center justify-center z-10"
+            className="absolute inset-0 flex items-center justify-center z-10 text-center px-4"
             style={{
               paddingLeft: "max(env(safe-area-inset-left), 1rem)",
               paddingRight: "max(env(safe-area-inset-right), 1rem)",
             }}
           >
-            <h1 className="font-mono font-bold text-white text-[28px] leading-tight px-[5px] text-center">
-              Profesionāli demontāžas un zemes darbu pakalpojumi
-            </h1>
+            <div>
+              <h1 className="font-mono font-bold text-white text-[64px] leading-none mb-2">404</h1>
+              <h2 className="font-mono font-bold text-white text-[20px] leading-tight px-[10px]">LAPA NAV ATRASTA</h2>
+            </div>
           </div>
         </div>
 
@@ -63,10 +64,16 @@ const NotFound = () => {
             }}
           >
             <div className="container mx-auto px-4 pb-8 pt-20 -mt-[56px]">
-              <p className="font-sans text-white text-base leading-relaxed my-[30px]">
-                No demontāžas līdz labiekārtošanai piedāvājam pilnu spektru risinājumu, kas pielāgoti gan privātiem, gan
-                industriāliem projektiem.
+              <p className="font-sans text-white text-base leading-relaxed mb-6 text-left">
+                Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
               </p>
+              <a
+                href="/"
+                className="inline-flex justify-center gap-2.5 px-6 py-3 bg-white items-center hover:bg-opacity-90 transition-all"
+              >
+                <span className="font-sans font-bold text-primary text-sm">Atgriezties uz sākumu</span>
+                <ArrowRight className="w-5 h-5 text-primary" />
+              </a>
             </div>
           </div>
 
@@ -74,20 +81,37 @@ const NotFound = () => {
           <div className="hidden md:block">
             <div
               className="
-                  container mx-auto px-8 lg:px-[75px]
-                  md:min-h-[635px] md:flex md:items-center
-                  md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
-                  xl:pr-[calc(48%+131px)] 2xl:pr-[calc(45%+131px)]
-                "
+                container mx-auto px-8 lg:px-[75px]
+                md:min-h-[635px] md:flex md:items-center
+                md:pr-[calc(50%+24px)] lg:pr-[calc(52%+131px)]
+              "
             >
-              <div className="w-[800px] lg:w-[900px] xl:w-[1000px] 2xl:w-[1200px]">
-                <h1 className="font-mono font-bold text-white text-4xl md:text-[40px] lg:text-[50px] leading-tight xl:whitespace-nowrap">
-                  Sadarbība un kontakti
-                </h1>
-                <p className="mt-6 font-sans text-white text-lg leading-relaxed max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1000px]">
-                  Mēs vienmēr esam atvērti jaunai sadarbībai. Rakstiet, zvaniet vai aizpildiet formu – kopā atradīsim
-                  labāko risinājumu jūsu objektam.
+              <div className="w-full max-w-[600px]">
+                <h1 className="font-mono font-bold text-white text-[80px] md:text-[100px] leading-none mb-4">404</h1>
+                <h2 className="font-mono font-bold text-white text-3xl md:text-4xl leading-tight mb-4">
+                  LAPA NAV ATRASTA
+                </h2>
+                <p className="font-sans text-white text-base md:text-lg leading-relaxed mb-8">
+                  Ups! Lapa, ko meklējat, neeksistē. Tā varētu būt pārvietota vai dzēsta.
                 </p>
+                <a
+                  href="/"
+                  className="
+                    group relative inline-flex items-center justify-center gap-2.5
+                    h-10 md:h-11 px-4 md:px-6 lg:px-8 rounded-lg
+                    bg-white text-primary font-sans font-bold
+                    shadow-sm hover:shadow-md transition ease-out duration-200
+                    hover:scale-[1.02] active:scale-[0.97]
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40
+                    overflow-hidden
+                    before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r
+                    before:from-transparent before:via-white/20 before:to-transparent
+                    group-hover:before:translate-x-full before:transition-transform before:duration-700
+                  "
+                >
+                  <span className="text-sm md:text-base">Atgriezties uz sākumu</span>
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-primary transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                </a>
               </div>
             </div>
           </div>
